@@ -7,22 +7,22 @@ import { IonSearchbar } from '@ionic/react';
 import { IonCard, IonCardContent, IonCardTitle } from '@ionic/react';
 import quiz from '../assests/task-square.png';
 import resources from '../assests/book.png';
-import challenges from '../assests/edit.png'
+import challenges from '../assests/edit.png';
 
 const Home: React.FC = () => {
   return (
     <IonPage>
 
-      <IonContent style={{'--ion-background-color':'antiquewhite'}} fullscreen>
+      <IonContent style={{ '--ion-background-color': 'antiquewhite' }} fullscreen>
         <link href="https://fonts.googleapis.com/css?family=Inria+Sans" rel="stylesheet" />
-        
+
         <div className="header">
           <IonIcon icon={menuOutline} className="custom-icon" />
 
           <IonLabel className='header-text'>CodeQuiz Pro</IonLabel>
 
           <IonIcon icon={personCircleOutline} className='custom-icon' />
-
+          
         </div>
         <div className='content'>
           <div className='search-container'>
