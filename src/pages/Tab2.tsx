@@ -1,5 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonLabel } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
+
 import './Tab2.css';
 import { IonIcon } from '@ionic/react';
 import { menuOutline, personCircleOutline, bookOutline } from 'ionicons/icons';
@@ -9,20 +10,18 @@ import quiz from '../assests/task-square.png';
 import resources from '../assests/book.png';
 import challenges from '../assests/edit.png';
 
-const Home: React.FC = () => {
+import './Tab1.css';
+
+const Tab2: React.FC = () => {
   return (
     <IonPage>
-
       <IonContent style={{ '--ion-background-color': 'antiquewhite' }} fullscreen>
         <link href="https://fonts.googleapis.com/css?family=Inria+Sans" rel="stylesheet" />
-
         <div className="header">
           <IonIcon icon={menuOutline} className="custom-icon" />
-
           <IonLabel className='header-text'>CodeQuiz Pro</IonLabel>
-
           <IonIcon icon={personCircleOutline} className='custom-icon' />
-          
+
         </div>
         <div className='content'>
           <div className='search-container'>
@@ -69,8 +68,23 @@ const Home: React.FC = () => {
           </div>
         </div>
       </IonContent>
+
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Tab 2</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Tab 2</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <ExploreContainer name="Tab 2 page" />
+      </IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+
+export default Tab2;
