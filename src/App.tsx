@@ -11,8 +11,8 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { homeOutline, square, triangle } from 'ionicons/icons';
-import Home from './pages/Tab1';
-import Tab2 from './pages/Tab1';
+import Home from './pages/Home';
+import Tab2 from './pages/Home';
 import Tab3 from './pages/Tab3';
 import TabBar from './components/tabbar'
 
@@ -34,6 +34,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Profile from './pages/Profile';
 
 setupIonicReact();
 
@@ -42,19 +43,15 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Home />
-          </Route>
-          <Route exact path="/home">
-            <Tab2 />
-          </Route>
+          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/home" component={Home}/>
           <Route exact path="/tab3" component={Tab3}/>
           <Redirect exact from="/" to="/tab1" />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="tab1" href="/profile">
             <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+            <IonLabel>Profile</IonLabel>
           </IonTabButton>
           <IonTabButton tab="Home" href="/home">
             <IonIcon aria-hidden="true" icon={homeOutline} />

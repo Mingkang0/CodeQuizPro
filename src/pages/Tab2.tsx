@@ -1,7 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonLabel } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 
-import './Tab2.css';
+import './css/Tab2.css';
 import { IonIcon } from '@ionic/react';
 import { menuOutline, personCircleOutline, bookOutline } from 'ionicons/icons';
 import { IonSearchbar } from '@ionic/react';
