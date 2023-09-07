@@ -29,8 +29,8 @@ const Home: React.FC = () => {
             <IonSearchbar className='searchbar'></IonSearchbar>
           </div>
           <div className='quiz'>
-            <IonCard className="card-button-1">
-              <IonCardContent className="card-content">
+            <IonCard className="card-button">
+              <IonCardContent className="card-content" style={{backgroundColor: '#ffbfbf'}}>
                 <div className="left-content">
                   <IonCardTitle className="card-title">Quizzes</IonCardTitle>
                   <div className="card-text">Test your knowledge</div>
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
             </IonCard>
           </div>
           <div className='challenges'>
-            <IonCard className="card-button-3">
+            <IonCard className="card-button" style={{backgroundColor: '#ccfcc2', marginTop:'30px'}}>
               <IonCardContent className="card-content">
                 <div className="left-content">
                   <IonCardTitle className="card-title">Daily Challenges</IonCardTitle>
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
             </IonCard>
           </div>
           <div className='learning'>
-            <IonCard className="card-button-2">
+            <IonCard className="card-button" style={{backgroundColor: '#fff4cc'}}>
               <IonCardContent className="card-content">
                 <div className="left-content">
                   <IonCardTitle className="card-title">Learning Resources</IonCardTitle>

@@ -33,7 +33,7 @@ ion-searchbar.searchbar {
 .search-container{
   padding-top:6px;
 }
-.card-button-1 {
+.card-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,15 +43,6 @@ ion-searchbar.searchbar {
   border-radius: 20px;
 }
 
-.card-button-3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: #ccfcc2;
-  color: #000000;
-  border-radius: 20px;
-}
 .learning , .challenges{
   margin-top:35px;
 }
@@ -59,15 +50,7 @@ ion-searchbar.searchbar {
 .quiz{
   margin-top: 20px;;
 }
-.card-button-2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: #fff4cc;
-  color: #000000;
-  border-radius: 30px;
-}
+
 
 .card-content {
   font-family:Inria Sans, sans-serif;
