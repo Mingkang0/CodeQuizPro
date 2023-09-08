@@ -1,7 +1,7 @@
 import { CreateAnimation, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { home, person, settings } from 'ionicons/icons';
-import Home from '../pages/Tab1';
+import Home from '../pages/Home';
 import Tab2 from '../pages/Tab2';
 import Tab3 from '../pages/Tab3';
 import { useRef } from "react";
@@ -66,8 +66,8 @@ const TabBar: React.FC = () => {
         const tabStyle = {
             backgroundColor: tab.backgroundColor,
             color: tab.color,
-            margin:'2px',
-            borderRadius:'100px',
+            margin: '2px',
+            borderRadius: '100px',
             transition: "0.5s all ease-in-out"
         };
         return tabStyle;
@@ -91,19 +91,19 @@ const TabBar: React.FC = () => {
                         <Redirect to="/home" />
                     </Route>
                 </IonRouterOutlet>
-                <IonTabBar slot="bottom" onIonTabsDidChange={e => setActiveTab(e.detail.tab || "")}> 
+                <IonTabBar slot="bottom" onIonTabsDidChange={e => setActiveTab(e.detail.tab || "")}>
                     {tabs.map((tab, index) => {
                         const tabStyle = getTabButtonStyle(tab);
                         const isActive = activeTab === `tab${index}`;
                         return (
                             <IonTabButton key={index} style={isActive ? tabStyle : {}} tab={`tab${index}`} href={tab.url} >
                                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                <IonIcon icon={tab.icon} style={{fontSize:'24px'}} />
-                                {isActive && (
-                                    <CreateAnimation ref={ref => (switchRefs.current[index] = ref)} {...switchAnimation}>
-                                        <IonLabel style={{fontSize:'14px', marginLeft:'6px'}}>{tab.label}</IonLabel>
-                                    </CreateAnimation>
-                                )}
+                                    <IonIcon icon={tab.icon} style={{ fontSize: '24px' }} />
+                                    {isActive && (
+                                        <CreateAnimation ref={ref => (switchRefs.current[index] = ref)} {...switchAnimation}>
+                                            <IonLabel style={{ fontSize: '14px', marginLeft: '6px' }}>{tab.label}</IonLabel>
+                                        </CreateAnimation>
+                                    )}
                                 </div>
                             </IonTabButton>
                         );
