@@ -1,17 +1,29 @@
 .custom-icon{
   font-size: 2.5rem;
   margin: 6px;
+  text-decoration: none;
 }
 
-.header {
+.custom-button {
+  --background: transparent; /* Set the background color */
+  --color: black; /* Set the text color */
+  font-size: 24px;
+  text-decoration: none !important; /* Remove text decoration */
+}
+
+ion-toolbar.header {
   display: flex; /* Use Flexbox to arrange children in a row */
   align-items: center; /* Vertically center the children */
   justify-content: space-between;
-  background: -webkit-linear-gradient(right, #ffe3b3, #fcdda8);
+  --background: -webkit-linear-gradient(right, #fadba5, #fcdda8);
   color:black;
   padding:3px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  text-align: center;
+}
+ion-header.Header{
+  --ion-header-box-shadow: none; 
 }
 
 .header-text{
@@ -32,6 +44,7 @@ ion-searchbar.searchbar {
 
 .search-container{
   padding-top:6px;
+  background-color: transparent;
 }
 .card-button {
   display: flex;
@@ -75,5 +88,9 @@ ion-searchbar.searchbar {
 
 .right-content {
   display: flex;
+  align-items: center;
+}
+
+.content{
   align-items: center;
 }
