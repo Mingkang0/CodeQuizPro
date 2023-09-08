@@ -1,0 +1,13 @@
+.header {
+  font-size: 24px;
+  box-shadow: none;
+  border: none;
+  --ion-background-color: antiquewhite;
+}
+.custom-icon{
+  background-color: #f9d19c; /* Background color */
+  padding: 2px;
+  margin: 5px;/* Add padding for some space around the icon */
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
