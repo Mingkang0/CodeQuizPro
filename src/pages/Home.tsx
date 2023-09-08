@@ -8,10 +8,24 @@ import { IonCard, IonCardContent, IonCardTitle } from '@ionic/react';
 import quiz from '../assests/task-square.png';
 import resources from '../assests/book.png';
 import challenges from '../assests/edit.png'
-import { Link, Redirect, Route } from 'react-router-dom';
+import { Link, Redirect, Route, useHistory } from 'react-router-dom';
 import Profile from './Profile';
+import { useEffect, useState } from 'react';
+
 
 const Home: React.FC = () => {
+  const history =useHistory();
+  const [shouldRefresh, setShouldRefresh] = useState(false);
+
+  const handleQuizClick = () => {
+    history.push('/quiz');
+    window.location.reload();
+  };
+  useEffect(() => {
+    if (shouldRefresh) {
+      setShouldRefresh(false);
+    }
+  }, [shouldRefresh]);
   return (
     <IonPage>
       <IonHeader>
@@ -29,7 +43,7 @@ const Home: React.FC = () => {
         {/* Home content */}
         <div className='ion-margin'>
           {/* Quizz */}
-          <IonCard className="card-button ion-padding" style={{ backgroundColor: '#ffbfbf' }}>
+          <IonCard className="card-button ion-padding" onClick={handleQuizClick} style={{ backgroundColor: '#ffbfbf' }}>
             <IonCardContent className='card-content'>
               <span>
                 <IonCardTitle><h1><strong>Quizzes</strong></h1></IonCardTitle>
