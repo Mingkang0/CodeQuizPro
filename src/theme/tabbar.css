@@ -1,7 +1,7 @@
 :root {
   --ion-tab-bar-color: rgb(0, 0, 0);
-  --ion-tab-bar-color-selected: rgb(0, 55, 255);
-  --ion-background-color: antiquewhite;
+  --ion-tab-bar-color-selected: #337CCF;
+  /* --ion-background-color: white; */
 }
 
 ion-tab-bar {
