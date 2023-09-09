@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonButton, IonTitle, IonPage,IonText, IonToolbar
 import React from 'react';
 import { chevronBackOutline } from 'ionicons/icons';
 import {BiLogoPython,BiLogoJava,BiLogoCPlusPlus} from 'react-icons/bi'
-import {TbBrandJavascript,TbStars} from 'react-icons/tb'
+import {TbBrandJavascript,TbStarsFilled} from 'react-icons/tb'
 import {FaPhp} from 'react-icons/fa6'
 
 import './Quiz.css'
@@ -84,11 +84,11 @@ const Quiz: React.FC = () => {
                     <IonCardTitle>{level}</IonCardTitle>
                     <div className='level ion-text-end'>
                       { level === 'Beginner' ? (
-                    <TbStars size={40} color="green" />
+                    <TbStarsFilled size={40} color="green" />
                      ):  level === 'Advanced' ? (
-                      <TbStars size={40} color="red" />
+                      <TbStarsFilled size={40} color="red" />
                      ) : level === 'Intermediate' ? (
-                        <TbStars size={40} color="orange" />
+                        <TbStarsFilled size={40} color="orange" />
                      ):null}
                     </div>
                     </IonCardContent>
