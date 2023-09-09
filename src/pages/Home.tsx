@@ -24,6 +24,9 @@ const Home: React.FC = () => {
     else if (e === "learning") {
       history.push('/language');
     }
+    else if (e === "challenges") {
+      history.push('/challenges');
+    }
     window.location.reload();
   };
   useEffect(() => {
@@ -67,7 +70,7 @@ const Home: React.FC = () => {
               </IonCardContent>
             </IonCard>
             {/* Daily Challenges */}
-            <IonCard className="card-button ion-padding" onClick={() => handleContentClick("quiz")} style={{ backgroundColor: '#C9F4AA' }}>
+            <IonCard className="card-button ion-padding" onClick={() => handleContentClick("challenges")} style={{ backgroundColor: '#C9F4AA' }}>
               <IonCardContent className='card-content'>
                 <span>
                   <IonCardTitle><h1><strong>Daily Challenges</strong></h1></IonCardTitle>

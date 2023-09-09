@@ -19,6 +19,7 @@ import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
 import TabBar from './components/tabbar'
 import Quiz from './pages/Quiz';
+import Challenges from './pages/Challenges';
 import Learning from './pages/learning resources/Learning';
 
 /* Core CSS required for Ionic components to work properly */
@@ -54,6 +55,7 @@ const App: React.FC = () => (
           <Route exact path="/home" component={Home} />
           <Route exact path="/tab3" component={Tab3} />
           <Route path="/quiz" component={Quiz} />
+          <Route path="/challenges" component={Challenges}/>
           <Route path="/learning" component={Learning} />
           <Route path="/language" component={Language} />
           <Redirect exact from="/" to="/home" />
