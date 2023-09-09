@@ -11,3 +11,24 @@
   border-radius: 25px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.horizontal-scroll-item {
+  flex: 0 0 auto;
+  margin-right: 10px; /* Add spacing between items */
+}
+
+.level, .icon {
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.button {
+  --background: #fdb42c;
+  color:black;
+}
