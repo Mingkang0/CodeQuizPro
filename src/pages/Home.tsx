@@ -40,7 +40,7 @@ const Home: React.FC = () => {
       <SideMenu/>
       <IonPage id="main-content">
         <IonHeader>
-          <IonToolbar color='warning' className='header ion-text-center'>
+          <IonToolbar color='warning' className='ion-text-center'>
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>

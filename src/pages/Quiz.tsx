@@ -39,7 +39,7 @@ const Quiz: React.FC = () => {
   const difficulty=['Beginner','Intermediate','Advanced'];
   return (
     <IonPage>
-      <IonHeader translucent className='header ion-text-center'>
+      <IonHeader className='ion-text-center'>
         <IonToolbar color="warning">
           <IonIcon icon={chevronBackOutline} size="large" slot="start" className='custom-icon'>
           </IonIcon>

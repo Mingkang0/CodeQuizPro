@@ -1,8 +1,3 @@
-.header {
-  --color: black;
-  font-size: 20px;
-}
-
 ion-searchbar.searchbar {
   --border-radius: 100px;
   --box-shadow: none !important;
