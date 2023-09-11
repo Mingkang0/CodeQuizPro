@@ -13,8 +13,69 @@ import {
     IonToolbar,
 } from '@ionic/react';
 import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/react';
+import Notes from './Notes';
 
 const Learning: React.FC = () => {
+    const topics = [
+        {
+            title: 'Overview',
+            duration: '30 minutes',
+        },
+        {
+            title: 'Variables and Data Types',
+            duration: '30 minutes',
+        },
+        {
+            title: 'Operators and Expressions ',
+            duration: '10 minutes',
+        },
+        {
+            title: 'Control Structures',
+            duration: '15 minutes',
+        },
+        {
+            title: 'Functions',
+            duration: '15 minutes',
+        },
+        {
+            title: 'Arrays and Strings',
+            duration: '16 minutes',
+        },
+        {
+            title: 'Pointers and References ',
+            duration: '20 minutes',
+        },
+        {
+            title: 'Object-Oriented Programming (OOP)',
+            duration: '4 hours',
+        },
+        {
+            title: 'Exception Handling',
+            duration: '2 hours',
+        },
+        {
+            title: 'File Input/Output',
+            duration: '2 hours',
+        },
+        {
+            title: 'Standard Template Library (STL)',
+            duration: '3 hours',
+        },
+        {
+            title: 'Debugging and Testing',
+            duration: '2 hours',
+        },
+        {
+            title: 'Best Practices and Coding Standards',
+            duration: '2 hours',
+        },
+    ];
+
+    const videos = [
+        {
+            src: "sample.mp4"
+        }
+    ]
     const [selectedSegment, setSelectedSegment] = useState<string>('notes');
 
 
@@ -22,34 +83,28 @@ const Learning: React.FC = () => {
         if (selectedSegment === 'notes') {
             return (
                 <>
-                    <IonCardContent>
-                        <IonNavLink >
-                            <IonItem lines='none' detail={true}>
-                                <IonLabel>
-                                    <h2><strong>Overview</strong></h2>
-                                    <small>10 minutes</small>
-                                </IonLabel>
-                            </IonItem>
-                        </IonNavLink>
-                        <IonNavLink >
-                            <IonItem lines='none' detail={true}>
-                                <IonLabel>
-                                    <h2><strong>Variables</strong></h2>
-                                    <small>5 minutes</small>
-                                </IonLabel>
-                            </IonItem>
-                        </IonNavLink>
-                    </IonCardContent>
+                    <Notes topics={topics} />
                 </>
             );
         } else if (selectedSegment === 'videos') {
             return (
                 <>
-                    <IonCardContent>Videos content goes here</IonCardContent>
+                    <IonCardContent>
+                        <iframe
+                            width="100%"
+                            height="315"
+                            src="https://www.youtube.com/embed/ZzaPdXTrSb8?si=66rjSSn8DJ9DRO-k"
+                            title="Embedded Video"
+                            frameBorder="0"
+                            allowFullScreen
+                        ></iframe>
+                    </IonCardContent>
                 </>
             );
         }
     };
+
+
 
     return (
         <>

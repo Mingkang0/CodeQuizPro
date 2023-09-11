@@ -2,8 +2,23 @@ import { IonContent, IonNavLink, IonButtons, IonBackButton, IonHeader, IonPage, 
 import './css/Profile.css'
 import React from 'react';
 import { pencilOutline } from 'ionicons/icons';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
 const Profile: React.FC = () => {
+    async function selectImage() {
+        try {
+            const image = await Camera.getPhoto({
+                quality: 90,
+                allowEditing: true,
+                resultType: CameraResultType.DataUrl,
+                source: CameraSource.Photos,
+            });
+            // Handle the captured image here
+        } catch (error) {
+            // Handle any errors that occur during image capture
+            console.error('Error capturing image:', error);
+        }
+    }
 
     return (
         <IonPage>
@@ -28,19 +43,19 @@ const Profile: React.FC = () => {
                 </IonItem>
                 <IonTitle class='ion-margin-top'>Username</IonTitle>
                 <IonText>Email@email.com</IonText>
-                <IonTitle className='ion-margin-top'><h2><strong>User Progress</strong></h2></IonTitle>
-                <IonCard style={{borderRadius:"10px"}}>
+                <IonTitle className='ion-margin-top'><h2><strong>Learning Progress</strong></h2></IonTitle>
+                <IonCard style={{ borderRadius: "10px" }}>
                     <IonCardContent>
-                        <IonItem detail={true}>
+                        <IonItem detail={true} routerLink='/learning'>
                             <IonLabel>
-                                <h3><strong>State the number (Dice Games)</strong></h3>
+                                <h3><strong>C++</strong></h3>
                                 <p>COMPLETED &nbsp; - &nbsp; 100%</p>
                             </IonLabel>
                         </IonItem>
                         <IonItem detail={true}>
                             <IonLabel>
-                                <h3><strong>State the number (Dice Games)</strong></h3>
-                                <p>COMPLETED &nbsp; - &nbsp; 100%</p>
+                                <h3><strong>Python</strong></h3>
+                                <p>IN PROGRESS &nbsp; - &nbsp; 70%</p>
                             </IonLabel>
                         </IonItem>
                     </IonCardContent>

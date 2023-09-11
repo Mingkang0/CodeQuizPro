@@ -7,9 +7,6 @@ const EditProfile: React.FC = () => {
     const [showImageUpload, setShowImageUpload] = useState(false);
 
     const handleImageUploadClick = () => {
-        // Implement your image upload logic here
-        // You can use a file input, a modal, or any other method you prefer
-        // For simplicity, we'll just toggle the "showImageUpload" state in this example
         setShowImageUpload(!showImageUpload);
     };
 

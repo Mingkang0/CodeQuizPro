@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch} from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -47,40 +47,42 @@ import Language from './pages/learning resources/Language';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/editProfile" component={EditProfile} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/tab3" component={Tab3} />
-          <Route path="/quiz" component={Quiz} />
-          <Route path="/challenges" component={Challenges}/>
-          <Route path="/learning" component={Learning} />
-          <Route path="/language" component={Language} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Redirect exact from="/" to="/home" />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom" className='tabbar-bottom'>
-          <IonTabButton tab="tab1" href="/profile">
-            <IonIcon aria-hidden="true" icon={person} />
-            <IonLabel>Profile</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Home" href="/home">
-            <IonIcon aria-hidden="true" icon={homeOutline} />
-            <IonLabel>Home</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/editProfile" component={EditProfile} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/tab3" component={Tab3} />
+            <Route path="/quiz" component={Quiz} />
+            <Route path="/challenges" component={Challenges} />
+            <Route path="/learning" component={Learning} />
+            <Route path="/language" component={Language} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Redirect exact from="/" to="/home" />
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom" className='tabbar-bottom'>
+            <IonTabButton tab="tab1" href="/profile">
+              <IonIcon aria-hidden="true" icon={person} />
+              <IonLabel>Profile</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="Home" href="/home">
+              <IonIcon aria-hidden="true" icon={homeOutline} />
+              <IonLabel>Home</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="tab3" href="/tab3">
+              <IonIcon aria-hidden="true" icon={square} />
+              <IonLabel>Tab 3</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
