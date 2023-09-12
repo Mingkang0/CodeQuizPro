@@ -5,6 +5,18 @@ import { cameraOutline } from 'ionicons/icons';
 
 const EditProfile: React.FC = () => {
     const [showImageUpload, setShowImageUpload] = useState(false);
+    const [username, setUsername] = useState<any>("");
+    const [email, setEmail] = useState<any>("");
+
+    const onUsernameChange = (e: any) => {
+        setUsername(e.detail.value);
+        console.log(username);
+    }
+
+    const onEmailChange = (e: any) => {
+        setEmail(e.detail.value);
+        console.log(email);
+    }
 
     const handleImageUploadClick = () => {
         setShowImageUpload(!showImageUpload);
@@ -31,8 +43,23 @@ const EditProfile: React.FC = () => {
                         Upload <IonIcon slot="end" icon={cameraOutline}></IonIcon>
                     </IonButton>
                 </IonButtons>
-                <IonInput value="xxxx" label="Username" labelPlacement="floating" fill="outline" placeholder="Enter Username"></IonInput>
-                <IonInput value="email@domain.com" label="Email" labelPlacement="floating" fill="outline" type="email" placeholder='Enter email'></IonInput>
+                <IonInput
+                    value={username}
+                    onIonChange={onUsernameChange} 
+                    label="Username"
+                    labelPlacement="floating"
+                    fill="outline"
+                    placeholder="Enter Username"
+                ></IonInput>
+                <IonInput
+                    value={email}
+                    onIonChange={onEmailChange} 
+                    label="Email"
+                    labelPlacement="floating"
+                    fill="outline"
+                    type="email"
+                    placeholder='Enter email'
+                ></IonInput>
             </IonContent>
         </IonPage>
     );

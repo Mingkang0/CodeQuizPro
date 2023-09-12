@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     IonBackButton,
     IonButtons,
@@ -6,84 +6,28 @@ import {
     IonCardContent,
     IonContent,
     IonHeader,
-    IonItem,
-    IonNavLink,
     IonPage,
     IonTitle,
     IonToolbar,
 } from '@ionic/react';
 import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/react';
 import Notes from './Notes';
+import { useParams } from 'react-router-dom';
+import { ref, get } from 'firebase/database';
+import { db } from '../../firebase.config';
+
 
 const Learning: React.FC = () => {
-    const topics = [
-        {
-            title: 'Overview',
-            duration: '30 minutes',
-        },
-        {
-            title: 'Variables and Data Types',
-            duration: '30 minutes',
-        },
-        {
-            title: 'Operators and Expressions ',
-            duration: '10 minutes',
-        },
-        {
-            title: 'Control Structures',
-            duration: '15 minutes',
-        },
-        {
-            title: 'Functions',
-            duration: '15 minutes',
-        },
-        {
-            title: 'Arrays and Strings',
-            duration: '16 minutes',
-        },
-        {
-            title: 'Pointers and References ',
-            duration: '20 minutes',
-        },
-        {
-            title: 'Object-Oriented Programming (OOP)',
-            duration: '4 hours',
-        },
-        {
-            title: 'Exception Handling',
-            duration: '2 hours',
-        },
-        {
-            title: 'File Input/Output',
-            duration: '2 hours',
-        },
-        {
-            title: 'Standard Template Library (STL)',
-            duration: '3 hours',
-        },
-        {
-            title: 'Debugging and Testing',
-            duration: '2 hours',
-        },
-        {
-            title: 'Best Practices and Coding Standards',
-            duration: '2 hours',
-        },
-    ];
-
-    const videos = [
-        {
-            src: "sample.mp4"
-        }
-    ]
+    const { language } = useParams<{ language: string }>();
+    const [topics, setTopics] = useState<any>(null);
     const [selectedSegment, setSelectedSegment] = useState<string>('notes');
-
 
     const renderContent = () => {
         if (selectedSegment === 'notes') {
             return (
                 <>
-                    <Notes topics={topics} />
+                    {topics ? <Notes topics={topics} language={language} /> :
+                        <IonCardContent className='ion-margin'>No notes available. Will be updated soon.</IonCardContent>}
                 </>
             );
         } else if (selectedSegment === 'videos') {
@@ -95,7 +39,6 @@ const Learning: React.FC = () => {
                             height="315"
                             src="https://www.youtube.com/embed/ZzaPdXTrSb8?si=66rjSSn8DJ9DRO-k"
                             title="Embedded Video"
-                            frameBorder="0"
                             allowFullScreen
                         ></iframe>
                     </IonCardContent>
@@ -104,7 +47,25 @@ const Learning: React.FC = () => {
         }
     };
 
+    const getTopics = async (language: any) => {
+        try {
+            const dbRef = ref(db, `resource/${language}/topics`);
+            const snapshot = await get(dbRef);
 
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                setTopics(data);
+            } else {
+                console.log('No data available');
+            }
+        } catch (error) {
+            console.error('Error retrieving data:', error);
+        }
+    };
+
+    useEffect(() => {
+        getTopics(language);
+    }, []);
 
     return (
         <>

@@ -7,12 +7,13 @@ import {
     IonList,
     IonMenu,
     IonMenuToggle,
-    IonPage,
     IonTitle,
     IonToolbar,
     IonAlert,
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
+import {auth} from '../firebase.config';
+import { signOut } from 'firebase/auth';
 
 const SideMenu: React.FC = () => {
     const history = useHistory();
@@ -38,8 +39,13 @@ const SideMenu: React.FC = () => {
         setShowLogoutAlert(true);
     };
 
-    const handleLogout = () => {
-        history.push('/login');
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            history.push('/login');
+          } catch (err) {
+            console.error(err);
+          }
     };
 
     return (

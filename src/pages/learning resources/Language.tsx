@@ -4,8 +4,10 @@ import SideMenu from '../../components/SideMenu';
 import { BiLogoPython, BiLogoJava, BiLogoCPlusPlus } from 'react-icons/bi';
 import { FaPhp } from 'react-icons/fa6';
 import { TbBrandJavascript } from 'react-icons/tb';
+import { useHistory } from 'react-router-dom';
 
 const Language: React.FC = () => {
+    const history = useHistory();
     const programminglanguage = [
         {
             id: 1,
@@ -34,6 +36,10 @@ const Language: React.FC = () => {
         },
     ]
 
+    const handleLanguage = (language: string) => {
+        history.push(`/learning/${language}`);
+    }
+
     return (
         <>
             <SideMenu />
@@ -43,42 +49,19 @@ const Language: React.FC = () => {
                         <IonButtons slot="start">
                             <IonMenuButton></IonMenuButton>
                         </IonButtons>
-                        <IonTitle>Learning Resources</IonTitle>
+                        <IonTitle><b>Learning Resources</b></IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <IonContent color='main'>
-                    {/* <IonList className='borderRadius'>
-                        <IonNavLink >
-                            <IonItem lines='none' detail={true} routerLink='/learning'>
-                                <IonLabel>
-                                    <h2><strong>C++</strong></h2>
-                                    <small>12 topics</small>
-                                </IonLabel>
-                            </IonItem>
-                        </IonNavLink>
-                        <IonNavLink >
-                            <IonItem lines='none' detail={true} routerLink='/learning'>
-                                <IonLabel>
-                                    <h2><strong>Java</strong></h2>
-                                    <small>12 topics</small>
-                                </IonLabel>
-                            </IonItem>
-                        </IonNavLink>
-                        <IonNavLink >
-                            <IonItem lines='none' detail={true} routerLink='/learning'>
-                                <IonLabel>
-                                    <h2><strong>PHP</strong></h2>
-                                    <small>12 topics</small>
-                                </IonLabel>
-                            </IonItem>
-                        </IonNavLink>
-                    </IonList> */}
                     <IonGrid>
                         <IonRow>
                             {programminglanguage.map((item => (
-                                <IonCol size="6" key={item.id}>
-                                    <IonCard routerLink='/learning' className='card-button ion-padding'>
-                                        <IonCardContent >
+                                <IonCol size="6" key={item.language}>
+                                    <IonCard
+                                        onClick={() => handleLanguage(item.language)} 
+                                        className='card-button ion-padding'
+                                    >
+                                        <IonCardContent>
                                             <IonCardTitle><strong>{item.language}</strong></IonCardTitle>
                                             <div className='ion-text-end ion-padding-top'>
                                                 <span className='icon'>{item.icon}</span>

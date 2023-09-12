@@ -1,9 +1,10 @@
-import { IonContent, IonHeader, IonButton, IonTitle, IonPage, IonText, IonToolbar, IonIcon, IonCardTitle, IonGrid, IonCard, IonCardContent, IonCardHeader, IonRow, IonCol, IonItem, IonInput } from '@ionic/react';
+import { IonContent, IonHeader,  IonTitle, IonPage, IonText, IonToolbar, IonIcon, IonCardTitle, IonGrid, IonCard, IonCardContent, IonCardHeader, IonRow, IonCol, IonItem, IonInput, IonBackButton, IonButtons, IonMenuButton } from '@ionic/react';
 import React from 'react';
 import { chevronBackOutline } from 'ionicons/icons';
 import { BiLogoPython, BiLogoJava, BiLogoCPlusPlus } from 'react-icons/bi'
 import { TbBrandJavascript, TbStarsFilled } from 'react-icons/tb'
 import { FaPhp } from 'react-icons/fa6'
+import SideMenu from '../components/SideMenu';
 
 
 const Challenges: React.FC = () => {
@@ -35,21 +36,26 @@ const Challenges: React.FC = () => {
     },
   ]
   return (
-    <IonPage>
-      <IonHeader className='ion-text-center'>
-        <IonToolbar color="warning">
-          <IonIcon icon={chevronBackOutline} size="large" slot="start" className='custom-icon'>
-          </IonIcon>
-          <IonTitle><b>Daily Challenges</b></IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent color="main">
-        <IonGrid>
-          <div className='language'>
-            <div className='header-text ion-margin-top'>
-              <IonTitle><b>Select programming language:</b></IonTitle>
-            </div>
-            <IonRow>
+    <>
+      <SideMenu />
+      <IonPage id="main-content">
+        <IonHeader>
+          <IonToolbar color="warning">
+            <IonButtons slot="start">
+              <IonMenuButton></IonMenuButton>
+            </IonButtons>
+            {/* <IonIcon icon={chevronBackOutline} size="large" slot="start" className='custom-icon'>
+          </IonIcon> */}
+            <IonTitle><b>Daily Challenges</b></IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent color="main">
+          <IonGrid>
+            <div className='language'>
+              <div className='header-text ion-margin-top'>
+                <IonTitle><b>Select programming language:</b></IonTitle>
+              </div>
+              <IonRow>
                 {programminglanguage.map((item => (
                   <IonCol size="6" key={item.id}>
                     <IonCard className='card-button ion-padding'>
@@ -62,11 +68,12 @@ const Challenges: React.FC = () => {
                     </IonCard>
                   </IonCol>
                 )))}
-            </IonRow>
-          </div>
-        </IonGrid>
-      </IonContent>
-    </IonPage>
+              </IonRow>
+            </div>
+          </IonGrid>
+        </IonContent>
+      </IonPage>
+    </>
   )
 }
 

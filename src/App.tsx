@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch} from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -44,6 +44,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/tabbar.css'
 import Language from './pages/learning resources/Language';
+import { auth } from './firebase.config';
+import Topic from './pages/learning resources/Topic';
 
 setupIonicReact();
 
@@ -59,7 +61,8 @@ const App: React.FC = () => {
             <Route exact path="/tab3" component={Tab3} />
             <Route path="/quiz" component={Quiz} />
             <Route path="/challenges" component={Challenges} />
-            <Route path="/learning" component={Learning} />
+            <Route path="/learning/:language" component={Learning} />
+            <Route path="/learning/:language/:topicId" component={Topic} />
             <Route path="/language" component={Language} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
