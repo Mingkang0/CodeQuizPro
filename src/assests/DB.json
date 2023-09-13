@@ -1,164 +1,727 @@
 {
-    "resource": {
-        "Python": {
-            "topics": {
-                "1": {
-                    "title": "Introduction to Python",
-                    "content": "Python is a high-level programming language...",
-                    "duration": "30 minutes"
-                },
-                "2": {
-                    "title": "Variables and Data Types",
-                    "content": "In Python, variables are used to store data...",
-                    "duration": "45 minutes"
-                },
-                "3": {
-                    "title": "Control Structures",
-                    "content": "Python provides various control structures...",
-                    "duration": "40 minutes"
-                },
-                "4": {
-                    "title": "Functions",
-                    "content": "Functions are blocks of reusable code...",
-                    "duration": "35 minutes"
-                },
-                "5": {
-                    "title": "Lists and Tuples",
-                    "content": "Lists and tuples are used to store collections of data...",
-                    "duration": "50 minutes"
-                },
-                "6": {
-                    "title": "Dictionaries",
-                    "content": "A dictionary is a collection of key-value pairs...",
-                    "duration": "40 minutes"
-                },
-                "7": {
-                    "title": "File Handling",
-                    "content": "Python allows you to work with files...",
-                    "duration": "45 minutes"
-                },
-                "8": {
-                    "title": "Modules and Packages",
-                    "content": "Modules and packages help you organize your code...",
-                    "duration": "30 minutes"
-                },
-                "9": {
-                    "title": "Object-Oriented Programming",
-                    "content": "Python supports object-oriented programming...",
-                    "duration": "55 minutes"
-                },
-                "10": {
-                    "title": "Error Handling",
-                    "content": "Errors can be handled using try-except blocks...",
-                    "duration": "35 minutes"
-                }
-            }
+  "resource": {
+    "Python": {
+      "topics": {
+        "1": {
+          "title": "Introduction to Python",
+          "content": "Python is a high-level programming language...",
+          "duration": "30 minutes"
+        },
+        "2": {
+          "title": "Variables and Data Types",
+          "content": "In Python, variables are used to store data...",
+          "duration": "45 minutes"
+        },
+        "3": {
+          "title": "Control Structures",
+          "content": "Python provides various control structures...",
+          "duration": "40 minutes"
+        },
+        "4": {
+          "title": "Functions",
+          "content": "Functions are blocks of reusable code...",
+          "duration": "35 minutes"
+        },
+        "5": {
+          "title": "Lists and Tuples",
+          "content": "Lists and tuples are used to store collections of data...",
+          "duration": "50 minutes"
+        },
+        "6": {
+          "title": "Dictionaries",
+          "content": "A dictionary is a collection of key-value pairs...",
+          "duration": "40 minutes"
+        },
+        "7": {
+          "title": "File Handling",
+          "content": "Python allows you to work with files...",
+          "duration": "45 minutes"
+        },
+        "8": {
+          "title": "Modules and Packages",
+          "content": "Modules and packages help you organize your code...",
+          "duration": "30 minutes"
+        },
+        "9": {
+          "title": "Object-Oriented Programming",
+          "content": "Python supports object-oriented programming...",
+          "duration": "55 minutes"
+        },
+        "10": {
+          "title": "Error Handling",
+          "content": "Errors can be handled using try-except blocks...",
+          "duration": "35 minutes"
         }
-    },
-    "quiz": {
-        "Python": {
-            "questions": [
-                {
-                    "question": "What is Python?",
-                    "options": [
-                        "A reptile",
-                        "A programming language",
-                        "A type of snake",
-                        "An operating system"
-                    ],
-                    "answer": "A programming language"
-                },
-                {
-                    "question": "Which of the following statements is true about Python?",
-                    "options": [
-                        "Python is a compiled language",
-                        "Python is dynamically typed",
-                        "Python is primarily used for game development",
-                        "Python is not open-source"
-                    ],
-                    "answer": "Python is dynamically typed"
-                },
-                {
-                    "question": "What is the output of the following code?\n\nprint(2 + 2)",
-                    "options": [
-                        "4",
-                        "22",
-                        "\"2 + 2\"",
-                        "None"
-                    ],
-                    "answer": "4"
-                },
-                {
-                    "question": "How do you declare a variable in Python?",
-                    "options": [
-                        "Using the var keyword",
-                        "Using the let keyword",
-                        "Using the const keyword",
-                        "Variables are declared automatically"
-                    ],
-                    "answer": "Variables are declared automatically"
-                },
-                {
-                    "question": "What is the correct way to comment out a single line in Python?",
-                    "options": [
-                        "// This is a comment",
-                        "/* This is a comment */",
-                        "# This is a comment",
-                        "<!-- This is a comment -->"
-                    ],
-                    "answer": "# This is a comment"
-                },
-                {
-                    "question": "Which of the following data types is mutable in Python?",
-                    "options": [
-                        "int",
-                        "str",
-                        "list",
-                        "tuple"
-                    ],
-                    "answer": "list"
-                },
-                {
-                    "question": "What is the result of 3 ** 2 in Python?",
-                    "options": [
-                        "6",
-                        "9",
-                        "12",
-                        "32"
-                    ],
-                    "answer": "9"
-                },
-                {
-                    "question": "How do you define a function in Python?",
-                    "options": [
-                        "function myFunction():",
-                        "def myFunction():",
-                        "method myFunction():",
-                        "func myFunction():"
-                    ],
-                    "answer": "def myFunction():"
-                },
-                {
-                    "question": "What does the len() function return in Python?",
-                    "options": [
-                        "The length of a list or string",
-                        "The largest integer less than or equal to a number",
-                        "The smallest integer greater than or equal to a number",
-                        "The logarithm of a number"
-                    ],
-                    "answer": "The length of a list or string"
-                },
-                {
-                    "question": "How do you open a file named \"example.txt\" for reading in Python?",
-                    "options": [
-                        "file = open(\"example.txt\", \"w\")",
-                        "file = open(\"example.txt\", \"r\")",
-                        "file = open(\"example.txt\", \"a\")",
-                        "file = open(\"example.txt\", \"x\")"
-                    ],
-                    "answer": "file = open(\"example.txt\", \"r\")"
-                }
-            ]
-        }
+      }
     }
+  },
+  "quiz": {
+    "Beginner": {
+      "Python": {
+        "questions": [
+          {
+            "question": "What is Python?",
+            "options": [
+              "A reptile",
+              "A programming language",
+              "A type of snake",
+              "An operating system"
+            ],
+            "answer": "A programming language"
+          },
+          {
+            "question": "Which of the following statements is true about Python?",
+            "options": [
+              "Python is a compiled language",
+              "Python is dynamically typed",
+              "Python is primarily used for game development",
+              "Python is not open-source"
+            ],
+            "answer": "Python is dynamically typed"
+          },
+          {
+            "question": "What is the output of the following code?\n\nprint(2 + 2)",
+            "options": ["4", "22", "\"2 + 2\"", "None"],
+            "answer": "4"
+          },
+          {
+            "question": "How do you declare a variable in Python?",
+            "options": [
+              "Using the var keyword",
+              "Using the let keyword",
+              "Using the const keyword",
+              "Variables are declared automatically"
+            ],
+            "answer": "Variables are declared automatically"
+          },
+          {
+            "question": "What is the correct way to comment out a single line in Python?",
+            "options": [
+              "// This is a comment",
+              "/* This is a comment */",
+              "# This is a comment",
+              "<!-- This is a comment -->"
+            ],
+            "answer": "# This is a comment"
+          },
+          {
+            "question": "Which of the following data types is mutable in Python?",
+            "options": ["int", "str", "list", "tuple"],
+            "answer": "list"
+          },
+          {
+            "question": "What is the result of 3 ** 2 in Python?",
+            "options": ["6", "9", "12", "32"],
+            "answer": "9"
+          },
+          {
+            "question": "How do you define a function in Python?",
+            "options": [
+              "function myFunction():",
+              "def myFunction():",
+              "method myFunction():",
+              "func myFunction():"
+            ],
+            "answer": "def myFunction():"
+          },
+          {
+            "question": "What does the len() function return in Python?",
+            "options": [
+              "The length of a list or string",
+              "The largest integer less than or equal to a number",
+              "The smallest integer greater than or equal to a number",
+              "The logarithm of a number"
+            ],
+            "answer": "The length of a list or string"
+          },
+          {
+            "question": "How do you open a file named \"example.txt\" for reading in Python?",
+            "options": [
+              "file = open(\"example.txt\", \"w\")",
+              "file = open(\"example.txt\", \"r\")",
+              "file = open(\"example.txt\", \"a\")",
+              "file = open(\"example.txt\", \"x\")"
+            ],
+            "answer": "file = open(\"example.txt\", \"r\")"
+          }
+        ]
+      },
+      "JavaScript": {
+        "questions": [
+          {
+            "question": "Which type of JavaScript language is _____ ?",
+            "options": [
+              "Object-Oriented",
+              "Object-Based",
+              "Assembly-language",
+              "High-level"
+            ],
+            "answer": "Object-Based",
+            "explanation": "JavaScript is not a pure OOP's (object oriented programming) based languages such as PHP, java or many other languages, although it is an object-based language. It is not OOP's based language, because it doesn't have three basic properties of object-oriented programming languages, such as polymorphism, encapsulation, and inheritance."
+          },
+          {
+            "question": "What is the actual output?",
+            "code": [
+              "var x = 5, y = 1",
+              "var obj = { x: 10 }",
+              "with(obj)",
+              "{",
+              "alert(y)",
+              "}"
+            ],
+            "options": ["1", "error", "10", "5"],
+            "answer": "1",
+            "explanation": "The output of the above snippet code will be 1 because, first of all, the interpreter will search 'obj' for the property 'y.' But it fails to find 'obj' for property 'y,' so it chooses a value from outside the object, which is available within the given code."
+          },
+          {
+            "question": "The \"function\" and \"var\" are known as:",
+            "options": [
+              "Keywords",
+              "Data types",
+              "Declaration statements",
+              "Prototypes"
+            ],
+            "answer": "Declaration statements",
+            "explanation": "The \"function\" and \"var\" both are Declaration statements. These both are used for defining and declaring variables and functions anywhere in the program."
+          },
+          {
+            "question": "Which of the following is the correct output for the following JavaScript code:",
+            "code": [
+              "var x = 8;",
+              "if (x > 9) {",
+              "  document.write(9);",
+              "} else {",
+              "  document.write(x);",
+              "}"
+            ],
+            "options": ["9", "0", "8", "Undefined"],
+            "answer": "8",
+            "explanation": "The code initializes a variable `x` with the value 8. Then, it checks if `x` is greater than 9, which is not true (`x` is 8), so it goes to the `else` block and writes the value of `x` which is 8."
+          },
+          {
+            "question": "Which of the following is the correct output for the following JavaScript code:",
+            "code": [
+              "var x=3;",
+              "var y=2;",
+              "var z=0;",
+              "If(x==y)",
+              "  document.write(x);",
+              "elseif(x==y)",
+              "  document.write(x);",
+              "else",
+              "  document.write(z);"
+            ],
+            "options": ["3", "0", "Error", "2"],
+            "answer": "0",
+            "explanation": "In the given code, x is compared to y in an if statement. Since x is not equal to y, it proceeds to the else block and writes the value of z (which is 0) to the document. Therefore, the correct output is 0."
+          },
+          {
+            "question": "Which of the following variables takes precedence over the others if the names are the same?",
+            "options": [
+              "Global variable",
+              "The local element",
+              "The two of the above",
+              "None of the above"
+            ],
+            "answer": "The local element",
+            "explanation": "If there are variables with the same name in both the global and local scope of a program, the local variable takes precedence over the global one. This means that when you access the variable within the local scope, you'll be working with the local version of the variable, and it won't affect the global variable with the same name."
+          },
+          {
+            "question": "Which one of the following is the correct way for calling the JavaScript code?",
+            "options": [
+              "Preprocessor",
+              "Triggering Event",
+              "RMI",
+              "Function/Method"
+            ],
+            "answer": "Function/Method",
+            "explanation": "The JavaScript code can be called simply by making the function call to the element on which the JavaScript code execution has to be run. There are several other ways to call JavaScript code such as submit, onclick, and onload, etc."
+          },
+          {
+            "question": "In the JavaScript, which one of the following is not considered as an error:",
+            "options": [
+              "Syntax error",
+              "Missing of semicolons",
+              "Division by zero",
+              "Missing of Bracket"
+            ],
+            "answer": "Division by zero",
+            "explanation": "Yes, you heard right that division of any integer by zero is not an error in the JavaScript. It just prints the infinity as a result. However, there is an exception in JavaScript, dividing zero with zero will not have any defined number/value so, the result of this specific operation is a special value 'Not a Number' (or NaN) and printed as NaN."
+          },
+          {
+            "question": "Which of the following number object functions returns the value of the number?",
+            "options": [
+              "toString()",
+              "valueOf()",
+              "toLocaleString()",
+              "toPrecision()"
+            ],
+            "answer": "valueOf()",
+            "explanation": "The valueOf() function returns the primitive value of the number object."
+          },
+          {
+            "question": "Which of the following function of the String object returns the character in the string starting at the specified position via the specified number of characters?",
+            "options": ["substr()", "substring()", "slice()", "splice()"],
+            "answer": "substr()",
+            "explanation": "The substr() function returns the character in the string starting at the specified position via the specified number of characters."
+          },
+          {
+            "question": "Which of the following is not a JavaScript Data Types?",
+            "options": ["Boolean", "Undefined", "Number", "Float"],
+            "answer": "Float",
+            "explanation": "In JavaScript, 'Float' is not a distinct data type. Instead, floating-point numbers are represented using the 'Number' data type, which can hold both integer and floating-point values."
+          },
+          {
+            "question": "Which of the following syntax can be used to write \"Hello World\" in an alert box?",
+
+            "options": [
+              "alertBox(\"Hello World\");",
+              "msgBox(\"Hello World\");",
+              "alert(\"Hello World\");",
+              "msg(\"Hello World\");"
+            ],
+            "answer": "alert(\"Hello World\");",
+            "explanation": "\"alert(\"Hello World\");\" is the correct answer."
+          },
+          {
+            "question": "Which of the following is the correct statement of WHILE loop start?",
+            "options": [
+              "while (i <= 10)",
+              "while (i <= 10; i++)",
+              "while i = 1 to 10",
+              "None of These"
+            ],
+            "answer": "while (i <= 10)",
+            "explanation": "\"while (i <= 10)\" is the correct answer."
+          },
+          {
+            "question": "Which of the following is the correct way to write a comment in JavaScript code?",
+            "options": [
+              "//This is a comment",
+              "/*This is a comment*/",
+              "$This is a comment$",
+              "**This is a comment**"
+            ],
+            "answer": "//This is a comment",
+            "explanation": "//This is a comment is the correct option."
+          },
+          {
+            "question": "What are the different types of Pop up boxes available in JavaScript?",
+
+            "options": ["Alert", "Prompt", "Confirm", "All of the above"],
+            "answer": "All of the above",
+            "explanation": "Alert, Prompt, Confirm are the different types of Pop up boxes available in JavaScript, option \"All of the above\" is correct."
+          },
+          {
+            "question": "Which of the following built-in method is used to remove the last element from an array and return that element?",
+            "options": ["last", "pop()", "get()", "None of the above"],
+            "answer": "pop()",
+            "explanation": "The pop() method is the correct answer. It is used to remove the last element from an array and return that element."
+          },
+          {
+            "question": "Which JavaScript String method can be used to find the index of the first occurrence of a specified substring within a string?",
+            "options": ["indexOf()", "search()", "substring()", "slice()"],
+            "answer": "indexOf()",
+            "explanation": "The 'indexOf()' method is used to find the index of the first occurrence of a specified substring within a string."
+          },
+          {
+            "question": "Which JavaScript Array method can be used to add one or more elements to the end of an array and returns the new length of the array?",
+            "options": ["concat()", "push()", "pop()", "splice()"],
+            "answer": "push()",
+            "explanation": "The 'push()' method is used to add one or more elements to the end of an array and returns the new length of the array."
+          }
+        ]
+      },
+      "Java": {
+        "questions": [{}]
+      },
+      "C++": {
+        "questions": [{}]
+      },
+      "PHP": {
+        "questions": [{}]
+      }
+    },
+    "Intermediate": {
+      "Python": {
+        "questions": [
+          {
+            "question": "Another Python question for Intermediate level"
+          }
+        ]
+      },
+      "JavaScript": {
+        "questions": [
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": [
+              "const numbers = [33, 2, 8];",
+              "numbers.sort();",
+              "console.log(numbers[1]);"
+            ],
+            "options": ["33", "2", "8", "1"],
+            "answer": "33",
+            "explanation": "The code sorts the 'numbers' array using the Array.prototype.sort() method, which converts all values to their string representation and then sorts them in lexicographic order. This results in ['2', '33', '8'] as the sorted array. When we print 'numbers[1]', it returns '33' because it is the second element (zero-based index) in the sorted array."
+          },
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": ["console.log(018 - 015);"],
+            "options": ["NaN", "5", "13"],
+            "answer": "5",
+            "explanation": "In earlier versions of JavaScript, a leading '0' on a number marked an octal number. Octal numbers have a base of 8, so valid digits are from 0 to 7. In the expression '018 - 015', '018' is treated as an octal number, but it's not a valid octal number because it contains '8'. Therefore, it's treated as a decimal number, and '015' is treated as a valid octal number, which is equivalent to '13' in decimal. The expression evaluates to '5' in decimal."
+          },
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": ["console.log(1 +  \"2\" + \"2\");"],
+            "options": ["122", "32", "NaN2", "NaN"],
+            "answer": "122",
+            "explanation": "In JavaScript, when you use the '+' operator with a string and a number, JavaScript converts the number to a string and performs string concatenation. So, '1 + \"2\"' results in '12', and then '12 + \"2\"' results in '122'. The final output is '122'."
+          },
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": ["console.log(String.raw`HelloTwitter\\nworld`);"],
+            "options": [
+              "\"HelloTwitter\\nworld\"",
+              "\"HelloTwitter\nworld\"",
+              "\"HelloTwitter world\"",
+              "\"Hello Twitter world\""
+            ],
+            "answer": "\"HelloTwitter\\nworld\"",
+            "explanation": "The `String.raw` function is used to get the raw string representation of a template literal. In the provided code, `HelloTwitter\\nworld` is a raw string with the escape sequence `\\n`, which represents a newline character. Therefore, the output will be the raw string itself: \"HelloTwitter\\nworld\"."
+          },
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": ["console.log(typeof typeof 1);"],
+            "options": ["string", "number", "1", "true"],
+            "answer": "string",
+            "explanation": "In JavaScript, the `typeof` operator is used to determine the data type of a value or expression. In the provided code, `typeof 1` returns the string 'number' because `1` is a number. Therefore, `typeof typeof 1` first evaluates `typeof 1`, which is 'string' (the data type of the result of `typeof`), and then the outer `typeof` returns 'string' because it's the data type of the inner `typeof` result."
+          },
+          {
+            "question": "Can you guess the result?",
+            "code": ["console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());"],
+            "options": ["bananaa", "baaa", "banana", "ananas"],
+            "answer": "banana",
+            "explanation": "The expression ('b' + 'a' + + 'a' + 'a') evaluates to 'banana'. Here's why:\n\n- 'b' + 'a' results in 'ba'.\n- +'a' attempts to convert 'a' to a number, which results in NaN (Not-a-Number).\n- 'ba' + NaN results in 'baNaN'.\n- Finally, 'baNaN' + 'a' results in 'banana'.\n\nThe `toLowerCase()` method is then applied to convert 'banana' to lowercase, resulting in the final output 'banana'."
+          },
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": [
+              "let array = [1, 2, 3];",
+              "array[6] = 9;",
+              "console.log(array[5]);"
+            ],
+            "options": ["1", "2", "9", "undefined"],
+            "answer": "undefined",
+            "explanation": "The output of the code will be 'undefined'.\n\nIn JavaScript, when you assign a value to an array element with an index that is greater than the current length of the array, JavaScript will create 'empty' or 'undefined' slots in the array for the indices in between. In this code, the array 'array' initially contains elements at indices 0, 1, and 2. When you set 'array[6] = 9;', JavaScript creates empty slots at indices 3, 4, and 5. Therefore, when you try to access 'array[5]', it returns 'undefined' because there is no value assigned to that index."
+          },
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": ["console.log(false == '0');"],
+            "options": ["false", "true"],
+            "answer": "true",
+            "explanation": "The output of the code will be 'true'.\n\nIn JavaScript, when you use the '==' operator for comparison, type coercion is performed. In this case, the boolean 'false' is being compared to the string '0'. JavaScript attempts to convert both values to a common type for comparison. When a boolean is compared to any other type, it is first converted to a number. In JavaScript, 'false' is equivalent to the number '0'. Therefore, the comparison 'false == '0'' evaluates to 'true' because '0' (as a string) is considered equal to '0' (as a number) after type coercion."
+          },
+          {
+            "question": "Do you know what will be the output of this code?",
+            "code": ["console.log(0.1 + 0.2 == 0.3);"],
+            "options": ["true", "false"],
+            "answer": "false",
+            "explanation": "0.1 + 0.2 -> 0.30000000000000004. \n(And 0.30000000000000004 is never equal to 0.3.)"
+          },
+          {
+            "question": "Can you guess what will be the output of the code below?",
+            "code": "console.log(typeof NaN);",
+            "options": ["NaN", "number", "null", "undefined"],
+            "answer": "number",
+            "explanation": "In JavaScript, typeof NaN returns 'number' because NaN (Not-a-Number) is considered a numeric data type."
+          },
+          {
+            "question": "Choose the correct snippet from the following to check if the variable 'a' is not equal to 'null':",
+            "options": ["if(a!==null)", "if (a!)", "if(a!null)", "if(a!=null)"],
+            "answer": "if(a!==null)",
+            "explanation": "The correct way to check if a variable 'a' is not equal to 'null' in JavaScript is by using the strict inequality operator '!=='."
+          },
+          {
+            "question": "Consider the following snippet of JavaScript code, which one of the following statement is most suitable to check if the pattern matches with the string 'text'?",
+            "code": [
+              "var text = 'testing: 1, 2, 3'; // Sample text",
+              "var pattern = /\\d+/g; // Matches all instances of one or more digits\n"
+            ],
+            "options": [
+              "test(text)",
+              "equals(pattern)",
+              "test(pattern)",
+              "text == pattern"
+            ],
+            "answer": "text == pattern",
+            "explanation": "The pattern is applied to the string 'text' by comparing it with the '==' operator."
+          },
+          {
+            "question": "Which of the following syntax is correct to refer to an external script called \"LFC.js\"?",
+
+            "options": [
+              "<script source=\"LFC.js\">",
+              "<script ref=\"LFC.js\">",
+              "<script src=\"LFC.js\">",
+              "<script type=\"LFC.js\">"
+            ],
+            "answer": "<script src=\"LFC.js\">",
+            "explanation": "<script src=\"LFC.js\"> is the correct answer. The \"src\" is used to refer to any JavaScript file."
+          },
+          {
+            "question": "In JavaScript, do the functions always return a value?",
+            "options": [
+              "Yes, functions always return a value",
+              "No, it is not necessary",
+              "A number of functions return values by default",
+              "Some functions do not return any value"
+            ],
+            "answer": "Some functions do not return any value"
+          },
+          {
+            "question": "Which one of the following options is the correct output for the given code of JavaScript?",
+            "code": [
+              "var values = [4, 5, 6, 7];",
+              "var ans = values.slice(1);",
+              "document.writeln(ans);"
+            ],
+            "options": ["Error", "5, 6, 7", "4, 5, 6", "4, 5, 6, 7"],
+            "answer": "5, 6, 7",
+            "explanation": "The `slice()` method in JavaScript is used to create a shallow copy of a portion of an array into a new array. In this code, it starts from index 1 and includes elements 5, 6, and 7 in the new array. The correct output will be '5, 6, 7.'"
+          },
+          {
+            "question": "Which one of the following options is the correct output for the given code of JavaScript?",
+            "code": [
+              "var arr = [4, 3, 2, 1];",
+              "var rev = arr.reverse();",
+              "document.writeln(rev);"
+            ],
+            "options": ["1, 2, 3, 4", "4, 3, 2, 1", "3", "1"],
+            "answer": "1, 2, 3, 4",
+            "explanation": "The 'reverse()' method in JavaScript is used to reverse the order of elements in an array. In this code, the array 'arr' is reversed using 'reverse()', so it becomes [1, 2, 3, 4]. When 'document.writeln(rev)' is called, it prints the reversed array, resulting in '1, 2, 3, 4' as the correct output."
+          }
+        ]
+      },
+      "Java": {
+        "questions": [{}]
+      },
+      "C++": {
+        "questions": [{}]
+      },
+      "PHP": {
+        "questions": [{}]
+      }
+    },
+    "Advanced": {
+      "Python": {
+        "questions": [
+          {
+            "question": "Another Python question for Advanced level"
+          }
+        ]
+      },
+      "JavaScript": {
+        "questions": [
+          {
+            "question": "Based on the below options, which option is the JavaScript Library?",
+            "options": ["React", "Vue.js", "Angular", "Ember.js"],
+            "answer": "React",
+            "explanation": "Vue.js, Angular, Ember.js are the JavaScript Framework. React is the JavaScript Library based on the options."
+          },
+          {
+            "question": "Predict the result",
+            "code": [
+              "var bar = 1,",
+              "fun = {};",
+              "fun: {",
+              "  bar: 2;",
+              "  x: ++bar;",
+              "};",
+              "fun.x + fun.bar + bar;"
+            ],
+            "options": ["undefined", "4", "5", "NaN"],
+            "answer": "NaN",
+            "explanation": "The value of fun.bar is undefined, so adding it to any numeric value results in NaN (Not-a-Number)."
+          },
+          {
+            "question": "Which one of the given options can be considered as the correct output of the following code?",
+            "code": [
+              "var addition=newFunction(\"number1\",\"number2\",\"return number1+number2\");",
+              "document.writeln(addition(10,5));"
+            ],
+            "options": ["12", "13", "15", "Error"],
+            "answer": "15",
+            "explanation": "The \"addition()\" function was defined in the first line of code using the \"new\" property. In the second line of code, the addition function is called along with two passed arguments as 10, 5 inside the \"document.write()\" method, which prints the sum of two passed arguments returned by the \"addition()\" method."
+          },
+          {
+            "question": "What output will be returned by the function in the following code?",
+            "code": [
+              "var scope = 'global scope';",
+              "function checkingscope() {",
+              "  var scope = 'local scope';",
+              "function f() {",
+              "return scope;",
+              "}",
+              "return f",
+              "}"
+            ],
+            "options": [
+              "It will return the value in scope",
+              "It will return null",
+              "It will throw an exception",
+              "It will show an error message"
+            ],
+            "answer": "It will return the value in scope",
+            "explanation": "Each block of code, function, or script as a whole always has an object, associated with them, called a Lexical environment. Therefore, the JavaScript code given in the above question will return the value in scope."
+          },
+          {
+            "question": "Which of the following is a server-side JavaScript object?",
+            "options": ["Date", "File", "FileUpload", "Function"],
+            "answer": "File",
+            "explanation": "File  is a server-side JavaScript object"
+          },
+          {
+            "question": "What will be the output of the following JavaScript code?",
+            "code": [
+              "var o =newF();  // statement 1",
+              "o.constructor=== F // statement 2"
+            ],
+            "options": ["False", "1", "0", "True"],
+            "answer": "True",
+            "explanation": "A \"constructor\" is a function property of any class that is typically used for object of that class . In the above given code, both 1,2 statements are creating the instance of the class."
+          },
+          {
+            "question": "What would be the output of the following Javascript code?",
+            "code": [
+              "var string1 = \"Fee\";",
+              "var intvalue = 10000;",
+              "alert( string1 + intvalue );"
+            ],
+            "options": ["Fee 10000", "10000", "Fee10000", "Exception"],
+            "answer": "Fee10000",
+            "explanation": "In JavaScript, when you concatenate a string and a number using the `+` operator, the number is implicitly converted to a string. So, the output will be 'Fee10000', as the string 'Fee' and the number 10000 are concatenated as strings."
+          },
+          {
+            "question": "Which one of the given options can be considered as the correct output for the following JavaScript code?",
+            "code": [
+              "const obj1 = {",
+              "    a: 10,",
+              "    b: 15,",
+              "    c: 18",
+              "};",
+              "const obj2 = Object.assign({c: 7, d: 1}, obj1);",
+              "console.log(obj2.c, obj2.d);"
+            ],
+            "options": ["Undefined", "18, 1", "7, 1", "Error"],
+            "answer": "7, 1",
+            "explanation": "The `Object.assign()` method is used to copy the values and properties of one object to another. In this code, it copies the properties from `obj1` into the new object `obj2`. The value of `obj2.c` is 7, and the value of `obj2.d` is 1. Therefore, the correct output is '7, 1'."
+          },
+          {
+            "question": "In the following code, what value should the variable 'a' contain?",
+            "code": [
+              "var x = counter(), y = counter();",
+              "x.count()",
+              "y.count()",
+              "x.reset()",
+              "x.count()",
+              "y.count()"
+            ],
+            "options": ["Null", "0", "2", "Undefined"],
+            "answer": "2",
+            "explanation": "The 'counter()' method increments the value of the variable by one each time it is called. The 'reset()' function resets the value of that variable to zero. In this code, 'counter()' is called two times for variable 'y', and 'reset()' is not called for 'x'. So, the value of variable 'y' is 2."
+          },
+          {
+            "question": "What will be the correct output of the following JavaScript code?",
+            "code": [
+              "<p id='demo'></p>",
+              "<script>",
+              "function myFunc() {",
+              "  document.getElementById('demo').innerHTML = Math.asinh(1);",
+              "}",
+              "</script>"
+            ],
+            "options": ["0.80", "0.78", "0.50", "0.88"],
+            "answer": "0.88",
+            "explanation": "The JavaScript code defines a function 'myFunc' that sets the innerHTML of the 'demo' element to the result of Math.asinh(1). The Math.asinh() function returns the inverse hyperbolic sine of a number. In this case, it computes asinh(1), which is approximately 0.88."
+          },
+          {
+            "question": "Which one of the following options is the correct output for the given code of JavaScript?",
+            "code": [
+              "function fun() {",
+              "  var a = 1;",
+              "  var b = 2;",
+              "  return a * b;",
+              "}",
+              "document.write(fun());"
+            ],
+            "options": ["2", "3", "0", "Error"],
+            "answer": "2",
+            "explanation": "The JavaScript function 'fun' calculates the product of two numbers, 1 and 2, and returns the result. The 'document.write' statement then displays the result in the document. In this case, it will write '2' to the document as the output."
+          },
+          {
+            "question": "What will be the output of the following given code of JavaScript?",
+            "code": [
+              "var x1 = [,,,];",
+              "var x2 = new Array(10);",
+              "0 in x1",
+              "0 in x2"
+            ],
+            "options": ["true true", "false true", "false false", "true false"],
+            "answer": "true false",
+            "explanation": "In the code, two arrays, x1 and x2, are defined. x1 is defined with empty slots (null values), while x2 is defined with a length of 10 but no specific values. The '0 in x1' expression returns true because even though x1 has empty slots, it still has an index 0. However, '0 in x2' returns false because x2 is an empty array with no values defined at index 0."
+          },
+          {
+            "question": "What will happen if we execute the following piece of code?",
+            "code": [
+              "<script>",
+              "var arr = [4, 3, , 1];",
+              "for (i = 0; i < 4; i++) {",
+              "  document.writeln(arr[i]);",
+              "}",
+              "</script>"
+            ],
+            "options": [
+              "The output will be 4 3 1",
+              "The output will be 4 3 undefined 1",
+              "It will result in an error",
+              "It does not run at all"
+            ],
+            "answer": "The output will be 4 3 undefined 1",
+            "explanation": "The code defines an array 'arr' with four elements, but the third element is left empty (undefined). When the code is executed, it uses a loop to iterate through the array and print each element. As a result, it will output '4 3 undefined 1' because the empty slot in the array is represented as 'undefined'."
+          },
+          {
+            "question": "For which purpose is the array 'map()' method used?",
+            "options": [
+              "It is used for mapping the elements of another array into itself.",
+              "It passes each data-item of the array and returns the necessary mapped elements.",
+              "It passes the data-items of an array into another array.",
+              "It passes every element of the array on which it is invoked to the function you specify and returns an array containing the values returned by that function."
+            ],
+            "answer": "It passes every element of the array on which it is invoked to the function you specify and returns an array containing the values returned by that function.",
+            "explanation": "The \"map()\" method is one of the built-in methods of the JavaScript that is used for mapping the data-items of the array, which can be used later for some other purpose. It passes every element of the array on which it is invoked to the function we specify, and returns an array containing the values returned by that function."
+          },
+          {
+            "question": "What is the primary purpose of the 'useParams' hook in React, especially when used in the context of React Router?",
+            "options": [
+              "To update the state of a component.",
+              "To access and retrieve URL parameters in a React component.",
+              "To define and manage global state variables.",
+              "To perform AJAX requests."
+            ],
+            "answer": "To access and retrieve URL parameters in a React component.",
+            "explanation": "The 'useParams' hook in React is primarily used to access and retrieve URL parameters, allowing you to extract dynamic values from the URL and use them within your React components when working with React Router. This is useful for building dynamic and parameterized routes in your web application."
+          }
+        ]
+      },
+      "Java": {
+        "questions": [{}]
+      },
+      "C++": {
+        "questions": [{}]
+      },
+      "PHP": {
+        "questions": [{}]
+      }
+    }
+  }
 }

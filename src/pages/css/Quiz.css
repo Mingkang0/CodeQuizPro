@@ -26,3 +26,8 @@
   --background: #fdb42c;
   color:black;
 }
+
+.active {
+  background-color: #007bff; /* Change to your preferred active button color */
+  color: #fff;
+}

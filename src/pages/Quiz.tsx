@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonButton, IonTitle, IonPage, IonText, IonToolbar, IonIcon, IonCardTitle, IonGrid, IonCard, IonCardContent, IonCardHeader, IonRow, IonCol, IonItem, IonInput, IonButtons, IonMenuButton } from '@ionic/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { chevronBackOutline } from 'ionicons/icons';
 import { BiLogoPython, BiLogoJava, BiLogoCPlusPlus } from 'react-icons/bi'
 import { TbBrandJavascript, TbStarsFilled } from 'react-icons/tb'
@@ -38,6 +38,26 @@ const Quiz: React.FC = () => {
   ]
 
   const difficulty = ['Beginner', 'Intermediate', 'Advanced'];
+  const [selectedLanguage,setSelectedLanguage]=useState<string | null>(null);
+  const [selectedDifficulty,setSelectedDifficulty]=useState<string | null>(null);
+  const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
+
+  const handleSelectedLanguage = (language:string) => {
+    setSelectedLanguage(language);
+    console.log(language);
+    if(selectedDifficulty !== null){
+      setIsSubmitEnabled(true)
+    }
+  }
+
+  const handleSelectedDifficulty = (Difficulty: string) => {
+    setSelectedDifficulty(Difficulty);
+    console.log(Difficulty);
+    if(selectedLanguage !== null){
+      setIsSubmitEnabled(true)
+    }
+  }
+
   return (
     <>
       <SideMenu />
@@ -60,7 +80,9 @@ const Quiz: React.FC = () => {
                 <div className="horizontal-scroll-container">
                   {programminglanguage.map((item => (
                     <IonCol size="6" key={item.id}>
-                      <IonCard className='card-button ion-padding'>
+                      <IonCard className='card-button ion-padding'
+                        color={selectedLanguage === item.language ? "secondary" : ""} 
+                      onClick={() => handleSelectedLanguage(item.language)}>
                         <IonCardContent>
                           <IonCardTitle>{item.language}</IonCardTitle>
                           <div className='ion-text-end'>
@@ -83,7 +105,9 @@ const Quiz: React.FC = () => {
                 <div className="horizontal-scroll-container">
                   {difficulty.map((level, index) => (
                     <IonCol size="6" key={index}>
-                      <IonCard className='card-button ion-padding'>
+                      <IonCard  className='card-button ion-padding' 
+                       color={selectedDifficulty === level ? "primary" : ""} 
+                      onClick={() => handleSelectedDifficulty(level)}>
                         <IonCardContent>
                           <IonCardTitle>{level}</IonCardTitle>
                           <div className='level ion-text-end'>
@@ -105,7 +129,7 @@ const Quiz: React.FC = () => {
           </IonGrid>
           <IonGrid>
             <div className='ion-text-center'>
-              <IonButton className='button ion-padding'>Start Quiz</IonButton>
+              <IonButton className='button ion-padding'  disabled={!isSubmitEnabled} >Start Quiz</IonButton>
             </div>
           </IonGrid>
         </IonContent>
