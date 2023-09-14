@@ -4,6 +4,7 @@ import { chevronBackOutline } from 'ionicons/icons';
 import { BiLogoPython, BiLogoJava, BiLogoCPlusPlus } from 'react-icons/bi'
 import { TbBrandJavascript, TbStarsFilled } from 'react-icons/tb'
 import { FaPhp } from 'react-icons/fa6'
+import { useHistory } from 'react-router';
 
 import './css/Quiz.css'
 import SideMenu from '../components/SideMenu';
@@ -41,6 +42,7 @@ const Quiz: React.FC = () => {
   const [selectedLanguage,setSelectedLanguage]=useState<string | null>(null);
   const [selectedDifficulty,setSelectedDifficulty]=useState<string | null>(null);
   const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
+  const [shouldRefresh, setShouldRefresh] = useState(false);
 
   const handleSelectedLanguage = (language:string) => {
     setSelectedLanguage(language);
@@ -57,7 +59,19 @@ const Quiz: React.FC = () => {
       setIsSubmitEnabled(true)
     }
   }
+  const history = useHistory();
 
+  const StartQuiz = () => {
+    if(selectedDifficulty && selectedLanguage){
+      history.push(`/question/${selectedLanguage}/${selectedDifficulty}`)
+      window.location.reload();
+    }
+  }
+  useEffect(() => {
+    if (shouldRefresh) {
+      setShouldRefresh(false);
+    }
+  }, [shouldRefresh]);
   return (
     <>
       <SideMenu />
@@ -129,7 +143,7 @@ const Quiz: React.FC = () => {
           </IonGrid>
           <IonGrid>
             <div className='ion-text-center'>
-              <IonButton className='button ion-padding'  disabled={!isSubmitEnabled} >Start Quiz</IonButton>
+              <IonButton className='button ion-padding'  disabled={!isSubmitEnabled} onClick={()=>StartQuiz()}>Start Quiz</IonButton>
             </div>
           </IonGrid>
         </IonContent>

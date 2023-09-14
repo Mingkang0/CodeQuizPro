@@ -23,6 +23,7 @@ import Challenges from './pages/Challenges';
 import Learning from './pages/learning resources/Learning';
 import Login from './pages/login';
 import Register from './pages/register';
+import Question from './pages/Question'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -64,6 +65,7 @@ const App: React.FC = () => {
             <Route path="/learning/:language" component={Learning} />
             <Route path="/learning/:language/:topicId" component={Topic} />
             <Route path="/language" component={Language} />
+            <Route path="/question/:language/:difficulty" component={Question}/>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Redirect exact from="/" to="/home" />
