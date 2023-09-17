@@ -16,9 +16,11 @@ import {
   IonCardTitle,
   IonContent,
   IonPage,
+  IonMenuButton,
 } from '@ionic/react';
 import { ref, get } from 'firebase/database';
 import { db } from '../firebase.config';
+import SideMenu from '../components/SideMenu';
 
 interface QuestionData {
   question: string;
@@ -39,7 +41,7 @@ const Question: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [quizFinished, setQuizFinished] = useState(false); // Add this state variable
-  const [quizResults, setQuizResults] = useState<{ correctAnswers: number; totalQuestions: number } | null>(null); 
+  const [quizResults, setQuizResults] = useState<{ correctAnswers: number; totalQuestions: number } | null>(null);
   const [shouldRefresh, setShouldRefresh] = useState(false);
 
   const getQuestions = async () => {
@@ -118,14 +120,18 @@ const Question: React.FC = () => {
   }, [shouldRefresh]);
   return (
     <>
-      <IonPage>
+      <SideMenu />
+      <IonPage id='main-content'>
         <IonHeader>
           <IonToolbar color="warning">
+            <IonButtons slot="start">
+              <IonMenuButton></IonMenuButton>
+            </IonButtons>
             <IonButton slot="end" color="danger" style={{ marginRight: '10px' }} onClick={handleExitQuiz}>Exit</IonButton>
-            <IonTitle>Quizzes</IonTitle>
+            <IonTitle><b>Quizzes</b></IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent>
+        <IonContent color='main'>
           {currentQuestion && !quizFinished && (
             <IonCard className='ion-margin'>
               <IonCardContent>
@@ -150,7 +156,8 @@ const Question: React.FC = () => {
                             expand="block"
                             color={currentQuestion.selectedOption === option ? (currentQuestion.isCorrect ? 'success' : 'danger') : 'light'}
                             key={optionIndex}
-                            onClick={() => handleOptionSelect(option)}>
+                            onClick={() => handleOptionSelect(option)}
+                            className='ion-text-wrap ion-margin-top'>
                             {option}
                           </IonButton>
                         ))}

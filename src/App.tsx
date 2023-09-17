@@ -21,9 +21,11 @@ import TabBar from './components/tabbar'
 import Quiz from './pages/Quiz';
 import Challenges from './pages/Challenges';
 import Learning from './pages/learning resources/Learning';
-import Login from './pages/login';
+import Login from './pages/Login';
 import Register from './pages/register';
-import Question from './pages/Question'
+import Question from './pages/Question';
+import Language from './pages/learning resources/Language';
+import Topic from './pages/learning resources/Topic';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,10 +45,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import './theme/tabbar.css'
-import Language from './pages/learning resources/Language';
-import { auth } from './firebase.config';
-import Topic from './pages/learning resources/Topic';
+import './theme/tabbar.css';
 
 setupIonicReact();
 

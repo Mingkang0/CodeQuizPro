@@ -4,54 +4,67 @@
       "topics": {
         "1": {
           "title": "Introduction to Python",
-          "content": "Python is a high-level programming language...",
-          "duration": "30 minutes"
+          "overview": "Introduction to Python covers the basics of the Python programming language. Learn about Python's history, syntax, and how to write your first Python program. Explore Python's philosophy and its role in various application domains.",
+          "duration": "10 minutes",
+          "content": "Welcome to the Introduction to Python topic! In this section, we'll dive into the world of Python programming. Python is a versatile and beginner-friendly programming language known for its simplicity and readability. In this topic, you'll learn about Python's history, its syntax, and how to write your first Python program. We'll also explore Python's philosophy and its widespread use in fields such as web development, data analysis, and automation. By the end of this topic, you'll have a solid foundation in Python programming."
         },
         "2": {
           "title": "Variables and Data Types",
-          "content": "In Python, variables are used to store data...",
-          "duration": "45 minutes"
+          "overview": "Variables and Data Types topic explains how to work with variables, data types, and basic data structures in Python. Explore Python's dynamic typing system, and learn how to declare variables, assign values, and work with numeric, string, and boolean data types.",
+          "duration": "15 minutes",
+          "content": "In the Variables and Data Types topic, we'll explore the fundamental building blocks of Python programs. You'll learn how to work with variables, which are used to store data in your programs. Python is dynamically typed, which means you don't need to declare the data type explicitly. We'll cover numeric data types, including integers and floating-point numbers, as well as string and boolean data types. You'll also discover how to perform operations and conversions between data types. By the end of this topic, you'll be comfortable working with variables and data types in Python."
         },
         "3": {
           "title": "Control Structures",
-          "content": "Python provides various control structures...",
-          "duration": "40 minutes"
+          "overview": "Control Structures topic dives into Python's control flow statements. Learn how to use if statements, loops, and conditional expressions to control the execution of your programs. Understand how to make decisions and create loops for repetitive tasks.",
+          "duration": "20 minutes",
+          "content": "Control structures are essential for directing the flow of your Python programs. In the Control Structures topic, we'll explore decision-making with if statements, allowing your programs to take different paths based on conditions. We'll also cover loops, including for loops and while loops, to perform repetitive tasks efficiently. Conditional expressions provide a concise way to make decisions within expressions. By mastering control structures, you'll have the power to create programs that respond dynamically to different situations."
         },
         "4": {
           "title": "Functions",
-          "content": "Functions are blocks of reusable code...",
-          "duration": "35 minutes"
+          "overview": "Functions topic covers the creation and usage of functions in Python. Explore how to define functions, pass arguments, and return values. Learn about function scopes, lambda functions, and common function design patterns.",
+          "duration": "15 minutes",
+          "content": "Functions are a fundamental concept in programming, allowing you to break down complex tasks into manageable pieces. In the Functions topic, you'll learn how to define and use functions in Python. We'll cover function arguments, return values, and function scopes. You'll also discover lambda functions, which are concise anonymous functions. Understanding functions is crucial for writing modular and maintainable code. By the end of this topic, you'll be able to create your own functions and leverage them in your Python programs."
         },
         "5": {
           "title": "Lists and Tuples",
-          "content": "Lists and tuples are used to store collections of data...",
-          "duration": "50 minutes"
+          "overview": "Lists and Tuples topic introduces Python's sequences. Learn how to work with lists, tuples, and ranges. Discover common list operations, including slicing, concatenation, and iteration. Understand the differences between lists and tuples.",
+          "duration": "10 minutes",
+          "content": "Sequences are essential data structures in Python, and the Lists and Tuples topic explores these concepts in depth. You'll learn how to create and manipulate lists, which are ordered collections of items. Tuples, on the other hand, are similar to lists but immutable. We'll cover common list operations like slicing, concatenation, and iteration. Additionally, you'll discover the power of list comprehensions for concise data processing. Understanding sequences is crucial for working with data and performing various operations in Python."
         },
         "6": {
           "title": "Dictionaries",
-          "content": "A dictionary is a collection of key-value pairs...",
-          "duration": "40 minutes"
+          "overview": "Dictionaries topic explores Python's dictionary data type. Learn how to create dictionaries, add and retrieve key-value pairs, and perform dictionary operations. Understand the use of dictionaries in data processing and mapping.",
+          "duration": "10 minutes",
+          "content": "Dictionaries are versatile data structures used to store key-value pairs, and the Dictionaries topic will teach you how to master them. You'll learn how to create dictionaries, add, retrieve, and update key-value pairs. We'll cover dictionary methods and operations like merging dictionaries and iterating through keys and values. Dictionaries are valuable for tasks such as data processing, configuration settings, and mapping relationships. By the end of this topic, you'll be proficient in using dictionaries in your Python projects."
         },
         "7": {
           "title": "File Handling",
-          "content": "Python allows you to work with files...",
-          "duration": "45 minutes"
+          "overview": "File Handling topic covers how to work with files in Python. Learn how to open, read, write, and close files. Explore different file modes, error handling, and best practices for file I/O operations.",
+          "duration": "15 minutes",
+          "content": "File handling is a fundamental aspect of programming, and the File Handling topic will equip you with the skills to work with files in Python. You'll learn how to open, read, write, and close files using Python's built-in functions and context managers. We'll explore different file modes and understand how to handle exceptions during file operations. File handling is essential for tasks like data input and output, log file processing, and more. By the end of this topic, you'll be proficient in handling files in Python."
         },
         "8": {
           "title": "Modules and Packages",
-          "content": "Modules and packages help you organize your code...",
-          "duration": "30 minutes"
+          "overview": "Modules and Packages topic explains how to organize and reuse code in Python. Learn about modules, import statements, and creating your own modules. Explore the concept of packages and how to structure larger Python projects.",
+          "duration": "10 minutes",
+          "content": "In the Modules and Packages topic, we'll delve into the world of code organization and reuse. You'll learn how to create and use modules, which are Python files containing reusable code. We'll explore different ways to import modules into your programs and discuss best practices for organizing your code. Additionally, you'll discover packages, which are collections of modules, and understand how to structure larger Python projects using packages. This topic is essential for writing maintainable and scalable Python code."
         },
         "9": {
           "title": "Object-Oriented Programming",
-          "content": "Python supports object-oriented programming...",
-          "duration": "55 minutes"
+          "overview": "Object-Oriented Programming (OOP) topic introduces OOP concepts in Python. Learn how to create classes, objects, and define methods. Explore encapsulation, inheritance, polymorphism, and design principles in Python.",
+          "duration": "15 minutes",
+          "content": "Object-Oriented Programming (OOP) is a powerful paradigm, and the OOP topic will teach you how to apply it in Python. You'll learn about classes and objects, the building blocks of OOP. Explore concepts like encapsulation, inheritance, and polymorphism, which enable you to create reusable and maintainable code. We'll also discuss design principles and best practices for designing object-oriented systems in Python. By the end of this topic, you'll have a solid understanding of OOP in Python."
         },
         "10": {
           "title": "Error Handling",
-          "content": "Errors can be handled using try-except blocks...",
-          "duration": "35 minutes"
+          "overview": "Error Handling topic covers how to handle exceptions and errors in Python. Learn about try-except blocks, raising exceptions, and handling different types of exceptions. Discover best practices for writing robust and error-tolerant code.",
+          "duration": "15 minutes",
+          "content": "Errors and exceptions are an integral part of software development, and the Error Handling topic will guide you in handling them effectively. You'll learn about try-except blocks, which allow you to gracefully handle exceptions in your code. Explore raising custom exceptions to handle specific errors. We'll cover various types of exceptions and their common use cases. Error handling is crucial for writing robust and reliable Python applications. By the end of this topic, you'll be skilled in managing errors in Python."
         }
+      },
+      "video": {
+        "url": "https://www.youtube.com/embed/_uQrJ0TkZlc?si=8pX5mp2zLauvyB2i"
       }
     }
   },
@@ -81,7 +94,12 @@
           },
           {
             "question": "What is the output of the following code?\n\nprint(2 + 2)",
-            "options": ["4", "22", "\"2 + 2\"", "None"],
+            "options": [
+              "4",
+              "22",
+              "\"2 + 2\"",
+              "None"
+            ],
             "answer": "4"
           },
           {
@@ -106,12 +124,22 @@
           },
           {
             "question": "Which of the following data types is mutable in Python?",
-            "options": ["int", "str", "list", "tuple"],
+            "options": [
+              "int",
+              "str",
+              "list",
+              "tuple"
+            ],
             "answer": "list"
           },
           {
             "question": "What is the result of 3 ** 2 in Python?",
-            "options": ["6", "9", "12", "32"],
+            "options": [
+              "6",
+              "9",
+              "12",
+              "32"
+            ],
             "answer": "9"
           },
           {
@@ -169,7 +197,12 @@
               "alert(y)",
               "}"
             ],
-            "options": ["1", "error", "10", "5"],
+            "options": [
+              "1",
+              "error",
+              "10",
+              "5"
+            ],
             "answer": "1",
             "explanation": "The output of the above snippet code will be 1 because, first of all, the interpreter will search 'obj' for the property 'y.' But it fails to find 'obj' for property 'y,' so it chooses a value from outside the object, which is available within the given code."
           },
@@ -194,7 +227,12 @@
               "  document.write(x);",
               "}"
             ],
-            "options": ["9", "0", "8", "Undefined"],
+            "options": [
+              "9",
+              "0",
+              "8",
+              "Undefined"
+            ],
             "answer": "8",
             "explanation": "The code initializes a variable `x` with the value 8. Then, it checks if `x` is greater than 9, which is not true (`x` is 8), so it goes to the `else` block and writes the value of `x` which is 8."
           },
@@ -211,7 +249,12 @@
               "else",
               "  document.write(z);"
             ],
-            "options": ["3", "0", "Error", "2"],
+            "options": [
+              "3",
+              "0",
+              "Error",
+              "2"
+            ],
             "answer": "0",
             "explanation": "In the given code, x is compared to y in an if statement. Since x is not equal to y, it proceeds to the else block and writes the value of z (which is 0) to the document. Therefore, the correct output is 0."
           },
@@ -261,19 +304,28 @@
           },
           {
             "question": "Which of the following function of the String object returns the character in the string starting at the specified position via the specified number of characters?",
-            "options": ["substr()", "substring()", "slice()", "splice()"],
+            "options": [
+              "substr()",
+              "substring()",
+              "slice()",
+              "splice()"
+            ],
             "answer": "substr()",
             "explanation": "The substr() function returns the character in the string starting at the specified position via the specified number of characters."
           },
           {
             "question": "Which of the following is not a JavaScript Data Types?",
-            "options": ["Boolean", "Undefined", "Number", "Float"],
+            "options": [
+              "Boolean",
+              "Undefined",
+              "Number",
+              "Float"
+            ],
             "answer": "Float",
             "explanation": "In JavaScript, 'Float' is not a distinct data type. Instead, floating-point numbers are represented using the 'Number' data type, which can hold both integer and floating-point values."
           },
           {
             "question": "Which of the following syntax can be used to write \"Hello World\" in an alert box?",
-
             "options": [
               "alertBox(\"Hello World\");",
               "msgBox(\"Hello World\");",
@@ -307,39 +359,64 @@
           },
           {
             "question": "What are the different types of Pop up boxes available in JavaScript?",
-
-            "options": ["Alert", "Prompt", "Confirm", "All of the above"],
+            "options": [
+              "Alert",
+              "Prompt",
+              "Confirm",
+              "All of the above"
+            ],
             "answer": "All of the above",
             "explanation": "Alert, Prompt, Confirm are the different types of Pop up boxes available in JavaScript, option \"All of the above\" is correct."
           },
           {
             "question": "Which of the following built-in method is used to remove the last element from an array and return that element?",
-            "options": ["last", "pop()", "get()", "None of the above"],
+            "options": [
+              "last",
+              "pop()",
+              "get()",
+              "None of the above"
+            ],
             "answer": "pop()",
             "explanation": "The pop() method is the correct answer. It is used to remove the last element from an array and return that element."
           },
           {
             "question": "Which JavaScript String method can be used to find the index of the first occurrence of a specified substring within a string?",
-            "options": ["indexOf()", "search()", "substring()", "slice()"],
+            "options": [
+              "indexOf()",
+              "search()",
+              "substring()",
+              "slice()"
+            ],
             "answer": "indexOf()",
             "explanation": "The 'indexOf()' method is used to find the index of the first occurrence of a specified substring within a string."
           },
           {
             "question": "Which JavaScript Array method can be used to add one or more elements to the end of an array and returns the new length of the array?",
-            "options": ["concat()", "push()", "pop()", "splice()"],
+            "options": [
+              "concat()",
+              "push()",
+              "pop()",
+              "splice()"
+            ],
             "answer": "push()",
             "explanation": "The 'push()' method is used to add one or more elements to the end of an array and returns the new length of the array."
           }
         ]
       },
       "Java": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       },
       "C++": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       },
       "PHP": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       }
     },
     "Intermediate": {
@@ -359,27 +436,47 @@
               "numbers.sort();",
               "console.log(numbers[1]);"
             ],
-            "options": ["33", "2", "8", "1"],
+            "options": [
+              "33",
+              "2",
+              "8",
+              "1"
+            ],
             "answer": "33",
             "explanation": "The code sorts the 'numbers' array using the Array.prototype.sort() method, which converts all values to their string representation and then sorts them in lexicographic order. This results in ['2', '33', '8'] as the sorted array. When we print 'numbers[1]', it returns '33' because it is the second element (zero-based index) in the sorted array."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": ["console.log(018 - 015);"],
-            "options": ["NaN", "5", "13"],
+            "code": [
+              "console.log(018 - 015);"
+            ],
+            "options": [
+              "NaN",
+              "5",
+              "13"
+            ],
             "answer": "5",
             "explanation": "In earlier versions of JavaScript, a leading '0' on a number marked an octal number. Octal numbers have a base of 8, so valid digits are from 0 to 7. In the expression '018 - 015', '018' is treated as an octal number, but it's not a valid octal number because it contains '8'. Therefore, it's treated as a decimal number, and '015' is treated as a valid octal number, which is equivalent to '13' in decimal. The expression evaluates to '5' in decimal."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": ["console.log(1 +  \"2\" + \"2\");"],
-            "options": ["122", "32", "NaN2", "NaN"],
+            "code": [
+              "console.log(1 +  \"2\" + \"2\");"
+            ],
+            "options": [
+              "122",
+              "32",
+              "NaN2",
+              "NaN"
+            ],
             "answer": "122",
             "explanation": "In JavaScript, when you use the '+' operator with a string and a number, JavaScript converts the number to a string and performs string concatenation. So, '1 + \"2\"' results in '12', and then '12 + \"2\"' results in '122'. The final output is '122'."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": ["console.log(String.raw`HelloTwitter\\nworld`);"],
+            "code": [
+              "console.log(String.raw`HelloTwitter\\nworld`);"
+            ],
             "options": [
               "\"HelloTwitter\\nworld\"",
               "\"HelloTwitter\nworld\"",
@@ -391,15 +488,29 @@
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": ["console.log(typeof typeof 1);"],
-            "options": ["string", "number", "1", "true"],
+            "code": [
+              "console.log(typeof typeof 1);"
+            ],
+            "options": [
+              "string",
+              "number",
+              "1",
+              "true"
+            ],
             "answer": "string",
             "explanation": "In JavaScript, the `typeof` operator is used to determine the data type of a value or expression. In the provided code, `typeof 1` returns the string 'number' because `1` is a number. Therefore, `typeof typeof 1` first evaluates `typeof 1`, which is 'string' (the data type of the result of `typeof`), and then the outer `typeof` returns 'string' because it's the data type of the inner `typeof` result."
           },
           {
             "question": "Can you guess the result?",
-            "code": ["console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());"],
-            "options": ["bananaa", "baaa", "banana", "ananas"],
+            "code": [
+              "console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());"
+            ],
+            "options": [
+              "bananaa",
+              "baaa",
+              "banana",
+              "ananas"
+            ],
             "answer": "banana",
             "explanation": "The expression ('b' + 'a' + + 'a' + 'a') evaluates to 'banana'. Here's why:\n\n- 'b' + 'a' results in 'ba'.\n- +'a' attempts to convert 'a' to a number, which results in NaN (Not-a-Number).\n- 'ba' + NaN results in 'baNaN'.\n- Finally, 'baNaN' + 'a' results in 'banana'.\n\nThe `toLowerCase()` method is then applied to convert 'banana' to lowercase, resulting in the final output 'banana'."
           },
@@ -410,34 +521,59 @@
               "array[6] = 9;",
               "console.log(array[5]);"
             ],
-            "options": ["1", "2", "9", "undefined"],
+            "options": [
+              "1",
+              "2",
+              "9",
+              "undefined"
+            ],
             "answer": "undefined",
             "explanation": "The output of the code will be 'undefined'.\n\nIn JavaScript, when you assign a value to an array element with an index that is greater than the current length of the array, JavaScript will create 'empty' or 'undefined' slots in the array for the indices in between. In this code, the array 'array' initially contains elements at indices 0, 1, and 2. When you set 'array[6] = 9;', JavaScript creates empty slots at indices 3, 4, and 5. Therefore, when you try to access 'array[5]', it returns 'undefined' because there is no value assigned to that index."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": ["console.log(false == '0');"],
-            "options": ["false", "true"],
+            "code": [
+              "console.log(false == '0');"
+            ],
+            "options": [
+              "false",
+              "true"
+            ],
             "answer": "true",
             "explanation": "The output of the code will be 'true'.\n\nIn JavaScript, when you use the '==' operator for comparison, type coercion is performed. In this case, the boolean 'false' is being compared to the string '0'. JavaScript attempts to convert both values to a common type for comparison. When a boolean is compared to any other type, it is first converted to a number. In JavaScript, 'false' is equivalent to the number '0'. Therefore, the comparison 'false == '0'' evaluates to 'true' because '0' (as a string) is considered equal to '0' (as a number) after type coercion."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": ["console.log(0.1 + 0.2 == 0.3);"],
-            "options": ["true", "false"],
+            "code": [
+              "console.log(0.1 + 0.2 == 0.3);"
+            ],
+            "options": [
+              "true",
+              "false"
+            ],
             "answer": "false",
             "explanation": "0.1 + 0.2 -> 0.30000000000000004. \n(And 0.30000000000000004 is never equal to 0.3.)"
           },
           {
             "question": "Can you guess what will be the output of the code below?",
             "code": "console.log(typeof NaN);",
-            "options": ["NaN", "number", "null", "undefined"],
+            "options": [
+              "NaN",
+              "number",
+              "null",
+              "undefined"
+            ],
             "answer": "number",
             "explanation": "In JavaScript, typeof NaN returns 'number' because NaN (Not-a-Number) is considered a numeric data type."
           },
           {
             "question": "Choose the correct snippet from the following to check if the variable 'a' is not equal to 'null':",
-            "options": ["if(a!==null)", "if (a!)", "if(a!null)", "if(a!=null)"],
+            "options": [
+              "if(a!==null)",
+              "if (a!)",
+              "if(a!null)",
+              "if(a!=null)"
+            ],
             "answer": "if(a!==null)",
             "explanation": "The correct way to check if a variable 'a' is not equal to 'null' in JavaScript is by using the strict inequality operator '!=='."
           },
@@ -458,7 +594,6 @@
           },
           {
             "question": "Which of the following syntax is correct to refer to an external script called \"LFC.js\"?",
-
             "options": [
               "<script source=\"LFC.js\">",
               "<script ref=\"LFC.js\">",
@@ -485,7 +620,12 @@
               "var ans = values.slice(1);",
               "document.writeln(ans);"
             ],
-            "options": ["Error", "5, 6, 7", "4, 5, 6", "4, 5, 6, 7"],
+            "options": [
+              "Error",
+              "5, 6, 7",
+              "4, 5, 6",
+              "4, 5, 6, 7"
+            ],
             "answer": "5, 6, 7",
             "explanation": "The `slice()` method in JavaScript is used to create a shallow copy of a portion of an array into a new array. In this code, it starts from index 1 and includes elements 5, 6, and 7 in the new array. The correct output will be '5, 6, 7.'"
           },
@@ -496,20 +636,31 @@
               "var rev = arr.reverse();",
               "document.writeln(rev);"
             ],
-            "options": ["1, 2, 3, 4", "4, 3, 2, 1", "3", "1"],
+            "options": [
+              "1, 2, 3, 4",
+              "4, 3, 2, 1",
+              "3",
+              "1"
+            ],
             "answer": "1, 2, 3, 4",
             "explanation": "The 'reverse()' method in JavaScript is used to reverse the order of elements in an array. In this code, the array 'arr' is reversed using 'reverse()', so it becomes [1, 2, 3, 4]. When 'document.writeln(rev)' is called, it prints the reversed array, resulting in '1, 2, 3, 4' as the correct output."
           }
         ]
       },
       "Java": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       },
       "C++": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       },
       "PHP": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       }
     },
     "Advanced": {
@@ -524,7 +675,12 @@
         "questions": [
           {
             "question": "Based on the below options, which option is the JavaScript Library?",
-            "options": ["React", "Vue.js", "Angular", "Ember.js"],
+            "options": [
+              "React",
+              "Vue.js",
+              "Angular",
+              "Ember.js"
+            ],
             "answer": "React",
             "explanation": "Vue.js, Angular, Ember.js are the JavaScript Framework. React is the JavaScript Library based on the options."
           },
@@ -539,7 +695,12 @@
               "};",
               "fun.x + fun.bar + bar;"
             ],
-            "options": ["undefined", "4", "5", "NaN"],
+            "options": [
+              "undefined",
+              "4",
+              "5",
+              "NaN"
+            ],
             "answer": "NaN",
             "explanation": "The value of fun.bar is undefined, so adding it to any numeric value results in NaN (Not-a-Number)."
           },
@@ -549,7 +710,12 @@
               "var addition=newFunction(\"number1\",\"number2\",\"return number1+number2\");",
               "document.writeln(addition(10,5));"
             ],
-            "options": ["12", "13", "15", "Error"],
+            "options": [
+              "12",
+              "13",
+              "15",
+              "Error"
+            ],
             "answer": "15",
             "explanation": "The \"addition()\" function was defined in the first line of code using the \"new\" property. In the second line of code, the addition function is called along with two passed arguments as 10, 5 inside the \"document.write()\" method, which prints the sum of two passed arguments returned by the \"addition()\" method."
           },
@@ -576,7 +742,12 @@
           },
           {
             "question": "Which of the following is a server-side JavaScript object?",
-            "options": ["Date", "File", "FileUpload", "Function"],
+            "options": [
+              "Date",
+              "File",
+              "FileUpload",
+              "Function"
+            ],
             "answer": "File",
             "explanation": "File  is a server-side JavaScript object"
           },
@@ -586,7 +757,12 @@
               "var o =newF();  // statement 1",
               "o.constructor=== F // statement 2"
             ],
-            "options": ["False", "1", "0", "True"],
+            "options": [
+              "False",
+              "1",
+              "0",
+              "True"
+            ],
             "answer": "True",
             "explanation": "A \"constructor\" is a function property of any class that is typically used for object of that class . In the above given code, both 1,2 statements are creating the instance of the class."
           },
@@ -597,7 +773,12 @@
               "var intvalue = 10000;",
               "alert( string1 + intvalue );"
             ],
-            "options": ["Fee 10000", "10000", "Fee10000", "Exception"],
+            "options": [
+              "Fee 10000",
+              "10000",
+              "Fee10000",
+              "Exception"
+            ],
             "answer": "Fee10000",
             "explanation": "In JavaScript, when you concatenate a string and a number using the `+` operator, the number is implicitly converted to a string. So, the output will be 'Fee10000', as the string 'Fee' and the number 10000 are concatenated as strings."
           },
@@ -612,7 +793,12 @@
               "const obj2 = Object.assign({c: 7, d: 1}, obj1);",
               "console.log(obj2.c, obj2.d);"
             ],
-            "options": ["Undefined", "18, 1", "7, 1", "Error"],
+            "options": [
+              "Undefined",
+              "18, 1",
+              "7, 1",
+              "Error"
+            ],
             "answer": "7, 1",
             "explanation": "The `Object.assign()` method is used to copy the values and properties of one object to another. In this code, it copies the properties from `obj1` into the new object `obj2`. The value of `obj2.c` is 7, and the value of `obj2.d` is 1. Therefore, the correct output is '7, 1'."
           },
@@ -626,7 +812,12 @@
               "x.count()",
               "y.count()"
             ],
-            "options": ["Null", "0", "2", "Undefined"],
+            "options": [
+              "Null",
+              "0",
+              "2",
+              "Undefined"
+            ],
             "answer": "2",
             "explanation": "The 'counter()' method increments the value of the variable by one each time it is called. The 'reset()' function resets the value of that variable to zero. In this code, 'counter()' is called two times for variable 'y', and 'reset()' is not called for 'x'. So, the value of variable 'y' is 2."
           },
@@ -640,7 +831,12 @@
               "}",
               "</script>"
             ],
-            "options": ["0.80", "0.78", "0.50", "0.88"],
+            "options": [
+              "0.80",
+              "0.78",
+              "0.50",
+              "0.88"
+            ],
             "answer": "0.88",
             "explanation": "The JavaScript code defines a function 'myFunc' that sets the innerHTML of the 'demo' element to the result of Math.asinh(1). The Math.asinh() function returns the inverse hyperbolic sine of a number. In this case, it computes asinh(1), which is approximately 0.88."
           },
@@ -654,7 +850,12 @@
               "}",
               "document.write(fun());"
             ],
-            "options": ["2", "3", "0", "Error"],
+            "options": [
+              "2",
+              "3",
+              "0",
+              "Error"
+            ],
             "answer": "2",
             "explanation": "The JavaScript function 'fun' calculates the product of two numbers, 1 and 2, and returns the result. The 'document.write' statement then displays the result in the document. In this case, it will write '2' to the document as the output."
           },
@@ -666,7 +867,12 @@
               "0 in x1",
               "0 in x2"
             ],
-            "options": ["true true", "false true", "false false", "true false"],
+            "options": [
+              "true true",
+              "false true",
+              "false false",
+              "true false"
+            ],
             "answer": "true false",
             "explanation": "In the code, two arrays, x1 and x2, are defined. x1 is defined with empty slots (null values), while x2 is defined with a length of 10 but no specific values. The '0 in x1' expression returns true because even though x1 has empty slots, it still has an index 0. However, '0 in x2' returns false because x2 is an empty array with no values defined at index 0."
           },
@@ -714,14 +920,21 @@
         ]
       },
       "Java": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       },
       "C++": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       },
       "PHP": {
-        "questions": [{}]
+        "questions": [
+          {}
+        ]
       }
     }
-  }
+  },
+  "users": {}
 }

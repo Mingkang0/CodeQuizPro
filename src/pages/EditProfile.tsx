@@ -22,6 +22,10 @@ const EditProfile: React.FC = () => {
         setShowImageUpload(!showImageUpload);
     };
 
+    const handleSaveClick = () => {
+        console.log("The profile is updated")
+    };
+
     return (
         <IonPage>
             <IonHeader>
@@ -45,7 +49,7 @@ const EditProfile: React.FC = () => {
                 </IonButtons>
                 <IonInput
                     value={username}
-                    onIonChange={onUsernameChange} 
+                    onIonChange={onUsernameChange}
                     label="Username"
                     labelPlacement="floating"
                     fill="outline"
@@ -53,13 +57,16 @@ const EditProfile: React.FC = () => {
                 ></IonInput>
                 <IonInput
                     value={email}
-                    onIonChange={onEmailChange} 
+                    onIonChange={onEmailChange}
                     label="Email"
                     labelPlacement="floating"
                     fill="outline"
                     type="email"
                     placeholder='Enter email'
                 ></IonInput>
+                <IonButtons>
+                    <IonButton onClick={handleSaveClick} type='submit' color='tertiary' fill='solid' shape='round' expand='block' id='saveBtn'>SAVE </IonButton>
+                </IonButtons>
             </IonContent>
         </IonPage>
     );

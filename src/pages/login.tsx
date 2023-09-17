@@ -30,7 +30,7 @@ const Login: React.FC = () => {
       console.error("Error during login:", error);
     }
   };
-  console.log(auth?.currentUser?.uid)
+  
   return (
     <IonPage>
       <IonContent color="main">

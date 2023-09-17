@@ -13,13 +13,14 @@ import {
 import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/react';
 import Notes from './Notes';
 import { useParams } from 'react-router-dom';
-import { ref, get } from 'firebase/database';
+import { ref, get, set } from 'firebase/database';
 import { db } from '../../firebase.config';
 
 
 const Learning: React.FC = () => {
     const { language } = useParams<{ language: string }>();
     const [topics, setTopics] = useState<any>(null);
+    const [videos, setVideos] = useState<any>(null);
     const [selectedSegment, setSelectedSegment] = useState<string>('notes');
 
     const renderContent = () => {
@@ -33,15 +34,19 @@ const Learning: React.FC = () => {
         } else if (selectedSegment === 'videos') {
             return (
                 <>
-                    <IonCardContent>
-                        <iframe
-                            width="100%"
-                            height="315"
-                            src="https://www.youtube.com/embed/ZzaPdXTrSb8?si=66rjSSn8DJ9DRO-k"
-                            title="Embedded Video"
-                            allowFullScreen
-                        ></iframe>
-                    </IonCardContent>
+                    {
+                        videos ?
+                            <>
+                                <iframe
+                                    width="100%"
+                                    height="315"
+                                    src={videos}
+                                    title="Embedded Video"
+                                    allowFullScreen
+                                ></iframe>
+                            </>
+                            : <IonCardContent className='ion-margin'>No videos available. Will be updated soon.</IonCardContent>
+                    }
                 </>
             );
         }
@@ -50,13 +55,20 @@ const Learning: React.FC = () => {
     const getTopics = async (language: any) => {
         try {
             const dbRef = ref(db, `resource/${language}/topics`);
+            const videoRef = ref(db, `resource/${language}/video`);
             const snapshot = await get(dbRef);
+            const videoSnapshot = await get(videoRef);
 
             if (snapshot.exists()) {
                 const data = snapshot.val();
                 setTopics(data);
             } else {
                 console.log('No data available');
+            }
+
+            if (videoSnapshot.exists()) {
+                const data = videoSnapshot.val();
+                setVideos(data.url);
             }
         } catch (error) {
             console.error('Error retrieving data:', error);
@@ -75,7 +87,7 @@ const Learning: React.FC = () => {
                         <IonButtons slot='start'>
                             <IonBackButton></IonBackButton>
                         </IonButtons>
-                        <IonTitle>Learning Resources</IonTitle>
+                        <IonTitle>Learning Resources - <b>{language}</b></IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <IonContent color='main' className="ion-padding">
@@ -88,7 +100,9 @@ const Learning: React.FC = () => {
                         </IonSegmentButton>
                     </IonSegment>
                     <IonCard>
-                        {renderContent()}
+                        <IonCardContent>
+                            {renderContent()}
+                        </IonCardContent>
                     </IonCard>
                 </IonContent>
             </IonPage>

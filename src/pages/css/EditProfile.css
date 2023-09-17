@@ -1,8 +1,13 @@
-ion-input{
+ion-input {
     background-color: white;
     margin: 25px 0px;
 }
 
-#uploadProfile{
+#uploadProfile {
     margin: 10px auto;
+}
+
+#saveBtn{
+    margin: 10px auto;
+    width: 100px;
 }

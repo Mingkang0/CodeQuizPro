@@ -1,4 +1,4 @@
-import { IonCardContent, IonItem, IonLabel, IonNavLink } from '@ionic/react';
+import { IonCardContent, IonItem, IonLabel, IonList, IonNavLink } from '@ionic/react';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -17,16 +17,16 @@ const Notes: React.FC<NotesProps> = ({ topics, language }) => {
     const history = useHistory();
     const handleTopic = (topicId: string) => {
         history.push(`/learning/${language}/${topicId}`);
-        console.log(language, topicId)
+        window.location.reload();
     }
 
     return (
-        <IonCardContent>
+        <IonList>
             {Object.keys(topics).map((topicId) => {
                 const topic = topics[topicId];
                 return (
-                    <IonNavLink key={topicId}>
-                        <IonItem onClick={() => handleTopic(topicId)} lines='none' detail={true}>
+                    <IonNavLink key={topicId} >
+                        <IonItem onClick={() => { handleTopic(topicId) }} routerLink={`/learning/${language}/${topicId}`} lines='none' detail={true}>
                             <IonLabel>
                                 <h2><strong>{topic.title}</strong></h2>
                                 <small>{topic.duration}</small>
@@ -35,7 +35,7 @@ const Notes: React.FC<NotesProps> = ({ topics, language }) => {
                     </IonNavLink>
                 );
             })}
-        </IonCardContent>
+        </IonList>
     );
 };
 
