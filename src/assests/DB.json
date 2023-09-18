@@ -94,12 +94,7 @@
           },
           {
             "question": "What is the output of the following code?\n\nprint(2 + 2)",
-            "options": [
-              "4",
-              "22",
-              "\"2 + 2\"",
-              "None"
-            ],
+            "options": ["4", "22", "\"2 + 2\"", "None"],
             "answer": "4"
           },
           {
@@ -124,22 +119,12 @@
           },
           {
             "question": "Which of the following data types is mutable in Python?",
-            "options": [
-              "int",
-              "str",
-              "list",
-              "tuple"
-            ],
+            "options": ["int", "str", "list", "tuple"],
             "answer": "list"
           },
           {
             "question": "What is the result of 3 ** 2 in Python?",
-            "options": [
-              "6",
-              "9",
-              "12",
-              "32"
-            ],
+            "options": ["6", "9", "12", "32"],
             "answer": "9"
           },
           {
@@ -171,6 +156,56 @@
               "file = open(\"example.txt\", \"x\")"
             ],
             "answer": "file = open(\"example.txt\", \"r\")"
+          },
+          {
+            "question": "What will be the value of the following Python expression?",
+            "code": ["4 + 3 % 5"],
+            "options": ["7", "2", "4", "1"],
+            "answer": "a) 7",
+            "explanation": "The order of precedence is: %, +. Hence the expression above, on simplification results in 4 + 3 = 7. Hence the result is 7."
+          },
+          {
+            "question": "What will be the output of the following Python code?",
+            "code": [
+              "i = 1",
+              "while True:",
+              "    if i % 3 == 0:",
+              "        break",
+              "    print(i)",
+              "    i += 1"
+            ],
+            "options": ["1 2 3", "error", "1 2", "none of the mentioned"],
+            "answer": "error",
+            "explanation": "SyntaxError, there shouldn’t be a space between + and = in +=."
+          },
+          {
+            "question": "What is the order of precedence in python?",
+            "options": [
+              "Exponential, Parentheses, Multiplication, Division, Addition, Subtraction",
+              "Exponential, Parentheses, Division, Multiplication, Addition, Subtraction",
+              "Parentheses, Exponential, Multiplication, Division, Subtraction, Addition",
+              "Parentheses, Exponential, Multiplication, Division, Addition, Subtraction"
+            ],
+            "answer": "Parentheses, Exponential, Multiplication, Division, Addition, Subtraction",
+            "explanation": "For order of precedence, just remember this PEMDAS (similar to BODMAS)."
+          },
+          {
+            "question": "What are the values of the following Python expressions?",
+            "expressions": ["2**(3**2)", "(2**3)**2", "2**3**2"],
+            "options": [
+              "512, 64, 512",
+              "512, 512, 512",
+              "64, 512, 64",
+              "64, 64, 64"
+            ],
+            "answer": "512, 64, 512",
+            "explanation": "Expression 1 is evaluated as: 2**9, which is equal to 512. Expression 2 is evaluated as 8**2, which is equal to 64. The last expression is evaluated as 2**(3**2). This is because the associativity of ** operator is from right to left. Hence the result of the third expression is 512."
+          },
+          {
+            "question": "Which of the following functions is a built-in function in python?",
+            "options": ["factorial()", "print()", "seed()", "sqrt()"],
+            "answer": "print()",
+            "explanation": "The function seed is a function which is present in the random module. The functions sqrt and factorial are a part of the math module. The print function is a built-in function which prints a value directly to the system output."
           }
         ]
       },
@@ -197,12 +232,7 @@
               "alert(y)",
               "}"
             ],
-            "options": [
-              "1",
-              "error",
-              "10",
-              "5"
-            ],
+            "options": ["1", "error", "10", "5"],
             "answer": "1",
             "explanation": "The output of the above snippet code will be 1 because, first of all, the interpreter will search 'obj' for the property 'y.' But it fails to find 'obj' for property 'y,' so it chooses a value from outside the object, which is available within the given code."
           },
@@ -227,12 +257,7 @@
               "  document.write(x);",
               "}"
             ],
-            "options": [
-              "9",
-              "0",
-              "8",
-              "Undefined"
-            ],
+            "options": ["9", "0", "8", "Undefined"],
             "answer": "8",
             "explanation": "The code initializes a variable `x` with the value 8. Then, it checks if `x` is greater than 9, which is not true (`x` is 8), so it goes to the `else` block and writes the value of `x` which is 8."
           },
@@ -249,12 +274,7 @@
               "else",
               "  document.write(z);"
             ],
-            "options": [
-              "3",
-              "0",
-              "Error",
-              "2"
-            ],
+            "options": ["3", "0", "Error", "2"],
             "answer": "0",
             "explanation": "In the given code, x is compared to y in an if statement. Since x is not equal to y, it proceeds to the else block and writes the value of z (which is 0) to the document. Therefore, the correct output is 0."
           },
@@ -304,23 +324,13 @@
           },
           {
             "question": "Which of the following function of the String object returns the character in the string starting at the specified position via the specified number of characters?",
-            "options": [
-              "substr()",
-              "substring()",
-              "slice()",
-              "splice()"
-            ],
+            "options": ["substr()", "substring()", "slice()", "splice()"],
             "answer": "substr()",
             "explanation": "The substr() function returns the character in the string starting at the specified position via the specified number of characters."
           },
           {
             "question": "Which of the following is not a JavaScript Data Types?",
-            "options": [
-              "Boolean",
-              "Undefined",
-              "Number",
-              "Float"
-            ],
+            "options": ["Boolean", "Undefined", "Number", "Float"],
             "answer": "Float",
             "explanation": "In JavaScript, 'Float' is not a distinct data type. Instead, floating-point numbers are represented using the 'Number' data type, which can hold both integer and floating-point values."
           },
@@ -359,45 +369,25 @@
           },
           {
             "question": "What are the different types of Pop up boxes available in JavaScript?",
-            "options": [
-              "Alert",
-              "Prompt",
-              "Confirm",
-              "All of the above"
-            ],
+            "options": ["Alert", "Prompt", "Confirm", "All of the above"],
             "answer": "All of the above",
             "explanation": "Alert, Prompt, Confirm are the different types of Pop up boxes available in JavaScript, option \"All of the above\" is correct."
           },
           {
             "question": "Which of the following built-in method is used to remove the last element from an array and return that element?",
-            "options": [
-              "last",
-              "pop()",
-              "get()",
-              "None of the above"
-            ],
+            "options": ["last", "pop()", "get()", "None of the above"],
             "answer": "pop()",
             "explanation": "The pop() method is the correct answer. It is used to remove the last element from an array and return that element."
           },
           {
             "question": "Which JavaScript String method can be used to find the index of the first occurrence of a specified substring within a string?",
-            "options": [
-              "indexOf()",
-              "search()",
-              "substring()",
-              "slice()"
-            ],
+            "options": ["indexOf()", "search()", "substring()", "slice()"],
             "answer": "indexOf()",
             "explanation": "The 'indexOf()' method is used to find the index of the first occurrence of a specified substring within a string."
           },
           {
             "question": "Which JavaScript Array method can be used to add one or more elements to the end of an array and returns the new length of the array?",
-            "options": [
-              "concat()",
-              "push()",
-              "pop()",
-              "splice()"
-            ],
+            "options": ["concat()", "push()", "pop()", "splice()"],
             "answer": "push()",
             "explanation": "The 'push()' method is used to add one or more elements to the end of an array and returns the new length of the array."
           }
@@ -405,25 +395,296 @@
       },
       "Java": {
         "questions": [
-          {}
+          {
+            "question": "Which of the following is a valid declaration of a char?",
+            "options": [
+              "char ch = '\\utea';",
+              "char ca = 'tea';",
+              "char cr = '\\u0223';",
+              "char cc = '\\itea';"
+            ],
+            "answer": "char ch = '\\utea';",
+            "explanation": "A char literal may contain a Unicode character (UTF-16). We can directly use these characters only if our file system allows us, else use a Unicode escape (\\u) such as \"\\u02tee\". The char literals are always declared in single quotes (').\n\nThe option b, c, and d, are not valid because:\n\nIn the option b), to make a String valid char literal, we should add prefix \"\\u\" in the string.\nIn the option c), single quotes are not present.\nIn the option d), \"\\i\" is used in place of \"\\u.\"\nHence, the correct answer is the option (a)."
+          },
+          {
+            "question": "Which of the following for loop declarations is not valid?",
+            "options": [
+              "for (int i = 99; i >= 0; i / 9)",
+              "for (int i = 7; i <= 77; i += 7)",
+              "for (int i = 20; i >= 2; --i)",
+              "for (int i = 2; i <= 20; i = 2 * i)"
+            ],
+            "answer": "for (int i = 99; i >= 0; i / 9)",
+            "explanation": "The first option is not a valid declaration because the assignment in the loop condition is incomplete. To make it valid, it should be corrected to 'for (int i = 99; i >= 0; i = i / 9)'. The other three loop declarations are valid and will execute correctly."
+          },
+          {
+            "question": "Which method of the Class.class is used to determine the name of a class represented by the class object as a String?",
+            "options": ["getClass()", "intern()", "getName()", "toString()"],
+            "answer": "getName()",
+            "explanation": "The getName() method of the Class class returns the name (as String) of the entity (class, interface) represented by this Class object. It is a non-static method, and available in the java.lang package. The getClass() method of the Object class returns the runtime class of this object. The intern() and toString() methods are of String class."
+          },
+          {
+            "question": "What will be the output of the following program?",
+            "code": [
+              "public class MyFirst {",
+              "  public static void main(String[] args) {",
+              "    MyFirst obj = new MyFirst(n);",
+              "  }",
+              "  static int a = 10;",
+              "  static int n;",
+              "  int b = 5;",
+              "  int c;",
+              "  public MyFirst(int m) {",
+              "    System.out.println(a + \", \" + b + \", \" + c + \", \" + n + \", \" + m);",
+              "  }",
+              "  {",
+              "    b = 30;",
+              "    n = 20;",
+              "  }",
+              "  static {",
+              "    a = 60;",
+              "  }",
+              "}"
+            ],
+            "options": [
+              "10, 5, 0, 20, 0",
+              "10, 30, 20",
+              "60, 5, 0, 20",
+              "60, 30, 0, 20, 0"
+            ],
+            "answer": "60, 30, 0, 20, 0",
+            "explanation": "In the above code, there are two values of variable 'a,' i.e., 10 and 60. Similarly, there are two values of variable 'b,' i.e., 5 and 30. But in the output, the values of 'a' and 'b' are 60 and 30, respectively. It is because of the execution order of the program. The execution order of the program is that the static block executes first, then the instance block, and then the constructor. Hence, the JVM will consider the value of 'a' and 'b' as 60 and 30 concerning the execution order. The value of 'a' = 10 and 'b' = 5 are of no use. And the value of variables 'c' and 'm' is 0 as we have not assigned any value to them."
+          },
+          {
+            "question": "Find the output of the following program.",
+            "code": [
+              "public class Solution {",
+              "   public static void main(String[] args) {",
+              "       short x = 10;",
+              "       x = x * 5;",
+              "       System.out.print(x);",
+              "   }",
+              "}"
+            ],
+            "options": ["50", "10", "Compiler Error", "Exception"],
+            "answer": "Compiler Error",
+            "explanation": "The program will result in a compilation error. In Java, when you perform arithmetic operations on integer-type literals, such as multiplying a short by an int (5 in this case), the result is automatically promoted to int. In this case, the result of 'x * 5' is an int value. Attempting to assign this int value to a short variable 'x' without an explicit type cast will result in a compilation error."
+          },
+          {
+            "question": "Select the valid statement.",
+            "options": [
+              "char[] ch = new char[5]",
+              "char[] ch = new char(5)",
+              "char[] ch = new char()",
+              "char[] ch = new char[]"
+            ],
+            "answer": "a) char[] ch = new char[5]",
+            "explanation": "The valid statement is 'char[] ch = new char[5]'. This statement declares an array of characters (char[]) named 'ch' with a size of 5. It creates an array object that can hold 5 characters. This is the correct syntax for creating a character array in Java.\n\nThe other statements are not valid:\n- 'char[] ch = new char(5)' is incorrect because you cannot specify the size of a character array using parentheses like this.\n- 'char[] ch = new char()' is incorrect because you need to specify the array size when creating an array.\n- 'char[] ch = new char[]' is incomplete and does not specify the array size or initialize the array."
+          },
+          {
+            "question": "Find the output of the following program.",
+            "code": [
+              "public class Solution {",
+              "   public static void main(String[] args) {",
+              "       short x = 10;",
+              "       x = x * 5;",
+              "       System.out.print(x);",
+              "   }",
+              "}"
+            ],
+            "options": ["120 200 016", "120 200 14", "120 200 16", "None"],
+            "answer": "b) 120 200 14",
+            "explanation": "The output of the program is '120 200 14'.\n\nIn the array 'x', there are three elements: 120, 200, and 016. In Java, if a number starts with '0', it is treated as an octal (base 8) number. So, '016' is interpreted as an octal number, which is equivalent to the decimal number '14'. Therefore, the array 'x' contains the values 120, 200, and 14.\n\nThe for loop iterates over the elements of the array and prints them, separated by spaces.\n\nHence, the correct answer is option (b) - '120 200 14'."
+          },
+          {
+            "question": "Which keyword is used for accessing the features of a package?",
+            "options": ["package", "import", "extends", "export"],
+            "answer": "b) import",
+            "explanation": "The import keyword is used to access the classes and interfaces of a particular package to the current file. In other words, it is used to import the user-defined and built-in classes and interfaces into the source file of java so that the current file can easily access the other packages by directly using its name. For example, 'import java.awt.*;' imports all the classes and interfaces of java.awt package. Whereas, 'import java.lang.Object;' only imports the Object class of the java.lang package. The package keyword is used to create a new package. The extends keyword indicates that the new class is derived from the base or parent class using inheritance, and export is not a keyword in Java."
+          },
+          {
+            "question": "Select the valid statement to declare and initialize an array.",
+            "options": [
+              "int [] A = {}",
+              "int [] A = {1,2,3}",
+              "int [][]A = {1,2,3}",
+              "int [] A = (1,2,3)"
+            ],
+            "answer": "b) int [] A = {1,2,3}",
+            "explanation": "int[] A = {1, 2, 3} is the valid way of declaring arrays. It initializes an integer array 'A' with the values 1, 2, and 3."
+          },
+          {
+            "question": "What is a constructor in JAVA?",
+            "options": [
+              "A special method to create instances of classes",
+              "A method used for mathematical calculations",
+              "A method to perform string manipulations",
+              "An exception handling mechanism"
+            ],
+            "answer": "A special method to create instances of classes",
+            "explanation": "Constructors typically initialize the instance variables of the class and perform any other setup required for the object to function correctly. So the answer is A special method to create instances of classes "
+          },
+          {
+            "question": "What does the `length()` method of a String object in Java return?",
+            "options": [
+              "The capacity of the string",
+              "The size of the string",
+              "The length of the string",
+              "The index of the last character"
+            ],
+            "answer": "The length of the string",
+            "explanation": "In Java, the `length()` method of a String object returns the number of characters (i.e., the length) in the string. It does not return the capacity or size of the string, nor does it provide the index of the last character. Instead, it specifically gives you the count of characters in the string."
+          },
+          {
+            "question": "How do you convert a string to lowercase in Java?",
+            "options": [
+              "str.toLower()",
+              "str.toLowerCase()",
+              "str.convertToLower()",
+              "str.makeLowerCase()"
+            ],
+            "answer": "str.toLowerCase()",
+            "explanation": "To convert a string to lowercase in Java, you should use the `toLowerCase()` method on the string object. This method returns a new string with all the characters converted to lowercase while leaving the original string unchanged. Option B, `str.toLowerCase()`, is the correct way to achieve this conversion in Java."
+          },
+          {
+            "question": "What is the purpose of the `charAt()` method of a String object in Java?",
+            "options": [
+              "To add a character to the string",
+              "To remove a character from the string",
+              "To get the character at a specific index",
+              "To get the length of the string"
+            ],
+            "answer": "To get the character at a specific index",
+            "explanation": "The `charAt()` method of a String object in Java is used to retrieve the character at a specific index within the string. It does not add or remove characters from the string, nor does it provide the length of the string. Instead, it allows you to access and retrieve individual characters from the string by specifying the index position."
+          },
+          {
+            "question": "What is the purpose of the charAt() method of a String object in Java?",
+            "options": [
+              "findIndex()",
+              "indexOf()",
+              "search()",
+              "findCharacter()"
+            ],
+            "answer": "indexOf()",
+            "explanation": "The charAt() method of a String object in Java is used to retrieve the character at a specific index within the string. It does not provide a method called findIndex(), search(), or findCharacter(). The correct method for finding the index of a character in a string is indexOf()."
+          },
+          {
+            "question": "In Java, what is the result of the expression \"Hello\".substring(1, 4)?",
+            "options": ["Hel", "H", "ell", "llo"],
+            "answer": "ell",
+            "explanation": "The expression \"Hello\".substring(1, 4) in Java returns the substring starting from index 1 (inclusive) to index 4 (exclusive) of the original string. So, the result is \"ell\"."
+          },
+          {
+            "question": "What method is used to convert an integer to a string in Java?",
+            "options": [
+              "String.valueOf()",
+              "Integer.toString()",
+              "int.toString()",
+              "parseToString()"
+            ],
+            "answer": "String.valueOf()",
+            "explanation": "In Java, the method used to convert an integer to a string is `String.valueOf()`. This method takes an integer as an argument and returns its string representation."
+          }
         ]
       },
       "C++": {
-        "questions": [
-          {}
-        ]
+        "questions": [{}]
       },
       "PHP": {
-        "questions": [
-          {}
-        ]
+        "questions": [{}]
       }
     },
     "Intermediate": {
       "Python": {
         "questions": [
           {
-            "question": "Another Python question for Intermediate level"
+            "question": "What will be the output of the following Python code?",
+            "code": [
+              "l=[1, 0, 2, 0, 'hello', '', []]",
+              "list(filter(bool, l))"
+            ],
+            "options": [
+              "a) [1, 0, 2, ‘hello’, ”, []]",
+              "b) Error",
+              "c) [1, 2, ‘hello’]",
+              "d) [1, 0, 2, 0, ‘hello’, ”, []]"
+            ],
+            "answer": "c",
+            "explanation": "The code shown above returns a new list containing only those elements of the list l which do not amount to zero. Hence the output is: [1, 2, ‘hello’]."
+          },
+          {
+            "question": "Which of the following is not a core data type in Python programming?",
+            "options": ["Tuples", "Lists", "Class", "Dictionary"],
+            "answer": "Class",
+            "explanation": "Class is a user-defined data type."
+          },
+          {
+            "question": "What will be the output of the following Python function?",
+            "code": ["min(max(False,-3,-4), 2,7)"],
+            "options": ["-4", "-3", "2", "False"],
+            "answer": "False",
+            "explanation": "The function max() is being used to find the maximum value from among -3, -4, and false. Since false amounts to the value zero, hence we are left with min(0, 2, 7) Hence the output is 0 (false)."
+          },
+          {
+            "question": "What will be the output of the following Python expression if x=56.236?",
+            "code": ["print(\"%.2f\"%x)"],
+            "options": ["a) 56.236", "b) 56.23", "c) 56.0000", "d) 56.24"],
+            "answer": "d",
+            "explanation": "The expression shown above rounds off the given number to the number of decimal places specified. Since the expression given specifies rounding off to two decimal places, the output of this expression will be 56.24. Had the value been x=56.234 (last digit being any number less than 5), the output would have been 56.23."
+          },
+          {
+            "question": "What will be the output of the following Python function?",
+            "code": "len([\"hello\",2, 4, 6])",
+            "options": ["Error", "6", "4", "3"],
+            "answer": "4",
+            "explanation": "The function len() returns the length of the number of elements in the iterable. Therefore the output of the function shown above is 4."
+          },
+          {
+            "question": "What will be the output of the following Python code snippet?",
+            "code": ["for i in [1, 2, 3, 4][::-1]:", "    print(i)"],
+            "options": ["4 3 2 1", "error", "1 2 3 4", "none of the mentioned"],
+            "answer": "4 3 2 1",
+            "explanation": "[::-1] reverses the list."
+          },
+          {
+            "question": "What will be the output of the following Python statement?",
+            "code": ["\"a\" + \"bc\""],
+            "options": ["bc", "abc", "a", "bca"],
+            "answer": "abc",
+            "explanation": "+ operator is concatenation operator."
+          },
+          {
+            "question": "Which function is called when the following Python program is executed?",
+            "code": ["f = foo()", "format(f)"],
+            "options": ["str()", "format()", "__str__()", "__format__()"],
+            "answer": "__str__()",
+            "explanation": "Both str(f) and format(f) call f.__str__()."
+          },
+          {
+            "question": "What will be the output of the following Python program?",
+            "code": [
+              "def foo(x):",
+              "    x[0] = ['def']",
+              "    x[1] = ['abc']",
+              "    return id(x)",
+              "q = ['abc', 'def']",
+              "print(id(q) == foo(q))"
+            ],
+            "options": ["Error", "None", "False", "True"],
+            "answer": "True",
+            "explanation": "The same object is modified in the function."
+          },
+          {
+            "question": "What arithmetic operators cannot be used with strings in Python?",
+            "options": ["*", "–", "+", "All of the mentioned"],
+            "answer": "-",
+            "explanation": "+ is used to concatenate and * is used to multiply strings."
+          },
+          {
+            "question": "What will be the output of the following Python code?\n\nprint(\"abc. DEF\".capitalize())",
+            "options": ["Abc. def", "abc. def", "Abc. Def", "ABC. DEF"],
+            "answer": "Abc. def",
+            "explanation": "The first letter of the string is converted to uppercase and the others are converted to lowercase."
           }
         ]
       },
@@ -436,47 +697,27 @@
               "numbers.sort();",
               "console.log(numbers[1]);"
             ],
-            "options": [
-              "33",
-              "2",
-              "8",
-              "1"
-            ],
+            "options": ["33", "2", "8", "1"],
             "answer": "33",
             "explanation": "The code sorts the 'numbers' array using the Array.prototype.sort() method, which converts all values to their string representation and then sorts them in lexicographic order. This results in ['2', '33', '8'] as the sorted array. When we print 'numbers[1]', it returns '33' because it is the second element (zero-based index) in the sorted array."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": [
-              "console.log(018 - 015);"
-            ],
-            "options": [
-              "NaN",
-              "5",
-              "13"
-            ],
+            "code": ["console.log(018 - 015);"],
+            "options": ["NaN", "5", "13"],
             "answer": "5",
             "explanation": "In earlier versions of JavaScript, a leading '0' on a number marked an octal number. Octal numbers have a base of 8, so valid digits are from 0 to 7. In the expression '018 - 015', '018' is treated as an octal number, but it's not a valid octal number because it contains '8'. Therefore, it's treated as a decimal number, and '015' is treated as a valid octal number, which is equivalent to '13' in decimal. The expression evaluates to '5' in decimal."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": [
-              "console.log(1 +  \"2\" + \"2\");"
-            ],
-            "options": [
-              "122",
-              "32",
-              "NaN2",
-              "NaN"
-            ],
+            "code": ["console.log(1 +  \"2\" + \"2\");"],
+            "options": ["122", "32", "NaN2", "NaN"],
             "answer": "122",
             "explanation": "In JavaScript, when you use the '+' operator with a string and a number, JavaScript converts the number to a string and performs string concatenation. So, '1 + \"2\"' results in '12', and then '12 + \"2\"' results in '122'. The final output is '122'."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": [
-              "console.log(String.raw`HelloTwitter\\nworld`);"
-            ],
+            "code": ["console.log(String.raw`HelloTwitter\\nworld`);"],
             "options": [
               "\"HelloTwitter\\nworld\"",
               "\"HelloTwitter\nworld\"",
@@ -488,29 +729,15 @@
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": [
-              "console.log(typeof typeof 1);"
-            ],
-            "options": [
-              "string",
-              "number",
-              "1",
-              "true"
-            ],
+            "code": ["console.log(typeof typeof 1);"],
+            "options": ["string", "number", "1", "true"],
             "answer": "string",
             "explanation": "In JavaScript, the `typeof` operator is used to determine the data type of a value or expression. In the provided code, `typeof 1` returns the string 'number' because `1` is a number. Therefore, `typeof typeof 1` first evaluates `typeof 1`, which is 'string' (the data type of the result of `typeof`), and then the outer `typeof` returns 'string' because it's the data type of the inner `typeof` result."
           },
           {
             "question": "Can you guess the result?",
-            "code": [
-              "console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());"
-            ],
-            "options": [
-              "bananaa",
-              "baaa",
-              "banana",
-              "ananas"
-            ],
+            "code": ["console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());"],
+            "options": ["bananaa", "baaa", "banana", "ananas"],
             "answer": "banana",
             "explanation": "The expression ('b' + 'a' + + 'a' + 'a') evaluates to 'banana'. Here's why:\n\n- 'b' + 'a' results in 'ba'.\n- +'a' attempts to convert 'a' to a number, which results in NaN (Not-a-Number).\n- 'ba' + NaN results in 'baNaN'.\n- Finally, 'baNaN' + 'a' results in 'banana'.\n\nThe `toLowerCase()` method is then applied to convert 'banana' to lowercase, resulting in the final output 'banana'."
           },
@@ -521,59 +748,34 @@
               "array[6] = 9;",
               "console.log(array[5]);"
             ],
-            "options": [
-              "1",
-              "2",
-              "9",
-              "undefined"
-            ],
+            "options": ["1", "2", "9", "undefined"],
             "answer": "undefined",
             "explanation": "The output of the code will be 'undefined'.\n\nIn JavaScript, when you assign a value to an array element with an index that is greater than the current length of the array, JavaScript will create 'empty' or 'undefined' slots in the array for the indices in between. In this code, the array 'array' initially contains elements at indices 0, 1, and 2. When you set 'array[6] = 9;', JavaScript creates empty slots at indices 3, 4, and 5. Therefore, when you try to access 'array[5]', it returns 'undefined' because there is no value assigned to that index."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": [
-              "console.log(false == '0');"
-            ],
-            "options": [
-              "false",
-              "true"
-            ],
+            "code": ["console.log(false == '0');"],
+            "options": ["false", "true"],
             "answer": "true",
             "explanation": "The output of the code will be 'true'.\n\nIn JavaScript, when you use the '==' operator for comparison, type coercion is performed. In this case, the boolean 'false' is being compared to the string '0'. JavaScript attempts to convert both values to a common type for comparison. When a boolean is compared to any other type, it is first converted to a number. In JavaScript, 'false' is equivalent to the number '0'. Therefore, the comparison 'false == '0'' evaluates to 'true' because '0' (as a string) is considered equal to '0' (as a number) after type coercion."
           },
           {
             "question": "Do you know what will be the output of this code?",
-            "code": [
-              "console.log(0.1 + 0.2 == 0.3);"
-            ],
-            "options": [
-              "true",
-              "false"
-            ],
+            "code": ["console.log(0.1 + 0.2 == 0.3);"],
+            "options": ["true", "false"],
             "answer": "false",
             "explanation": "0.1 + 0.2 -> 0.30000000000000004. \n(And 0.30000000000000004 is never equal to 0.3.)"
           },
           {
             "question": "Can you guess what will be the output of the code below?",
-            "code": "console.log(typeof NaN);",
-            "options": [
-              "NaN",
-              "number",
-              "null",
-              "undefined"
-            ],
+            "code": ["console.log(typeof NaN);"],
+            "options": ["NaN", "number", "null", "undefined"],
             "answer": "number",
             "explanation": "In JavaScript, typeof NaN returns 'number' because NaN (Not-a-Number) is considered a numeric data type."
           },
           {
             "question": "Choose the correct snippet from the following to check if the variable 'a' is not equal to 'null':",
-            "options": [
-              "if(a!==null)",
-              "if (a!)",
-              "if(a!null)",
-              "if(a!=null)"
-            ],
+            "options": ["if(a!==null)", "if (a!)", "if(a!null)", "if(a!=null)"],
             "answer": "if(a!==null)",
             "explanation": "The correct way to check if a variable 'a' is not equal to 'null' in JavaScript is by using the strict inequality operator '!=='."
           },
@@ -620,12 +822,7 @@
               "var ans = values.slice(1);",
               "document.writeln(ans);"
             ],
-            "options": [
-              "Error",
-              "5, 6, 7",
-              "4, 5, 6",
-              "4, 5, 6, 7"
-            ],
+            "options": ["Error", "5, 6, 7", "4, 5, 6", "4, 5, 6, 7"],
             "answer": "5, 6, 7",
             "explanation": "The `slice()` method in JavaScript is used to create a shallow copy of a portion of an array into a new array. In this code, it starts from index 1 and includes elements 5, 6, and 7 in the new array. The correct output will be '5, 6, 7.'"
           },
@@ -636,12 +833,7 @@
               "var rev = arr.reverse();",
               "document.writeln(rev);"
             ],
-            "options": [
-              "1, 2, 3, 4",
-              "4, 3, 2, 1",
-              "3",
-              "1"
-            ],
+            "options": ["1, 2, 3, 4", "4, 3, 2, 1", "3", "1"],
             "answer": "1, 2, 3, 4",
             "explanation": "The 'reverse()' method in JavaScript is used to reverse the order of elements in an array. In this code, the array 'arr' is reversed using 'reverse()', so it becomes [1, 2, 3, 4]. When 'document.writeln(rev)' is called, it prints the reversed array, resulting in '1, 2, 3, 4' as the correct output."
           }
@@ -649,25 +841,473 @@
       },
       "Java": {
         "questions": [
-          {}
+          {
+            "question": "What is the return type of the hashCode() method in the Object class?",
+            "options": ["Object", "int", "long", "void"],
+            "answer": "int",
+            "explanation": "In Java, the return type of hashCode() method is an integer, as it returns a hash code value for the object."
+          },
+          {
+            "question": "What will be the output of the following program?",
+            "code": [
+              "public class Test {",
+              "public static void main(String[] args) {",
+              "int count = 1;",
+              "while (count <= 15) {",
+              "System.out.println(count % 2 == 1 ? \"***\" : \"+++++\");",
+              "++count;",
+              "} // end while",
+              "} // end main",
+              "}"
+            ],
+            "options": [
+              "15 times ***",
+              "15 times +++++",
+              "8 times *** and 7 times +++++",
+              "Both will print only once"
+            ],
+            "answer": "8 times *** and 7 times +++++",
+            "explanation": "The program uses a while loop to print '***' or '+++++' based on the value of count. Since count starts at 1 and increments by 1 in each iteration, it will print '***' when count is odd and '+++++' when count is even. This pattern continues until count reaches 15. As a result, it will print '***' 8 times and '+++++' 7 times."
+          },
+          {
+            "question": "Given that Student is a class, how many reference variables and objects are created by the following code?",
+            "code": [
+              "Student studentName, studentId;",
+              "studentName = new Student();",
+              "Student stud_class = new Student();"
+            ],
+            "options": [
+              "Three reference variables and two objects are created.",
+              "Two reference variables and two objects are created.",
+              "One reference variable and two objects are created.",
+              "Three reference variables and three objects are created."
+            ],
+            "answer": "Three reference variables and two objects are created.",
+            "explanation": "In the above code, there are three reference variables and two objects. The studentName, studentId, and stud_class are the three reference variables. The objects are those variables that are created using the new operator, i.e., studentName and stud_class. The studentId is only a reference variable as it is not declared using the new operator. Both studentName and stud_class are reference variables as well as objects."
+          },
+          {
+            "question": "What will be the output of the following Java code?",
+            "code": [
+              "public class ConcatNull {",
+              "  public static void main(String[] args) {",
+              "    String str1 = \"include\";",
+              "    String str2 = \"help\";",
+              "    System.out.println(str1 + str2);",
+              "  }",
+              "}"
+            ],
+            "options": ["includehelp", "include", "help", "None of these"],
+            "answer": "A) includehelp",
+            "explanation": "In the above code, the '+' operator is concatenating both of the strings."
+          },
+          {
+            "question": "What will be the output of following Java code?",
+            "code": [
+              "public class Main {",
+              "  public static void main(String arg[]) {",
+              "    int i;",
+              "    for (i = 1; i <= 12; i += 2) {",
+              "      if (i == 8) {",
+              "        System.out.println(i);",
+              "        break;",
+              "      }",
+              "    }",
+              "  }",
+              "}"
+            ],
+            "options": ["1", "No output", "8", "1357911"],
+            "answer": "No output",
+            "explanation": "The condition (i == 8) could not be satisfied, hence nothing is printed."
+          },
+          {
+            "question": "Static variables in java are declared as ___.",
+            "options": [
+              "final variables",
+              "new variables",
+              "Constants",
+              "All of these"
+            ],
+            "answer": "Constants",
+            "explanation": "The static variables declarations just like constants, they require the static keyword and an initial value."
+          },
+          {
+            "question": "Find the value of values[i]?",
+            "code": [
+              "int values[] = {1,2,3,4,5,6,7,8,9,10};",
+              "for(int i=0;i< Y; ++i)",
+              "System.out.println(values[i]);"
+            ],
+            "options": ["10", "11", "15", "None of the above"],
+            "answer": "None of the above",
+            "explanation": "In the above code, we have not defined the variable Y. The code will not execute without any specific value for Y; it results in an exception. So, the values of i will not be printed, and the above exception is thrown."
+          },
+          {
+            "question": "What will be the output of the following program?",
+            "code": [
+              "abstract class MyFirstClass{",
+              "  abstract num (int a, int b){",
+              "  }",
+              "}"
+            ],
+            "options": [
+              "No error",
+              "Method is not defined properly",
+              "Constructor is not defined properly",
+              "Extra parentheses"
+            ],
+            "answer": "Method is not defined properly.",
+            "explanation": "Following are some rules for declaring an abstract method:\n\n- Abstract methods do not specify a method body, but they only have a method signature.\n- Abstract methods are always defined inside an abstract class.\n\nIn the above code, MyFirstClass is an abstract class. It contains an abstract method named num() that is not defined properly. According to the rules discussed above, an abstract method only has a method signature, not the method body.\n\nHence, the correct answer is Method is not defined properly."
+          },
+          {
+            "question": "What is meant by the classes and objects that dependents on each other?",
+            "options": [
+              "Tight Coupling",
+              "Cohesion",
+              "Loose Coupling",
+              "None of the above"
+            ],
+            "answer": "Tight Coupling",
+            "explanation": "In tight coupling, a group of classes and objects are highly dependent on each other. Tight coupling is also used in some cases, like when an object creates some other objects that are going to be used by them.\n\nTight coupling is the correct answer as it is used when the logic of one class is called by the logic of another class."
+          },
+          {
+            "question": "The super() method is used to ___.",
+            "options": [
+              "Call constructor of friend class",
+              "Is a declared method",
+              "Call constructor of the parent class",
+              "Call constructor"
+            ],
+            "answer": "Call constructor of the parent class",
+            "explanation": "In Java programming language, the super() is a reference variable that is used to refer parent class constructors. The super can be used to call parent class's variables and methods. The super() can be used to call parent class' constructors only."
+          },
+          {
+            "question": "Consider the following program and predict the output:\npublic class Test {\n    public static void main(String[] args) {\n        String s = new String(\"5\");\n        System.out.println(1 + 10 + s + 1 + 10);\n    }\n}",
+            "options": ["a) 11511", "b) 1105110", "c) 115110", "d) 27"],
+            "answer": "c) 115110",
+            "explanation": "The output of the program will be '115110'. In Java, when you use the '+' operator with a String, it performs concatenation. So, the expression '1 + 10 + s + 1 + 10' is evaluated as '115' (1 + 10) concatenated with '5' (the value of String s) concatenated with '1' concatenated with '10'. This results in '115110'."
+          },
+          {
+            "question": "Which package is used for basic I/O operations in Java?",
+            "options": [
+              "a) java.lang",
+              "b) java.io",
+              "c) java.util",
+              "d) java.nio"
+            ],
+            "answer": "b) java.io",
+            "explanation": "The correct option is b) java.io"
+          },
+          {
+            "question": "What is the output of the following Java program?\npublic class Main{\n     public static void main(String []args){\n        int x = 10;\n        while (x > 0) {\n            System.out.print(x + \" \");\n            x--;\n        }\n     }\n}",
+            "options": [
+              "a) 10 9 8 7 6 5 4 3 2 1",
+              "b) 10 9 8 7 6 5 4 3 2 1 0",
+              "c) 1 2 3 4 5 6 7 8 9 10",
+              "d) The code will not compile due to a syntax error."
+            ],
+            "answer": "a) 10 9 8 7 6 5 4 3 2 1",
+            "explanation": "The given Java program initializes an integer variable 'x' with the value 10. It then enters a 'while' loop that continues as long as 'x' is greater than 0. Inside the loop, it prints the value of 'x' followed by a space and decrements 'x' by 1 in each iteration.\n\nAs a result, the program prints the numbers from 10 down to 1, separated by spaces, which corresponds to option (a) '10 9 8 7 6 5 4 3 2 1.'"
+          },
+          {
+            "question": "What is the output of the following Java program?",
+            "code": [
+              "class Automobile {",
+              "    private String drive() {",
+              "        return \"Driving vehicle\";",
+              "    }",
+              "}",
+              "",
+              "class Car extends Automobile {",
+              "    protected String drive() {",
+              "        return \"Driving car\";",
+              "    }",
+              "}",
+              "",
+              "public class ElectricCar extends Car {",
+              "    @Override",
+              "    public final String drive() {",
+              "        return \"Driving an electric car\";",
+              "    }",
+              "",
+              "    public static void main(String[] wheels) {",
+              "        final Car car = new ElectricCar();",
+              "        System.out.print(car.drive());",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "A. Driving vehicle",
+              "B. Driving an electric car",
+              "C. Driving car",
+              "D. The code does not compile"
+            ],
+            "answer": "B. Driving an electric car",
+            "explanation": "The output of the given Java program is 'B. Driving an electric car' because it calls the 'drive()' method of the 'ElectricCar' class. In Java, when a method is overridden in a subclass and marked with the 'final' keyword, it cannot be further overridden by any subclass. In this case, the 'drive()' method in the 'ElectricCar' class is marked as 'final', so it cannot be overridden again. Therefore, when 'car.drive()' is called in the 'main' method, it invokes the 'drive()' method of the 'ElectricCar' class, which returns 'Driving an electric car'."
+          }
         ]
       },
       "C++": {
-        "questions": [
-          {}
-        ]
+        "questions": [{}]
       },
       "PHP": {
-        "questions": [
-          {}
-        ]
+        "questions": [{}]
       }
     },
     "Advanced": {
       "Python": {
         "questions": [
           {
-            "question": "Another Python question for Advanced level"
+            "question": "Which of the following is correct?",
+            "code": [
+              "class A:",
+              "    def __init__(self, name):",
+              "        self.name = name"
+            ],
+            "options": [
+              "id(a1) and id(a2) will have the same value.",
+              "id(a1) and id(a2) will have different values.",
+              "Two objects with the same value of the attribute cannot be created.",
+              "None of the above"
+            ],
+            "answer": "B",
+            "explanation": "Although both a1 and a2 have the same value of attributes, but these two point to two different objects. Hence, their id will be different."
+          },
+          {
+            "question": "In python, what is method inside class?",
+            "options": ["attribute", "object", "argument", "function"],
+            "answer": "function",
+            "explanation": "In OOP of Python, a function defined inside a class is referred to as a 'method'."
+          },
+          {
+            "question": "What will be the output of the below Python code?",
+            "code": [
+              "class A:",
+              "    def __init__(self, num):",
+              "        num = 3",
+              "        self.num = num",
+              "    def change(self):",
+              "        self.num = 7",
+              "a = A(5)",
+              "print(a.num)",
+              "a.change()",
+              "print(a.num)"
+            ],
+            "options": [
+              "A. 5\n   7",
+              "B. 5\n   5",
+              "C. 3\n   3",
+              "D. 3\n   7"
+            ],
+            "answer": "D",
+            "explanation": "Inside the constructor (__init__), self.num is set to 3 initially. The first print statement prints 3. When the method change() is invoked, self.num is changed to 7, so the second print statement prints 7."
+          },
+          {
+            "question": "What will be the output for the following code?",
+            "code": [
+              "class A:",
+              "    def __init__(self, x=1):",
+              "        self.x = x",
+              "class der(A):",
+              "    def __init__(self, y=2):",
+              "        super().__init__()",
+              "        self.y = y",
+              "def main():",
+              "    obj = der()",
+              "    print(obj.x, obj.y)",
+              "main()"
+            ],
+            "options": [
+              "Error, the syntax of the invoking method is wrong",
+              "The program runs fine but nothing is printed",
+              "1 0",
+              "1 2"
+            ],
+            "answer": "1 2",
+            "explanation": "The code defines two classes, A and der, where der is a subclass of A. Both classes have constructors (__init__) that initialize instance variables x and y, respectively. In the main function, an object of the der class is created. When printing obj.x and obj.y, it outputs '1 2' because der's constructor initializes y to 2, and it also calls the parent class A's constructor, which initializes x to 1."
+          },
+          {
+            "question": "Which of the following statements is false?",
+            "options": [
+              "A. A non-private method in a superclass can be overridden",
+              "B. A derived class is a subset of superclass",
+              "C. The value of a private variable in the superclass can be changed in the subclass",
+              "D. When invoking the constructor from a subclass, the constructor of superclass is automatically invoked"
+            ],
+            "answer": "C",
+            "explanation": "Statement C is false. In object-oriented programming, private variables in a superclass are not accessible directly in the subclass, so their values cannot be changed directly in the subclass. The concept of encapsulation prevents direct access to private variables from outside the class."
+          },
+          {
+            "question": "What will be the output of the following Python code?",
+            "code": [
+              "tuple1 = (2, 4, 3)",
+              "tuple3 = tuple1 * 2",
+              "print(tuple3)"
+            ],
+            "options": [
+              "A. (4, 8, 6)",
+              "B. (2, 4, 3, 2, 4, 3)",
+              "C. (2, 2, 4, 4, 3, 3)",
+              "D. Error"
+            ],
+            "answer": "B",
+            "explanation": "The code duplicates the tuple1 by multiplying it by 2, resulting in (2, 4, 3, 2, 4, 3)."
+          },
+          {
+            "question": "What will be the output of the following Python code?",
+            "code": [
+              "list1 = [8, 0, 9, 5]",
+              "print(list1[::-1])"
+            ],
+            "options": [
+              "A. [5, 9, 0, 8]",
+              "B. [8, 0, 9]",
+              "C. [8, 0, 9, 5]",
+              "D. [0, 9, 5]"
+            ],
+            "answer": "A",
+            "explanation": "The code reverses the list1 using slicing with [::-1], resulting in [5, 9, 0, 8]."
+          },
+          {
+            "question": "The marks of a student on 6 subjects are stored in a list, list1=[80,66,94,87,99,95]. How can the student's average mark be calculated?",
+            "options": [
+              "A. print(avg(list1))",
+              "B. print(sum(list1)/len(list1))",
+              "C. print(sum(list1)/sizeof(list1))",
+              "D. print(total(list1)/len(list1))"
+            ],
+            "answer": "B",
+            "explanation": "The student's average mark can be calculated by summing the marks in the list and dividing by the number of subjects, which is len(list1). So, the correct calculation is print(sum(list1)/len(list1))."
+          },
+          {
+            "question": "What will be the output of the following Python code?",
+            "code": [
+              "list1=[1,3,5,2,4,6,2]",
+              "list1.remove(2)",
+              "print(sum(list1))"
+            ],
+            "options": [
+              "A. 18",
+              "B. 19",
+              "C. 21",
+              "D. 22"
+            ],
+            "answer": "C",
+            "explanation": "After removing the first occurrence of the value 2 from the list, the modified list becomes [1, 3, 5, 4, 6, 2], and the sum of these numbers is 21. Therefore, the output is 21."
+          },
+          {
+            "question": "What will the above Python code do?",
+            "code": [
+              "dict = {'Phy': 94, 'Che': 70, 'Bio': 82, 'Eng': 95}",
+              "dict.update({'Che': 72, 'Bio': 80})"
+            ],
+            "options": [
+              "A. It will create a new dictionary as dict={'Che':72,'Bio':80} and the old dict will be deleted.",
+              "B. It will throw an error as a dictionary cannot be updated.",
+              "C. It will simply update the dictionary as dict={'Phy':94,'Che':72,'Bio':80,'Eng':95}.",
+              "D. It will not throw any error but it will not make any changes in dict."
+            ],
+            "answer": "C",
+            "explanation": "The code updates the values of the 'Che' and 'Bio' keys in the dictionary, so the resulting dictionary is {'Phy': 94, 'Che': 72, 'Bio': 80, 'Eng': 95}. Therefore, option C is correct."
+          },
+          {
+            "question": "What will be the result of the above Python code?",
+            "code": [
+              "dict = {'Joey': 1, 'Rachel': 2}",
+              "dict.update({'Phoebe': 2})",
+              "print(dict)"
+            ],
+            "options": [
+              "A. {'Joey': 1, 'Rachel': 2, 'Phoebe': 2}",
+              "B. {'Joey': 1, 'Rachel': 2}",
+              "C. {'Joey': 1, 'Phoebe': 2}",
+              "D. Error"
+            ],
+            "answer": "A",
+            "explanation": "The code updates the dictionary by adding the 'Phoebe' key with a value of 2. So, the resulting dictionary is {'Joey': 1, 'Rachel': 2, 'Phoebe': 2}. Therefore, option A is correct."
+          },
+          {
+            "question": "What will be the output of the following Python code?",
+            "code": [
+              "set1 = {2, 5, 3}",
+              "set2 = {3, 1}",
+              "set3 = {}",
+              "set3 = set1 & set2",
+              "print(set3)"
+            ],
+            "options": [
+              "A. {3}",
+              "B. {}",
+              "C. {2, 5, 3, 1}",
+              "D. {2, 5, 1}"
+            ],
+            "answer": "A",
+            "explanation": "The code performs a set intersection between set1 and set2 using the '&' operator. The result is a new set containing the common element, which is {3}. Therefore, option A is correct."
+          },
+          {
+            "question": "What will set1|set2 do?",
+            "code": ["If set1={\"a\",\"b\",3}" , "set2={3,7}"],
+            "options": [
+              "A. Elements of set2 will get appended to set1",
+              "B. Elements of set1 will get appended to set2",
+              "C. A new set will be created with the elements of both set1 and set2",
+              "D. A new set will be created with the unique elements of set1 and set2."
+            ],
+            "answer": "C",
+            "explanation": "The '|' operator performs a union operation on sets. It creates a new set that contains all the unique elements from both set1 and set2. Therefore, option C is correct."
+          },
+          {
+            "question": "What will be the output of given Python code?",
+            "code": [
+              "str1=\"hello\"",
+              "c=0",
+              "for x in str1:",
+              "   if(x!=\"l\"):",
+              "       c=c+1",
+              "   else:",
+              "       pass",
+              "print(c)"
+            ],
+            "options": [
+              "A. 2",
+              "B. 0",
+              "C. 4",
+              "D. 3"
+            ],
+            "answer": "D",
+            "explanation": "The given Python code counts the number of characters in the string 'hello' that are not 'l'. It initializes a count 'c' to 0 and iterates through each character in the string. If the character is not 'l', it increments 'c' by 1. The final value of 'c' is 3, so the output is 3, as given in option D."
+          },
+          {
+            "question": "What will be the output of given Python code?",
+            "code": [
+              "str1=\"hello\"",
+              "c=0",
+              "for x in str1:",
+              "   if(x!=\"l\"):",
+              "       c=c+1",
+              "   else:",
+              "       pass",
+              "print(c)"
+            ],
+            "options": [
+              "A. 2",
+              "B. 0",
+              "C. 4",
+              "D. 3"
+            ],
+            "answer": "D",
+            "explanation": "The given Python code counts the number of characters in the string 'hello' that are not 'l'. It initializes a count 'c' to 0 and iterates through each character in the string. If the character is not 'l', it increments 'c' by 1. The final value of 'c' is 3, so the output is 3, as given in option D."
+          },
+          {
+            "question": "What will the below Python code will return?",
+            "code": ["If str1=\"save paper,save plants\"", "str1.find(\"save\")"],
+            "options": [
+              "A. It returns the first index position of the first occurrence of \"save\" in the given string str1.",
+              "B. It returns the last index position of the last occurrence of \"save\" in the given string str1.",
+              "C. It returns the last index position of the first occurrence of \"save\" in the given string str1.",
+              "D. It returns the first index position of the first occurrence of \"save\" in the given string str1."
+            ],
+            "answer": "A",
+            "explanation": "It returns the first index position of the first occurrence of \"save\" in the given string str1."
           }
         ]
       },
@@ -675,12 +1315,7 @@
         "questions": [
           {
             "question": "Based on the below options, which option is the JavaScript Library?",
-            "options": [
-              "React",
-              "Vue.js",
-              "Angular",
-              "Ember.js"
-            ],
+            "options": ["React", "Vue.js", "Angular", "Ember.js"],
             "answer": "React",
             "explanation": "Vue.js, Angular, Ember.js are the JavaScript Framework. React is the JavaScript Library based on the options."
           },
@@ -695,12 +1330,7 @@
               "};",
               "fun.x + fun.bar + bar;"
             ],
-            "options": [
-              "undefined",
-              "4",
-              "5",
-              "NaN"
-            ],
+            "options": ["undefined", "4", "5", "NaN"],
             "answer": "NaN",
             "explanation": "The value of fun.bar is undefined, so adding it to any numeric value results in NaN (Not-a-Number)."
           },
@@ -710,12 +1340,7 @@
               "var addition=newFunction(\"number1\",\"number2\",\"return number1+number2\");",
               "document.writeln(addition(10,5));"
             ],
-            "options": [
-              "12",
-              "13",
-              "15",
-              "Error"
-            ],
+            "options": ["12", "13", "15", "Error"],
             "answer": "15",
             "explanation": "The \"addition()\" function was defined in the first line of code using the \"new\" property. In the second line of code, the addition function is called along with two passed arguments as 10, 5 inside the \"document.write()\" method, which prints the sum of two passed arguments returned by the \"addition()\" method."
           },
@@ -742,12 +1367,7 @@
           },
           {
             "question": "Which of the following is a server-side JavaScript object?",
-            "options": [
-              "Date",
-              "File",
-              "FileUpload",
-              "Function"
-            ],
+            "options": ["Date", "File", "FileUpload", "Function"],
             "answer": "File",
             "explanation": "File  is a server-side JavaScript object"
           },
@@ -757,12 +1377,7 @@
               "var o =newF();  // statement 1",
               "o.constructor=== F // statement 2"
             ],
-            "options": [
-              "False",
-              "1",
-              "0",
-              "True"
-            ],
+            "options": ["False", "1", "0", "True"],
             "answer": "True",
             "explanation": "A \"constructor\" is a function property of any class that is typically used for object of that class . In the above given code, both 1,2 statements are creating the instance of the class."
           },
@@ -773,12 +1388,7 @@
               "var intvalue = 10000;",
               "alert( string1 + intvalue );"
             ],
-            "options": [
-              "Fee 10000",
-              "10000",
-              "Fee10000",
-              "Exception"
-            ],
+            "options": ["Fee 10000", "10000", "Fee10000", "Exception"],
             "answer": "Fee10000",
             "explanation": "In JavaScript, when you concatenate a string and a number using the `+` operator, the number is implicitly converted to a string. So, the output will be 'Fee10000', as the string 'Fee' and the number 10000 are concatenated as strings."
           },
@@ -793,12 +1403,7 @@
               "const obj2 = Object.assign({c: 7, d: 1}, obj1);",
               "console.log(obj2.c, obj2.d);"
             ],
-            "options": [
-              "Undefined",
-              "18, 1",
-              "7, 1",
-              "Error"
-            ],
+            "options": ["Undefined", "18, 1", "7, 1", "Error"],
             "answer": "7, 1",
             "explanation": "The `Object.assign()` method is used to copy the values and properties of one object to another. In this code, it copies the properties from `obj1` into the new object `obj2`. The value of `obj2.c` is 7, and the value of `obj2.d` is 1. Therefore, the correct output is '7, 1'."
           },
@@ -812,12 +1417,7 @@
               "x.count()",
               "y.count()"
             ],
-            "options": [
-              "Null",
-              "0",
-              "2",
-              "Undefined"
-            ],
+            "options": ["Null", "0", "2", "Undefined"],
             "answer": "2",
             "explanation": "The 'counter()' method increments the value of the variable by one each time it is called. The 'reset()' function resets the value of that variable to zero. In this code, 'counter()' is called two times for variable 'y', and 'reset()' is not called for 'x'. So, the value of variable 'y' is 2."
           },
@@ -831,12 +1431,7 @@
               "}",
               "</script>"
             ],
-            "options": [
-              "0.80",
-              "0.78",
-              "0.50",
-              "0.88"
-            ],
+            "options": ["0.80", "0.78", "0.50", "0.88"],
             "answer": "0.88",
             "explanation": "The JavaScript code defines a function 'myFunc' that sets the innerHTML of the 'demo' element to the result of Math.asinh(1). The Math.asinh() function returns the inverse hyperbolic sine of a number. In this case, it computes asinh(1), which is approximately 0.88."
           },
@@ -850,12 +1445,7 @@
               "}",
               "document.write(fun());"
             ],
-            "options": [
-              "2",
-              "3",
-              "0",
-              "Error"
-            ],
+            "options": ["2", "3", "0", "Error"],
             "answer": "2",
             "explanation": "The JavaScript function 'fun' calculates the product of two numbers, 1 and 2, and returns the result. The 'document.write' statement then displays the result in the document. In this case, it will write '2' to the document as the output."
           },
@@ -867,12 +1457,7 @@
               "0 in x1",
               "0 in x2"
             ],
-            "options": [
-              "true true",
-              "false true",
-              "false false",
-              "true false"
-            ],
+            "options": ["true true", "false true", "false false", "true false"],
             "answer": "true false",
             "explanation": "In the code, two arrays, x1 and x2, are defined. x1 is defined with empty slots (null values), while x2 is defined with a length of 10 but no specific values. The '0 in x1' expression returns true because even though x1 has empty slots, it still has an index 0. However, '0 in x2' returns false because x2 is an empty array with no values defined at index 0."
           },
@@ -921,18 +1506,425 @@
       },
       "Java": {
         "questions": [
-          {}
+          {
+            "question": "What will be the output of the following Java code?",
+            "code": [
+              "import java.util.Hashtable;",
+              "public class HashTableClass {",
+              "  int hashcode;",
+              "  HashTableClass(int hashcode) {",
+              "    this.hashcode = hashcode;",
+              "  }",
+              "  public int hashCode() {",
+              "    return hashcode;",
+              "  }",
+              "  public String toString() {",
+              "    return hashcode + \" \";",
+              "  }",
+              "  public static void main(String[] args) {",
+              "    Hashtable ht = new Hashtable();",
+              "    ht.put(new HashTableClass(10), \"Java\");",
+              "    ht.put(new HashTableClass(3), \"C\");",
+              "    ht.put(new HashTableClass(4), \"C++\");",
+              "    ht.put(new HashTableClass(5), \"Ruby\");",
+              "    ht.put(new HashTableClass(6), \"null\");",
+              "    System.out.println(ht);",
+              "  }",
+              "}"
+            ],
+            "options": [
+              "{10 =Java, 3 =C, 4 =C++, 6 =null, 5 =Ruby}",
+              "{10 =Java, 6 =null, 5 =Ruby, 4 =C++, 3 =C}",
+              "{3 =C, 4 =C++, 5 =Ruby, 6 =null, 10 =Java}",
+              "None of these"
+            ],
+            "answer": "{10 =Java, 6 =null, 5 =Ruby, 4 =C++, 3 =C}",
+            "explanation": "The output of the code is a Hashtable in the form of `{key = value}` pairs. However, the order of elements in a Hashtable is not guaranteed to be in the same order as they were inserted. Hashtable uses the hash code of the keys to store and retrieve values efficiently, and the order can be different from the insertion order. In this case, the order of elements in the Hashtable may vary, so options A and C can be ruled out. Option D ('None of these') is not correct because there is a valid output among the given options. Therefore, the correct answer is option B."
+          },
+          {
+            "question": "Which Java method is used to clear elements of an ArrayList?",
+            "options": ["deleteAll()", "delete()", "clearAll()", "clear()"],
+            "answer": "clear()",
+            "explanation": "The clear() method of ArrayList in Java is used to remove all the elements from a list."
+          },
+          {
+            "question": "Which of the following code segment would execute the stored procedure 'getPassword()' located in a database server?",
+            "options": [
+              "CallableStatement cs = connection.prepareCall('{call.getPassword()}');\ncs.executeQuery();",
+              "CallabledStatement callable = conn.prepareCall('{call getPassword()}');\ncallable.executeUpdate();",
+              "CallableStatement cab = con.prepareCall('{call getPassword()}');\ncab.executeQuery();",
+              "Callablestatement cstate = connect.prepareCall('{call getpassword()}');\ncstate.executeQuery();"
+            ],
+            "answer": "CallableStatement cab = con.prepareCall('{call getPassword()}');\ncab.executeQuery();",
+            "explanation": "In Java, java.sql.CallableStatement interface is used to call the SQL stored procedures in the database. The stored procedures are similar to functions as they perform some specific tasks, except that they are only available in the database. The CallableStatement can return either a single ResultSet object or multiple ResultSet objects."
+          },
+          {
+            "question": "'this' keyword in Java is ___.",
+            "options": [
+              "Used to hold the reference of the current object",
+              "Holds object value",
+              "Used to create a new instance",
+              "All of these"
+            ],
+            "answer": "Used to hold the reference of the current object",
+            "explanation": "Java 'this' keyword is used to hold the reference of the current object."
+          },
+          {
+            "question": "What will be the output of the following Java code?",
+            "code": [
+              "import java.util.Scanner;",
+              "",
+              "class ThisKeyword {",
+              "  private int a = 4;",
+              "  private int b = 1;",
+              "",
+              "  void getSum(int a, int b) {",
+              "    this.a = a;",
+              "    this.b = b;",
+              "    System.out.println(this.a + this.b);",
+              "  }",
+              "}",
+              "",
+              "public class Main {",
+              "  public static void main(String args[]) {",
+              "    ThisKeyword T = new ThisKeyword();",
+              "    T.getSum(3, 5);",
+              "  }",
+              "}"
+            ],
+            "options": ["5", "9", "8", "4"],
+            "answer": "8",
+            "explanation": "The above Java program is an example to demonstrate the use of the 'this' keyword. When the getSum method is called with arguments 3 and 5, it sets the private fields 'a' and 'b' of the current object to 3 and 5, respectively. Then, it prints the sum of 'this.a' and 'this.b,' which is 8."
+          },
+          {
+            "question": "What is the output of the following Java program?",
+            "code": [
+              "class One{",
+              "    public One(){",
+              "        System.out.print(\"One,\");",
+              "    }",
+              "}",
+              "class Two extends One{",
+              "    public Two(){",
+              "        System.out.print(\"Two,\");",
+              "    }",
+              "}",
+              "class Three extends Two{",
+              "    public Three(){",
+              "        System.out.print(\"Three\");",
+              "    }",
+              "}",
+              "",
+              "public class Test{",
+              "    public static void main(String[] args){",
+              "        Three three = new Three();",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "a) Three",
+              "b) One",
+              "c) One,Two,Three",
+              "d) Run-time error"
+            ],
+            "answer": "c) One,Two,Three",
+            "explanation": "The output of the given Java program is 'c) One,Two,Three'. When an object of the 'Three' class is created in the 'main' method, it invokes the constructors of its superclasses in the order of inheritance. First, the constructor of 'One' is called, which prints 'One,'. Then, the constructor of 'Two' (the subclass of 'One') is called, which prints 'Two,'. Finally, the constructor of 'Three' (the subclass of 'Two') is called, which prints 'Three'."
+          },
+          {
+            "question": "What is the output of the following Java program?",
+            "code": [
+              "abstract class Car {",
+              "    static {",
+              "        System.out.print(\"1\");",
+              "    }",
+              "",
+              "    public Car(String name) {",
+              "        super();",
+              "        System.out.print(\"2\");",
+              "    }",
+              "",
+              "    {",
+              "        System.out.print(\"3\");",
+              "    }",
+              "}",
+              "",
+              "public class BlueCar extends Car {",
+              "    {",
+              "        System.out.print(\"4\");",
+              "    }",
+              "",
+              "    public BlueCar() {",
+              "        super(\"blue\");",
+              "        System.out.print(\"5\");",
+              "    }",
+              "",
+              "    public static void main(String[] gears) {",
+              "        new BlueCar();",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "a) 23451",
+              "b) 12354",
+              "c) 13245",
+              "d) The code does not compile."
+            ],
+            "answer": "c) 13245",
+            "explanation": "The class is loaded first, with the static initialization block called and '1' is outputted first. When the 'BlueCar' is created in the 'main()' method, the superclass initialization happens first. The instance initialization blocks are executed before the constructor, so '32' is outputted next.\n\nFinally, the class is loaded with the instance initialization blocks again being called before the constructor, outputting '45'. The result is that '13245' is printed, making Option C the correct answer."
+          },
+          {
+            "question": "What is the output of the following Java program?",
+            "code": [
+              "class Math {",
+              "    public final double secret = 2;",
+              "}",
+              "",
+              "class ComplexMath extends Math {",
+              "    public final double secret = 4;",
+              "}",
+              "",
+              "public class InfiniteMath extends ComplexMath {",
+              "    public final double secret = 8;",
+              "",
+              "    public static void main(String[] numbers) {",
+              "        Math math = new InfiniteMath();",
+              "        System.out.print(math.secret);",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "A. 2",
+              "B. 4",
+              "C. 8",
+              "D. The code does not compile."
+            ],
+            "answer": "A. 2",
+            "explanation": "The code compiles without issue, so Option D is incorrect. Java allows methods to be overridden, but not variables. Therefore, marking them final does not prevent them from being reimplemented in a subclass. Furthermore, polymorphism does not apply in the same way it would to methods as it does to variables. In particular, the reference type determines the version of the secret variable that is selected, making Output 2 and Option A the correct answer."
+          },
+          {
+            "question": "What will be the output of this program?",
+            "code": [
+              "class Color {",
+              "    int red, green, blue;",
+              "",
+              "    void Color() {",
+              "        red = 10;",
+              "        green = 10;",
+              "        blue = 10;",
+              "    }",
+              "",
+              "    void printColor() {",
+              "        System.out.println(\"red: \" + red + \" green: \" + green + \" blue: \" + blue);",
+              "    }",
+              "}",
+              "",
+              "public class Test {",
+              "    public static void main(String[] args) {",
+              "        Color color = new Color();",
+              "        color.printColor();",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "A. Compiler error: no constructor provided for the class.",
+              "B. Compiles without errors, and when run, it prints the following: red: 0 green: 0 blue: 0.",
+              "C. Compiles without errors, and when run, it prints the following: red: 10 green: 10 blue: 10.",
+              "D. Compiles without errors, and when run, crashes by throwing NullPointerException."
+            ],
+            "answer": "B. Compiles without errors, and when run, it prints the following: red: 0 green: 0 blue: 0.",
+            "explanation": "In Java, a method with the same name as the class is not treated as a constructor. In the given program, the `Color` class has a method named `Color()`, but it is not a constructor. Therefore, when an instance of `Color` is created using `new Color()`, the default constructor is invoked, which initializes integer fields to their default values, which is 0. As a result, it prints 'red: 0 green: 0 blue: 0' when run."
+          },
+          {
+            "question": "Look at the following code and choose the right option for the word:",
+            "code": [
+              "// Shape.java",
+              "public class Shape {",
+              "    protected void display() {",
+              "        System.out.println(\"Display-base\");",
+              "    }",
+              "}",
+              "// Circle.java",
+              "public class Circle extends Shape {",
+              "    <access-modifier> void display() {",
+              "        System.out.println(\"Display-derived\");",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "a. Only protected can be used.",
+              "B. public and protected both can be used.",
+              "C. public, protected, and private can be used.",
+              "d. Only public can be used."
+            ],
+            "answer": "B. public and protected both can be used.",
+            "explanation": "In Java, when a subclass overrides a method from its superclass, the access modifier for the overridden method can be the same or less restrictive. In this case, the `display` method in the `Circle` class is overriding the `display` method from the `Shape` class. Since the `display` method in the `Shape` class is declared as `protected`, the overriding method in the `Circle` class can have an access modifier of `protected` or `public`. Therefore, both `public` and `protected` can be used as access modifiers for the `display` method in the `Circle` class."
+          },
+          {
+            "question": "What is the output of the following program?",
+            "code": [
+              "public class Test {",
+              "    public static void main(String[] args) {",
+              "        String s1 = \"hello\";",
+              "        String s2 = new String(\"hello\");",
+              "        s2 = s2.intern();",
+              "        System.out.println(s1 == s2);",
+              "    }",
+              "}"
+            ],
+            "options": ["a) false", "b) true", "c) None"],
+            "answer": "b) true",
+            "explanation": "We know that the intern() method will return the String object reference from the string pool since we assign it back to s2 and now both s1 and s2 are having the same reference. It means that s1 and s2 references pointing to the same object."
+          },
+          {
+            "question": "What is the output of the following Java program?",
+            "code": [
+              "class Demo{",
+              "    public Demo(int i){",
+              "        System.out.println(\"int\");",
+              "    }",
+              "    public void Demo(short s){",
+              "        System.out.println(\"short\");",
+              "    }",
+              "}",
+              "public class Test{",
+              "    public static void main(String[] args){",
+              "        short s = 10;",
+              "        Demo demo = new Demo(s);",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "a) int",
+              "b) short",
+              "c) Compile-time error",
+              "d) Run-time error"
+            ],
+            "answer": "a) int",
+            "explanation": "The class Demo has one constructor i.e. with int argument. The short value is automatically promoted to an int value during object creation so the constructor with the int argument will be called and it will print “int”."
+          },
+          {
+            "question": "What is the output of the following Java program?",
+            "code": [
+              "class Parent{",
+              "    public void className(){",
+              "        System.out.println(\"Parent\");",
+              "    }",
+              "}",
+              "class Child extends Parent{",
+              "    void className(){",
+              "        System.out.println(\"Child\");",
+              "    }",
+              "}",
+              "public class Test{",
+              "    public static void main(String[] args){",
+              "        Parent parent = new Child();",
+              "        parent.className();",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "a) Parent",
+              "b) Child",
+              "c) Compile-time error",
+              "d) Run-time error"
+            ],
+            "answer": "c) Compile-time error",
+            "explanation": "The code will not compile because in Java, when you override a method in a subclass, the access modifier of the overriding method should not be more restrictive than the overridden method. In this case, the `className` method in the `Child` class has default/package-private access, which is more restrictive than the `className` method in the `Parent` class, which is `public`. This leads to a compile-time error."
+          },
+          {
+            "question": "Which polymorphism behavior do you see in the following class?",
+            "code": [
+              "class Paint {",
+              "    // all methods have the same name",
+              "    public void Color(int x) {",
+              "    }",
+              "",
+              "    public void Color(int x, int y) {",
+              "    }",
+              "",
+              "    public void Color(int x, int y, int z) {",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "Method overloading",
+              "Constructor overloading",
+              "Method overriding",
+              "Run-time polymorphism"
+            ],
+            "answer": "Method overloading",
+            "explanation": "Method with the same name with different numbers of arguments or the same number of arguments with different data types is method overloading in Java programming."
+          },
+          {
+            "question": "Which one is the correct declaration for implementing two interfaces?",
+            "options": [
+              "class C implements A, B",
+              "class C implements A, implements B",
+              "class C implements A extends B"
+            ],
+            "answer": "class C implements A, B",
+            "explanation": "To implement multiple interfaces in a Java class, you should use the 'implements' keyword followed by the interface names separated by commas. Therefore, 'class C implements A, B' is the correct declaration for implementing both interfaces A and B in class C."
+          },
+          {
+            "question": "What is wrong with the below source code?",
+            "code": [
+              "interface IShape {",
+              "    void f1();",
+              "    void f2();",
+              "    void f3();",
+              "}",
+              "",
+              "class Circle implements IShape {",
+              "    public void f1() {",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "Compile-time error",
+              "Run-time error",
+              "Source code is OK"
+            ],
+            "answer": "Compile-time error",
+            "explanation": "There is a compile-time error in the code because the 'Circle' class implements the 'IShape' interface but has not provided implementations for all the methods declared in the 'IShape' interface. In Java, when a class implements an interface, it must provide concrete implementations for all the methods declared in that interface. Since 'Circle' has not implemented 'f2()' and 'f3()' methods from the 'IShape' interface, it results in a compile-time error."
+          },
+          {
+            "question": "In the below Java code, whose 'Car' method will be called?",
+            "code": [
+              "class Father {",
+              "    public void car() {",
+              "        System.out.println(\"Father's Car\");",
+              "    }",
+              "}",
+              "",
+              "class Son extends Father {",
+              "    public void car() {",
+              "        System.out.println(\"Son's Car\");",
+              "    }",
+              "}",
+              "",
+              "public class Sample {",
+              "    public static void main(String[] args) {",
+              "        Son john = new Son();",
+              "        john.car();",
+              "    }",
+              "}"
+            ],
+            "options": [
+              "Father’s Car",
+              "Son’s Car",
+              "There is an ambiguity, so no one Car",
+              "Compiler Error"
+            ],
+            "answer": "Son’s Car",
+            "explanation": "In this Java code, the 'Son' class extends the 'Father' class and overrides the 'car' method. When an object of the 'Son' class is created and its 'car' method is called, the overridden 'car' method in the 'Son' class will be invoked. This is an example of method overriding in Java, where the subclass provides its own implementation of a method defined in the superclass. If the 'Son' class did not contain the 'car' method, then the 'car' method from the 'Father' class would be called."
+          }
         ]
       },
       "C++": {
-        "questions": [
-          {}
-        ]
+        "questions": [{}]
       },
       "PHP": {
-        "questions": [
-          {}
-        ]
+        "questions": [{}]
       }
     }
   },
