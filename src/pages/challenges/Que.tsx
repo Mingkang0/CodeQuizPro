@@ -1,6 +1,6 @@
+// for Challenges Question
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import QuizResults from './QuizResult';
 import {
   IonButton,
   IonCard,
@@ -19,10 +19,11 @@ import {
   IonMenuButton,
 } from '@ionic/react';
 import { ref, get } from 'firebase/database';
-import { db } from '../firebase.config';
-import SideMenu from '../components/SideMenu';
+import { db } from '../../firebase.config';
+import SideMenu from '../../components/SideMenu';
+import ChallengesResults from './result';
 
-interface QuestionData {
+interface QuesData {
   question: string;
   options: string[];
   answer: string;
@@ -32,21 +33,21 @@ interface QuestionData {
   isCorrect: boolean | null; // Store whether the selected option is correct for each question
 }
 
-const MAX_QUESTIONS = 10; // Maximum number of questions per session
+const MAX_QUESTIONS = 5; // Maximum number of questions per session
 
-const Question: React.FC = () => {
-  const { language, difficulty } = useParams<{ language: string; difficulty: string }>();
-  const [questions, setQuestions] = useState<QuestionData[]>([]);
+const Ques: React.FC = () => {
+  const { language } = useParams<{ language: string }>();
+  const [questions, setQuestions] = useState<QuesData[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [quizFinished, setQuizFinished] = useState(false); // Add this state variable
-  const [quizResults, setQuizResults] = useState<{ correctAnswers: number; totalQuestions: number } | null>(null);
+  const [challengesFinished, setChallengesFinished] = useState(false); // Add this state variable
+  const [challengesResults, setChallengesResults] = useState<{ correctAnswers: number; totalQuestions: number } | null>(null);
   const [shouldRefresh, setShouldRefresh] = useState(false);
 
   const getQuestions = async () => {
     try {
-      const dbRef = ref(db, `quiz/${difficulty}/${language}/questions`);
+      const dbRef = ref(db, `challenges/${language}/questions`);
       const snapshot = await get(dbRef);
 
       if (snapshot.exists()) {
@@ -72,7 +73,7 @@ const Question: React.FC = () => {
 
   useEffect(() => {
     getQuestions();
-  }, [language, difficulty]);
+  }, [language]);
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -97,19 +98,19 @@ const Question: React.FC = () => {
     setQuestions(updatedQuestions);
   };
 
-  const handleFinishQuiz = () => {
+  const handleFinishChallenges = () => {
     // Calculate the number of correct answers
     const correctAnswers = questions.filter((question) => question.isCorrect === true).length;
     const totalQuestions = questions.length;
 
-    // Set a flag to indicate that the quiz is finished
-    setQuizFinished(true);
+    // Set a flag to indicate that the challenges is finished
+    setChallengesFinished(true);
 
     // Store the results in state
-    setQuizResults({ correctAnswers, totalQuestions });
+    setChallengesResults({ correctAnswers, totalQuestions });
   };
   const History = useHistory();
-  const handleExitQuiz = () => {
+  const handleExitChallenges = () => {
     History.push('/');
     window.location.reload();
   }
@@ -127,12 +128,12 @@ const Question: React.FC = () => {
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonButton slot="end" color="danger" style={{ marginRight: '10px' }} onClick={handleExitQuiz}>Exit</IonButton>
-            <IonTitle><b>Quizzes</b></IonTitle>
+            <IonButton slot="end" color="danger" style={{ marginRight: '10px' }} onClick={handleExitChallenges}>Exit</IonButton>
+            <IonTitle><b>Challenges</b></IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent color='main'>
-          {currentQuestion && !quizFinished && (
+          {currentQuestion && !challengesFinished && (
             <IonCard className='ion-margin'>
               <IonCardContent>
                 <IonCardTitle>
@@ -191,7 +192,7 @@ const Question: React.FC = () => {
               </IonCardContent>
             </IonCard>
           )}
-          {!quizFinished && (
+          {!challengesFinished && (
             <IonGrid className='ion-margin'>
               <IonButton onClick={handlePreviousQuestion} disabled={currentQuestionIndex === 0}>
                 Previous
@@ -205,15 +206,15 @@ const Question: React.FC = () => {
               </IonButton>
             </IonGrid>
           )}
-          {currentQuestionIndex === questions.length - 1 && !quizFinished && (
-            <IonButton expand='block' className='ion-margin' color="primary" onClick={handleFinishQuiz}>
+          {currentQuestionIndex === questions.length - 1 && !challengesFinished && (
+            <IonButton expand='block' className='ion-margin' color="primary" onClick={handleFinishChallenges}>
               Finish
             </IonButton>
           )}
-          {quizResults && (
-            <QuizResults
-              correctAnswers={quizResults?.correctAnswers || 0} // Use a default value of 0 if correctAnswers is undefined
-              totalQuestions={quizResults?.totalQuestions || 0}   // Use a default value of 0 if totalQuestions is undefined
+          {challengesResults && (
+            <ChallengesResults
+              correctAnswers={challengesResults?.correctAnswers || 0} // Use a default value of 0 if correctAnswers is undefined
+              totalQuestions={challengesResults?.totalQuestions || 0}   // Use a default value of 0 if totalQuestions is undefined
             />
           )}
         </IonContent>
@@ -232,4 +233,5 @@ function shuffleArray(array: any[]) {
   return shuffledArray;
 }
 
-export default Question;
+export default Ques;
+

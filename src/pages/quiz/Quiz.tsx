@@ -1,13 +1,11 @@
 import { IonContent, IonHeader, IonButton, IonTitle, IonPage, IonText, IonToolbar, IonIcon, IonCardTitle, IonGrid, IonCard, IonCardContent, IonCardHeader, IonRow, IonCol, IonItem, IonInput, IonButtons, IonMenuButton } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import programminglanguage from '../assests/languageInfo';
-import { BiLogoPython, BiLogoJava, BiLogoCPlusPlus } from 'react-icons/bi'
-import { TbBrandJavascript, TbStarsFilled } from 'react-icons/tb'
-import { FaPhp } from 'react-icons/fa6'
+import programminglanguage from '../../assests/languageInfo';
+import {TbStarsFilled } from 'react-icons/tb'
 import { useHistory } from 'react-router';
 
-import './css/Quiz.css'
-import SideMenu from '../components/SideMenu';
+import '../css/Quiz.css'
+import SideMenu from '../../components/SideMenu';
 
 const Quiz: React.FC = () => {
   const difficulty = ['Beginner', 'Intermediate', 'Advanced'];

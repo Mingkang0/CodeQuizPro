@@ -73,7 +73,7 @@ const Home: React.FC = () => {
             <IonCard className="card-button ion-padding" onClick={() => handleContentClick("challenges")} style={{ backgroundColor: '#C9F4AA' }}>
               <IonCardContent className='card-content'>
                 <span>
-                  <IonCardTitle><h1><strong>Daily Challenges</strong></h1></IonCardTitle>
+                  <IonCardTitle><h1><strong>BrainStorming Challenges</strong></h1></IonCardTitle>
                   <IonText color="dark"><h2>Enhance your coding skills</h2></IonText>
                 </span>
                 <img src={challenges} alt="challenges" />

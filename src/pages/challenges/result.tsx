@@ -9,15 +9,15 @@ import {
   IonText,
 } from '@ionic/react';
 
-import pic from '../assests/congratulation_5278593.png'
+import pic from '../../assests/congratulation_5278593.png'
 import { useHistory } from 'react-router';
 
-interface QuizResultsProps {
+interface ChallengesResultsProps {
   correctAnswers: number;
   totalQuestions: number;
 }
 
-const QuizResults: React.FC<QuizResultsProps> = ({ correctAnswers, totalQuestions }) => {
+const ChallengesResults: React.FC<ChallengesResultsProps> = ({ correctAnswers, totalQuestions }) => {
   const history =useHistory();
   const handleReturnHome= () => {
    
@@ -26,7 +26,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({ correctAnswers, totalQuestion
   return (
     <IonCard className="ion-margin">
       <IonCardContent>
-        <IonCardTitle className=''>Quiz Results</IonCardTitle>
+        <IonCardTitle className=''>Challenges Results</IonCardTitle>
         <div className='pic' style={{ marginTop: '30px', marginBottom: '30px' , display: 'flex', justifyContent: 'center'}}>
         <IonImg src={pic} alt={pic} style={{width:'90%'}}></IonImg>
       </div>
@@ -37,7 +37,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({ correctAnswers, totalQuestion
         </IonGrid>
         <IonGrid>
         <IonText>
-          <strong>Percentage: {(correctAnswers / totalQuestions) * 100}% </strong>
+          <strong>Score: {(correctAnswers / totalQuestions) * 100}% </strong>
         </IonText>
         </IonGrid>
         <IonGrid>
@@ -49,4 +49,4 @@ const QuizResults: React.FC<QuizResultsProps> = ({ correctAnswers, totalQuestion
   );
 };
 
-export default QuizResults;
+export default ChallengesResults;

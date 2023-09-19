@@ -1,13 +1,29 @@
 import { IonContent, IonHeader,  IonTitle, IonPage, IonText, IonToolbar, IonIcon, IonCardTitle, IonGrid, IonCard, IonCardContent, IonCardHeader, IonRow, IonCol, IonItem, IonInput, IonBackButton, IonButtons, IonMenuButton } from '@ionic/react';
-import React from 'react';
-import { chevronBackOutline } from 'ionicons/icons';
-import { BiLogoPython, BiLogoJava, BiLogoCPlusPlus } from 'react-icons/bi'
-import { TbBrandJavascript, TbStarsFilled } from 'react-icons/tb'
-import { FaPhp } from 'react-icons/fa6'
-import SideMenu from '../components/SideMenu';
-import programminglanguage from '../assests/languageInfo';
+import React, { useState, useEffect } from 'react';
+import SideMenu from '../../components/SideMenu';
+import programminglanguage from '../../assests/languageInfo';
+import { useHistory } from 'react-router';
+import { language } from 'ionicons/icons';
+
 
 const Challenges: React.FC = () => {
+
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
+  const [shouldRefresh, setShouldRefresh] = useState(false);
+  const history = useHistory();
+  const handleLanguageSelect = (language: string) => {
+    setSelectedLanguage(language);
+    if(selectedLanguage) {
+      history.push(`/challenges/${selectedLanguage}`)
+      window.location.reload();
+    }
+  }
+  useEffect(() => {
+    if (shouldRefresh) {
+      setShouldRefresh(false);
+    }
+  }, [shouldRefresh]);
+
   return (
     <>
       <SideMenu />
@@ -31,7 +47,7 @@ const Challenges: React.FC = () => {
               <IonRow>
                 {programminglanguage.map((item => (
                   <IonCol size="6" key={item.id}>
-                    <IonCard className='card-button ion-padding'>
+                    <IonCard className='card-button ion-padding' onClick={()=> handleLanguageSelect(item.language)}>
                       <IonCardContent>
                         <IonCardTitle>{item.language}</IonCardTitle>
                         <div className='ion-text-end'>

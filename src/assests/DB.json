@@ -161,7 +161,7 @@
             "question": "What will be the value of the following Python expression?",
             "code": ["4 + 3 % 5"],
             "options": ["7", "2", "4", "1"],
-            "answer": "a) 7",
+            "answer": "7",
             "explanation": "The order of precedence is: %, +. Hence the expression above, on simplification results in 4 + 3 = 7. Hence the result is 7."
           },
           {
@@ -478,7 +478,7 @@
               "char[] ch = new char()",
               "char[] ch = new char[]"
             ],
-            "answer": "a) char[] ch = new char[5]",
+            "answer": "char[] ch = new char[5]",
             "explanation": "The valid statement is 'char[] ch = new char[5]'. This statement declares an array of characters (char[]) named 'ch' with a size of 5. It creates an array object that can hold 5 characters. This is the correct syntax for creating a character array in Java.\n\nThe other statements are not valid:\n- 'char[] ch = new char(5)' is incorrect because you cannot specify the size of a character array using parentheses like this.\n- 'char[] ch = new char()' is incorrect because you need to specify the array size when creating an array.\n- 'char[] ch = new char[]' is incomplete and does not specify the array size or initialize the array."
           },
           {
@@ -493,13 +493,13 @@
               "}"
             ],
             "options": ["120 200 016", "120 200 14", "120 200 16", "None"],
-            "answer": "b) 120 200 14",
+            "answer": "120 200 14",
             "explanation": "The output of the program is '120 200 14'.\n\nIn the array 'x', there are three elements: 120, 200, and 016. In Java, if a number starts with '0', it is treated as an octal (base 8) number. So, '016' is interpreted as an octal number, which is equivalent to the decimal number '14'. Therefore, the array 'x' contains the values 120, 200, and 14.\n\nThe for loop iterates over the elements of the array and prints them, separated by spaces.\n\nHence, the correct answer is option (b) - '120 200 14'."
           },
           {
             "question": "Which keyword is used for accessing the features of a package?",
             "options": ["package", "import", "extends", "export"],
-            "answer": "b) import",
+            "answer": "import",
             "explanation": "The import keyword is used to access the classes and interfaces of a particular package to the current file. In other words, it is used to import the user-defined and built-in classes and interfaces into the source file of java so that the current file can easily access the other packages by directly using its name. For example, 'import java.awt.*;' imports all the classes and interfaces of java.awt package. Whereas, 'import java.lang.Object;' only imports the Object class of the java.lang package. The package keyword is used to create a new package. The extends keyword indicates that the new class is derived from the base or parent class using inheritance, and export is not a keyword in Java."
           },
           {
@@ -510,7 +510,7 @@
               "int [][]A = {1,2,3}",
               "int [] A = (1,2,3)"
             ],
-            "answer": "b) int [] A = {1,2,3}",
+            "answer": "int [] A = {1,2,3}",
             "explanation": "int[] A = {1, 2, 3} is the valid way of declaring arrays. It initializes an integer array 'A' with the values 1, 2, and 3."
           },
           {
@@ -588,10 +588,323 @@
         ]
       },
       "C++": {
-        "questions": [{}]
+        "questions": [
+          {
+            "question": "Which of the following is the correct syntax to print the message in C++ language?",
+            "options": [
+              "cout <<\"Hello world!\";",
+              "Cout << Hello world! ;",
+              "Out <<\"Hello world!;",
+              "None of the above"
+            ],
+            "answer": "cout <<\"Hello world!\";",
+            "explanation": "To print a message in the C++ language, you should use the 'cout <<' syntax. Additionally, it's essential to include the necessary header and 'using namespace std;' statement for proper usage, as shown in the example code."
+          },
+          {
+            "question": "Which of the following is the correct identifier?",
+            "options": [
+              "$var_name",
+              "VAR_123",
+              "varname@",
+              "None of the above"
+            ],
+            "answer": "VAR_123",
+            "explanation": "The correct identifier follows certain rules: it may contain uppercase/lowercase letters, digits, and underscores (_) only. It must start with non-digit characters and should not contain special characters like $, @, etc."
+          },
+          {
+            "question": "Constant function in C++ can be declared as",
+            "options": [
+              "void display()",
+              "void display() const",
+              "const void display()",
+              "void const display()"
+            ],
+            "answer": "void display() const",
+            "explanation": "A constant function in C++ is declared with the 'const' keyword after the function declaration, like 'void display() const'. It is used to prevent modification of class member variables inside its body when you only want to read member variables."
+          },
+          {
+            "question": "What did we call an array of the one-dimensional array?",
+            "options": [
+              "Single Dimensional array",
+              "Multi-Dimensional array",
+              "2D Array (or 2-Dimensional array)",
+              "Both A and B"
+            ],
+            "answer": "2D Array (or 2-Dimensional array)",
+            "explanation": "An array of one-dimensional array is known as a 2-dimensional array or 2D Array. It represents a matrix or a table-like structure."
+          },
+          {
+            "question": "Which of the following is an insertion operator in C++?",
+            "options": ["<<", ">>", "->", "<<<"],
+            "answer": "<<",
+            "explanation": "In C++, '<<' is known as the insertion operator, used with the 'cout' object to print data on the console screen."
+          },
+          {
+            "question": "Which of the following can be considered as the correct syntax for declaring an array of pointers of integers that has a size of 10 in C++?",
+            "options": [
+              "int arr = new int[10];",
+              "int *arr = new int*[10]",
+              "int **arr = new int*[10];",
+              "int *arr = new int[10];"
+            ],
+            "answer": "int **arr = new int*[10];",
+            "explanation": "To declare an array of integer pointers in C++, you need to use a double-pointer array where each element is a pointer to an integer."
+          },
+          {
+            "question": "Which of the following can be considered as the members that can be inherited but not accessible in any class?",
+            "options": ["Public", "Protected", "Private", "Both A and C"],
+            "answer": "Private",
+            "explanation": "The 'Private' members of a class can be inherited by a child class but are not accessible from the child class."
+          },
+          {
+            "question": "Pick out the compound assignment statement.",
+            "options": ["a = a - 5", "a = a / b", "a -= 5", "a = a + 5"],
+            "answer": "a -= 5",
+            "explanation": "The compound assignment statement is a shorthand way of modifying a variable by performing an operation on its current value. In this case, 'a -= 5' is equivalent to 'a = a - 5.'"
+          },
+          {
+            "question": "Which of the following accesses the seventh element stored in an array?",
+            "options": ["array[6];", "array[7];", "array(7);", "array;"],
+            "answer": "array[6];",
+            "explanation": "In most programming languages, array indexing starts from zero. So, 'array[6]' would access the seventh element in the array."
+          },
+          {
+            "question": "A switch construct can be used with which of the following types of variable?",
+            "options": [
+              "int",
+              "int, char",
+              "int, float, char",
+              "Any basic datatype"
+            ],
+            "answer": "int, char",
+            "explanation": "A switch construct in most programming languages can be used with integer and character (char) variables. So, the correct option is 'int, char.'"
+          },
+          {
+            "question": "Which of the following is illegal?",
+            "options": [
+              "int *ip;",
+              "string s, *sp = 0;",
+              "int i; double* dp = &i;",
+              "int *pi = 0;"
+            ],
+            "answer": "int i; double* dp = &i;",
+            "explanation": "int i; double* dp = &i; is illegal because it attempts to initialize a pointer to a double (double*) with the address of an integer variable (&i). Pointer types should match the types of the variables they point to."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int a = 0;",
+              "    int b = 10;",
+              "    a = 2;",
+              "    b = 7;",
+              "    if (a && b) {",
+              "        cout << \"true: \" << endl;",
+              "    }",
+              "    else {",
+              "        cout << \"false: \" << endl;",
+              "    }",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["true", "false", "error", "10"],
+            "answer": "true",
+            "explanation": "The code assigns the values 2 to 'a' and 7 to 'b'. In the 'if' condition, 'a && b' checks if both 'a' and 'b' are nonzero. Since both are nonzero, the condition is true, and 'true' is printed."
+          },
+          {
+            "question": "Which is more effective while calling the functions?",
+            "options": [
+              "call by value",
+              "call by reference",
+              "call by pointer",
+              "call by object"
+            ],
+            "answer": "call by reference",
+            "explanation": "In the call by reference, it passes the reference of the memory addresses of passed values rather than copying the value to new memories, which reduces the overall time and memory use."
+          },
+          {
+            "question": "Which of the following is used to create an output stream?",
+            "options": ["ofstream", "ifstream", "iostream", "fstream"],
+            "answer": "ofstream",
+            "explanation": "ofstream is used to create an output stream in C++ file handling operations. Ofstream objects are used to write to files."
+          },
+          {
+            "question": "What is the return type of the open() method?",
+            "options": ["int", "char", "bool", "float"],
+            "answer": "bool",
+            "explanation": "The open() method returns a bool value indicating whether the file is opened successfully or if some error has occurred during the process."
+          }
+        ]
       },
       "PHP": {
-        "questions": [{}]
+        "questions": [
+          {
+            "question": "Which of the following is the correct way to create a function in PHP?",
+            "options": [
+              "Create myFunction()",
+              "New_function myFunction()",
+              "function myFunction()",
+              "None of the above"
+            ],
+            "answer": "function myFunction()",
+            "explanation": "We can declare and call user-defined functions easily. The syntax to declare user-defined functions is given below -\n\nfunction functionname(){\n//code to be executed\n}"
+          },
+          {
+            "question": "Which of the following is the correct way of defining a variable in PHP?",
+            "options": [
+              "$variable name = value;",
+              "$variable_name = value;",
+              "$variable_name = value",
+              "$variable name as value;"
+            ],
+            "answer": "$variable_name = value;",
+            "explanation": "In PHP, a variable is declared using a $ sign followed by the variable name. A PHP variable name cannot contain spaces.\n\nSyntax of declaring a variable in PHP is given below:\n\n$variable_name=value;"
+          },
+          {
+            "question": "What is the use of isset() function in PHP?",
+            "options": [
+              "The isset() function is used to check whether variable is set or not",
+              "The isset() function is used to check whether the variable is free or not",
+              "The isset() function is used to check whether the variable is string or not",
+              "None of the above"
+            ],
+            "answer": "The isset() function is used to check whether a variable is set or not",
+            "explanation": "The isset() function is a built-in function of PHP, which is used to determine that a variable is set or not. If a variable is considered set, it means the variable is declared and has a different value from the NULL. In short, it checks that the variable is declared and not null. This function returns true if the variable is not null, otherwise it returns false."
+          },
+          {
+            "question": "Which of the following function is used to set cookie in PHP?",
+            "options": [
+              "createcookie()",
+              "makecookie()",
+              "setcookie()",
+              "None of the above"
+            ],
+            "answer": "setcookie()",
+            "explanation": "PHP cookie is a small piece of information that is stored at the client's browser. It is used to recognize the user. PHP setcookie() function is used to set a cookie with an HTTP response. Once the cookie is set, you can access it by the $_COOKIE superglobal variable."
+          },
+          {
+            "question": "Which of the following is the correct way to create an array in PHP?",
+            "options": [
+              "$season = array[\"summer\" , \"winter\" , \"spring\" , \"autumn\"];",
+              "$season = array(\"summer\" , \"winter\" , \"spring\" , \"autumn\");",
+              "$season = \"summer\" , \"winter\" , \"spring\" , \"autumn\";",
+              "All of the above"
+            ],
+            "answer": "$season = array(\"summer\" , \"winter\" , \"spring\" , \"autumn\");",
+            "explanation": "The correct way to create an array in PHP is by using the format: $season = array(\"summer\", \"winter\", \"spring\", \"autumn\");"
+          },
+          {
+            "question": "Which of the following is the correct way to print \"Hello World\" in PHP?",
+            "options": [
+              "\"Hello World\";",
+              "write(\"Hello World\");",
+              "echo \"Hello World\";",
+              "None of the above"
+            ],
+            "answer": "echo \"Hello World\";",
+            "explanation": "PHP echo is a language construct, not a function. Therefore, you don't need to use parentheses with it. The correct way to print \"Hello World\" in PHP is: echo \"Hello World\";"
+          },
+          {
+            "question": "Which of the following function converts a string to all uppercase?",
+            "options": [
+              "upper()",
+              "uppercase()",
+              "struppercase()",
+              "strtoupper()"
+            ],
+            "answer": "strtoupper()",
+            "explanation": "The strtoupper() is one of the most popular functions of PHP, which is widely used to convert the string into uppercase. It takes a string as a parameter and converts all lowercase English characters of that string to uppercase."
+          },
+          {
+            "question": "What will be the output of the following program?",
+            "code": [
+              "<?php",
+              "$var1 = 'Hello';",
+              "$var2 = 'World';",
+              "echo $var1, $var2;",
+              "?>"
+            ],
+            "options": [
+              "HelloWorld",
+              "Hello, World",
+              "Hello World",
+              "None of the above"
+            ],
+            "answer": "HelloWorld",
+            "explanation": "We can pass multiple strings separated by a comma (,) in echo. In the echo statement, the , (comma) operator is also used to join strings."
+          },
+          {
+            "question": "What will be the output of the following program?",
+            "code": [
+              "<?php",
+              "$a;",
+              "if ($a)",
+              "{",
+              "echo 'hi';",
+              "}",
+              "else",
+              "{",
+              "echo 'How are you';",
+              "}",
+              "?>"
+            ],
+            "options": [
+              "Hi How are you",
+              "How are you",
+              "Hi",
+              "None of the above"
+            ],
+            "answer": "How are you",
+            "explanation": "In the given program, the variable $a is uninitialized. So, the if condition will fail, and the echo statement of the else block will be printed on the screen."
+          },
+          {
+            "question": "Which of the following is not a variable scope in PHP?",
+            "options": ["Extern", "Local", "Static", "Global"],
+            "answer": "Extern",
+            "explanation": "The scope of a variable is defined as its range in the program under which it can be accessed. PHP has three types of variable scopes: Local variable, Global variable, and Static variable."
+          },
+          {
+            "question": "Which of the following is used for concatenation in PHP?",
+            "options": ["+ (plus)", "* (Asterisk)", ". (dot)", "append()"],
+            "answer": ". (dot)",
+            "explanation": "In PHP, the . (dot) operator is used for concatenation. Suppose there are two variables $a and $b, so the statement $a . $b will concatenate both $a and $b."
+          },
+          {
+            "question": "How do you create a session in PHP?",
+            "options": [
+              "Using the session_start() function",
+              "By declaring a session using $session = new Session()",
+              "Using the setSession() method",
+              "Sessions cannot be created in PHP"
+            ],
+            "answer": "Using the session_start() function",
+            "explanation": "In PHP, sessions are created and managed using the session_start() function. This function initializes a new session or resumes the existing session if one exists. It should be called at the beginning of your PHP script to start or resume a session."
+          },
+          {
+            "question": "How can you destroy a session in PHP?",
+            "options": [
+              "Using the session_destroy() function",
+              "By setting the session variable to null",
+              "Closing the browser",
+              "Sessions cannot be destroyed in PHP"
+            ],
+            "answer": "Using the session_destroy() function",
+            "explanation": "In PHP, you can destroy a session and delete all the session data associated with it using the session_destroy() function. This function terminates the current session and clears all session variables. It should be called when you want to log a user out or terminate a session."
+          },
+          {
+            "question": "Which of the following is the correct use of the strcmp() function in PHP?",
+            "options": [
+              "The strcmp() function is used to compare the strings excluding case",
+              "The strcmp() function is used to compare the uppercase strings",
+              "The strcmp() function is used to compare the lowercase strings",
+              "The strcmp() function is used to compare the strings including case"
+            ],
+            "answer": "The strcmp() function is used to compare the strings including case",
+            "explanation": "The strcmp() is a string comparison function in PHP. It is case-sensitive, meaning it treats uppercase and lowercase characters separately. It is used to compare two strings and determine whether one string is greater, less than, or equal to another string, considering the case of characters."
+          }
+        ]
       }
     },
     "Intermediate": {
@@ -604,12 +917,12 @@
               "list(filter(bool, l))"
             ],
             "options": [
-              "a) [1, 0, 2, ‘hello’, ”, []]",
-              "b) Error",
-              "c) [1, 2, ‘hello’]",
-              "d) [1, 0, 2, 0, ‘hello’, ”, []]"
+              "[1, 0, 2, ‘hello’, ”, []]",
+              "Error",
+              "[1, 2, ‘hello’]",
+              "[1, 0, 2, 0, ‘hello’, ”, []]"
             ],
-            "answer": "c",
+            "answer": "[1, 2, ‘hello’]",
             "explanation": "The code shown above returns a new list containing only those elements of the list l which do not amount to zero. Hence the output is: [1, 2, ‘hello’]."
           },
           {
@@ -628,8 +941,8 @@
           {
             "question": "What will be the output of the following Python expression if x=56.236?",
             "code": ["print(\"%.2f\"%x)"],
-            "options": ["a) 56.236", "b) 56.23", "c) 56.0000", "d) 56.24"],
-            "answer": "d",
+            "options": ["56.236", "56.23", "56.0000", "56.24"],
+            "answer": "56.24",
             "explanation": "The expression shown above rounds off the given number to the number of decimal places specified. Since the expression given specifies rounding off to two decimal places, the output of this expression will be 56.24. Had the value been x=56.234 (last digit being any number less than 5), the output would have been 56.23."
           },
           {
@@ -897,7 +1210,7 @@
               "}"
             ],
             "options": ["includehelp", "include", "help", "None of these"],
-            "answer": "A) includehelp",
+            "answer": "includehelp",
             "explanation": "In the above code, the '+' operator is concatenating both of the strings."
           },
           {
@@ -981,31 +1294,44 @@
             "explanation": "In Java programming language, the super() is a reference variable that is used to refer parent class constructors. The super can be used to call parent class's variables and methods. The super() can be used to call parent class' constructors only."
           },
           {
-            "question": "Consider the following program and predict the output:\npublic class Test {\n    public static void main(String[] args) {\n        String s = new String(\"5\");\n        System.out.println(1 + 10 + s + 1 + 10);\n    }\n}",
-            "options": ["a) 11511", "b) 1105110", "c) 115110", "d) 27"],
-            "answer": "c) 115110",
+            "question": "Consider the following program and predict the output:",
+            "code": ["public class Test {",    
+            " public static void main(String[] args) {",        
+            "  String s = new String(\"5\");",        
+            "    System.out.println(1 + 10 + s + 1 + 10);",   
+             " }",
+             "}"
+            ],
+            "options": ["11511", "1105110", "115110", "27"],
+            "answer": "115110",
             "explanation": "The output of the program will be '115110'. In Java, when you use the '+' operator with a String, it performs concatenation. So, the expression '1 + 10 + s + 1 + 10' is evaluated as '115' (1 + 10) concatenated with '5' (the value of String s) concatenated with '1' concatenated with '10'. This results in '115110'."
           },
           {
             "question": "Which package is used for basic I/O operations in Java?",
-            "options": [
-              "a) java.lang",
-              "b) java.io",
-              "c) java.util",
-              "d) java.nio"
-            ],
-            "answer": "b) java.io",
-            "explanation": "The correct option is b) java.io"
+            "options": ["java.lang", "java.io", "java.util", "java.nio"],
+            "answer": "java.io",
+            "explanation": "The correct option is java.io"
           },
           {
-            "question": "What is the output of the following Java program?\npublic class Main{\n     public static void main(String []args){\n        int x = 10;\n        while (x > 0) {\n            System.out.print(x + \" \");\n            x--;\n        }\n     }\n}",
-            "options": [
-              "a) 10 9 8 7 6 5 4 3 2 1",
-              "b) 10 9 8 7 6 5 4 3 2 1 0",
-              "c) 1 2 3 4 5 6 7 8 9 10",
-              "d) The code will not compile due to a syntax error."
+            "question": "What is the output of the following Java program?",
+            "code" : [
+              "public class Main{",    
+              "public static void main(String []args){",
+              "  int x = 10;",
+              "   while (x > 0) {",            
+              "     System.out.print(x + \" \");",            
+              "     x--;",      
+              "   }",
+              " }",
+              "}"
             ],
-            "answer": "a) 10 9 8 7 6 5 4 3 2 1",
+            "options": [
+              "10 9 8 7 6 5 4 3 2 1",
+              "10 9 8 7 6 5 4 3 2 1 0",
+              "1 2 3 4 5 6 7 8 9 10",
+              "The code will not compile due to a syntax error."
+            ],
+            "answer": "10 9 8 7 6 5 4 3 2 1",
             "explanation": "The given Java program initializes an integer variable 'x' with the value 10. It then enters a 'while' loop that continues as long as 'x' is greater than 0. Inside the loop, it prints the value of 'x' followed by a space and decrements 'x' by 1 in each iteration.\n\nAs a result, the program prints the numbers from 10 down to 1, separated by spaces, which corresponds to option (a) '10 9 8 7 6 5 4 3 2 1.'"
           },
           {
@@ -1036,21 +1362,366 @@
               "}"
             ],
             "options": [
-              "A. Driving vehicle",
-              "B. Driving an electric car",
-              "C. Driving car",
-              "D. The code does not compile"
+              "Driving vehicle",
+              "Driving an electric car",
+              "Driving car",
+              "The code does not compile"
             ],
-            "answer": "B. Driving an electric car",
+            "answer": "Driving an electric car",
             "explanation": "The output of the given Java program is 'B. Driving an electric car' because it calls the 'drive()' method of the 'ElectricCar' class. In Java, when a method is overridden in a subclass and marked with the 'final' keyword, it cannot be further overridden by any subclass. In this case, the 'drive()' method in the 'ElectricCar' class is marked as 'final', so it cannot be overridden again. Therefore, when 'car.drive()' is called in the 'main' method, it invokes the 'drive()' method of the 'ElectricCar' class, which returns 'Driving an electric car'."
           }
         ]
       },
       "C++": {
-        "questions": [{}]
+        "questions": [
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "struct Time {",
+              "    int hours, minutes, seconds;",
+              "};",
+              "int toSeconds(Time now);",
+              "int main() {",
+              "    Time t;",
+              "    t.hours = 5;",
+              "    t.minutes = 30;",
+              "    t.seconds = 45;",
+              "    cout << \"Total seconds: \" << toSeconds(t) << endl;",
+              "    return 0;",
+              "}",
+              "int toSeconds(Time now) {",
+              "    return 3600 * now.hours + 60 * now.minutes + now.seconds;",
+              "}"
+            ],
+            "options": ["19845", "20000", "15000", "19844"],
+            "answer": "19845",
+            "explanation": "The code converts the given hours and minutes into seconds and then prints the total seconds, which is 19845."
+          },
+          {
+            "question": "Which of the following is a properly defined structure?",
+            "options": [
+              "struct {int a;}",
+              "struct a_struct {int a;}",
+              "struct a_struct int a;",
+              "struct a_struct {int a;};"
+            ],
+            "answer": "struct a_struct {int a;};",
+            "explanation": "Option d is the correct definition of a structure. It includes the structure name 'a_struct,' followed by a proper structure definition with curly braces."
+          },
+          {
+            "question": "Which of the following accesses a variable in structure *b?",
+            "options": ["b->var;", "b.var;", "b-var;", "b>var;"],
+            "answer": "b->var;",
+            "explanation": "Option a is correct because the arrow operator (->) is used to access members of a structure pointer, while the dot operator (.) is used to access normal structure variables."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    if (0) {",
+              "        cout << \"Hello\" ;",
+              "    }",
+              "    else",
+              "    {",
+              "        cout << \"Good Bye\" ;",
+              "    }",
+              "    return 0;",
+              "}"
+            ],
+            "options": [
+              "Hello",
+              "Good Bye",
+              "HelloGood bye",
+              "Compilation Error"
+            ],
+            "answer": "Good Bye",
+            "explanation": "In this code, the condition 'if (0)' is always false, so the code inside the 'else' block is executed. Therefore, the output will be 'Good Bye'."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int a, b, c;",
+              "    a = 2;",
+              "    b = 7;",
+              "    c = (a > b) ? a : b;",
+              "    cout << \"c: \" << c;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["2", "7", "9", "14"],
+            "answer": "7",
+            "explanation": "In this code, the conditional (ternary) operator '?' is used to assign the value of 'a' to 'c' if 'a' is greater than 'b', otherwise, it assigns the value of 'b' to 'c'. Since 'a' (2) is not greater than 'b' (7), 'c' is assigned the value of 'b', which is 7. Therefore, the output will be 'c: 7'."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int array[] = {0, 2, 4, 6, 7, 5, 3};",
+              "    int n, result = 0;",
+              "    for (n = 0; n < 8; n++){",
+              "        result += array[n];",
+              "    }",
+              "    cout << result;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["25", "26", "27", "21"],
+            "answer": "27",
+            "explanation": "In this code, an integer array 'array' is defined with 7 elements. The 'for' loop iterates from 0 to 7, adding each element of the array to the 'result' variable. The sum of all elements in the array is 0 + 2 + 4 + 6 + 7 + 5 + 3, which equals 27. Therefore, the output will be '27'."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int a = 5, b = 10, c = 15;",
+              "    int arr[3] = {&a, &b, &c};",
+              "    cout << *arr[*arr[1] - 0];",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["15", "18", "garbage value", "compile time error"],
+            "answer": "compile time error",
+            "explanation": "In this code, an array 'arr' of type int is defined, but it is initialized with pointers to integers (i.e., &a, &b, and &c). The expression '*arr[*arr[1] - 0]' attempts to dereference these pointers and perform arithmetic operations on them. This is not valid in C++ and will result in a compile-time error because it's trying to mix integer and pointer arithmetic."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "void fun(int x, int y){",
+              "    x = 20;",
+              "    y = 10;",
+              "}",
+              "int main() {",
+              "    int x = 10;",
+              "    fun (x, x);",
+              "    cout << x;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["10", "20", "compile time error", "30"],
+            "answer": "10",
+            "explanation": "In this program, the function 'fun' is called with two arguments, 'x' and 'x'. These arguments are passed by value, which means that the function receives copies of 'x' and 'x' and operates on these copies. The changes made to 'x' and 'y' inside the 'fun' function do not affect the original variables in the 'main' function. Therefore, the output of 'cout << x;' in 'main' is 10."
+          },
+          {
+            "question": "What is the scope of the variable declared in the user-defined function?",
+            "options": [
+              "whole program",
+              "only inside the {} block",
+              "the main function",
+              "header section"
+            ],
+            "answer": "only inside the {} block",
+            "explanation": "The scope of a variable declared within a user-defined function is limited to the block enclosed by curly braces '{}' where it is declared. This means the variable is only accessible and valid within the function's block and not outside of it."
+          },
+          {
+            "question": "What is the name of | operator?",
+            "options": ["sizeof", "or", "and", "modulus"],
+            "answer": "or",
+            "explanation": "The '|' operator in C++ is known as the 'or' operator, and it is used to perform a bitwise OR operation on the binary representations of two values."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int a;",
+              "    a = 5 + 3 * 5;",
+              "    cout << \"a: \" << a;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["35", "20", "25", "30"],
+            "answer": "20",
+            "explanation": "In this C++ code, the expression '5 + 3 * 5' is evaluated using operator precedence. The multiplication operator '*' has a higher precedence than the addition operator '+', so '3 * 5' is computed first, resulting in 15. Then, '5 + 15' is computed, giving the final value of 'a' as 20. Therefore, the output is 'a: 20'."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int a = 20, b = 10, c = 15, d = 5;",
+              "    int e;",
+              "    e = a + b * c / d;",
+              "    cout << e << endl;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["50", "60", "70", "90"],
+            "answer": "60",
+            "explanation": "In this C++ code, the expression 'a + b * c / d' is evaluated using operator precedence. The multiplication operator '*' and division operator '/' have higher precedence than the addition operator '+'. So, 'b * c / d' is computed first, resulting in '10 * 15 / 5' which equals 30. Then, 'a + 30' is computed, giving the final value of 'e' as 60. Therefore, the output is '60'."
+          },
+          {
+            "question": "Which of the following explains Polymorphism?",
+            "options": [
+              "int func(int, int); float func1(float, float);",
+              "int func(int); int func(int);",
+              "int func(float); float func(int, int, char);",
+              "int func(); int new_func();"
+            ],
+            "answer": "int func(float); float func(int, int, char);",
+            "explanation": "Polymorphism involves overriding the same function by changing the types or number of arguments. In the given options, the function names are the same, but in option 'int func(float); float func(int, int, char);', the types and number of parameters are different, which illustrates polymorphism."
+          }
+        ]
       },
       "PHP": {
-        "questions": [{}]
+        "questions": [
+          {
+            "question": "What will be the output of the following program?",
+            "code": [
+              "<?php",
+              "echo strtr(\"Walcoma to the juvuTpoint.com\", \"au\", \"ea\");",
+              "?>"
+            ],
+            "options": [
+              "Welcome to the javaTpoint.com",
+              "Wulcomu to tha juvuTpoint.com",
+              "Walcoma to the jeveTpoint.com",
+              "None of the above"
+            ],
+            "answer": "Welcome to the javaTpoint.com",
+            "explanation": "The strtr() is an in-built function of PHP, which is used to replace a substring inside the other string. It provides the facility to change the particular word in a string. The strtr() function translates characters or replaces the substrings. It is a case-sensitive function."
+          },
+          {
+            "question": "Output of the following code is",
+            "code": [
+              "<?php",
+              "$On_e = 1;",
+              "$tw_o = 2;",
+              "$thre_e = 3;",
+              "$fou_r = 4;",
+              "echo \"$on_e / $tw_o + $thre_e / $fou_r\";",
+              "?>"
+            ],
+            "options": ["0.125", "0.25", "0.26", "0.75"],
+            "answer": "0.26",
+            "explanation": "The code evaluates the expression $on_e / $tw_o + $thre_e / $fou_r, which simplifies to 1 / 2 + 3 / 4. When you perform these operations, the result is 0.26."
+          },
+          {
+            "question": "Find out the output",
+            "code": [
+              "<?php",
+              "$foo = 'Bob';",
+              "$bar = &$foo;",
+              "$bar = \"My name is $bar\";",
+              "echo $bar;",
+              "echo $foo;",
+              "?>"
+            ],
+            "options": [
+              "Bob",
+              "My name is Bob",
+              "My name is BobMy name is Bob",
+              "My name is"
+            ],
+            "answer": "My name is BobMy name is Bob",
+            "explanation": "In the code, $foo is assigned the value 'Bob,' and $bar is assigned a reference to $foo. When $bar is updated with \"My name is $bar,\" it modifies $foo as well since $bar and $foo share the same reference. Therefore, both echo statements display the updated value, 'My name is Bob,' twice."
+          },
+          {
+            "question": "If $a = 12, what will be returned when ($a == 12) ? 5 : 1 is executed?",
+            "options": ["1", "5", "12", "Error"],
+            "answer": "5",
+            "explanation": "The ?: operator is known as the ternary operator in PHP. If the condition in the parentheses is true, then the value just after the ? is returned; otherwise, the value after the : is returned. In this case, since $a is equal to 12, the condition ($a == 12) is true, so 5 is returned."
+          },
+          {
+            "question": "What will be the output of the following PHP program?",
+            "code": [
+              "<?php",
+              "$php = array(\"Array\", \"Function\", \"Strings\", \"File\");",
+              "echo pos($php);",
+              "?>"
+            ],
+            "options": ["Function", "File", "Strings", "Array"],
+            "answer": "Array",
+            "explanation": "The `pos()` function returns the value of the current element in an array. Since no operation has been done on the array, the current element is the first one, which is 'Array'. Therefore, 'Array' will be the output."
+          },
+          {
+            "question": "Which of the following function is used to get the length of a string?",
+            "options": ["size()", "strlen()", "length", "None of the above"],
+            "answer": "strlen()",
+            "explanation": "The strlen() function is used to find the length of a string."
+          },
+          {
+            "question": "Which of the following is used to access session variables in PHP?",
+            "options": [
+              "session_start() function",
+              "$_SESSION[]",
+              "isset() function",
+              "session_destroy() function"
+            ],
+            "answer": "$_SESSION[]",
+            "explanation": "Session variables are stored in an associative array called $_SESSION[]. These variables can be accessed during the lifetime of a session."
+          },
+          {
+            "question": "Which of the following method returns the current date and time?",
+            "options": ["time()", "getdate()", "date()", "None of the above"],
+            "answer": "time()",
+            "explanation": "PHP's time() function gives you all the information you need about the current date and time. It requires no arguments but returns an integer."
+          },
+          {
+            "question": "If we filter many variables into one then which of the following filter is used?",
+            "options": [
+              "filter_var_array()",
+              "filter_var()",
+              "filter_input",
+              "filter_input_array"
+            ],
+            "answer": "filter_var_array()",
+            "explanation": "The filter_var_array() function is used to filter multiple variables using the same filter settings."
+          },
+          {
+            "question": "Which of the below methods is used to send the given data using URL?",
+            "options": ["Post", "Send", "Get", "Both A and D"],
+            "answer": "Get",
+            "explanation": "The 'Get' method is used to send data using the URL by appending it as query parameters."
+          },
+          {
+            "question": "What is the primary difference between the 'GET' and 'POST' methods in HTTP?",
+            "options": [
+              "The 'GET' method is used for retrieving data from the server, while the 'POST' method is used for sending data to the server.",
+              "The 'GET' method is more secure than the 'POST' method.",
+              "The 'POST' method is used exclusively for downloading files, while the 'GET' method is used for all other types of requests.",
+              "There is no significant difference between the 'GET' and 'POST' methods in HTTP."
+            ],
+            "answer": "The 'GET' method is used for retrieving data from the server, while the 'POST' method is used for sending data to the server.",
+            "explanation": "In HTTP, the 'GET' method is used to request data from a specified resource, and it should only retrieve data without causing any side-effects on the server. On the other hand, the 'POST' method is used to submit data to be processed to a specified resource, often resulting in a change in server state."
+          },
+          {
+            "question": "What is PHP Mailer commonly used for in web development?",
+            "options": [
+              "Handling database connections",
+              "Creating dynamic web pages",
+              "Sending emails from a web server",
+              "Styling web pages with CSS"
+            ],
+            "answer": "Sending emails from a web server",
+            "explanation": "PHP Mailer is a popular library used for sending emails from a web server using PHP. It provides a convenient and feature-rich way to send email messages, including text and HTML emails, with attachments and custom configurations."
+          },
+          {
+            "question": "What is the primary function of the `json_encode` function in PHP?",
+            "options": [
+              "Decoding JSON data into a PHP array",
+              "Creating a JSON string from a PHP array",
+              "Parsing XML data",
+              "Encrypting data"
+            ],
+            "answer": "Creating a JSON string from a PHP array",
+            "explanation": "The `json_encode` function in PHP is used to convert a PHP array into a JSON-encoded string. This makes it easier to transmit data in a format that can be understood by other applications or services that consume JSON data."
+          }
+        ]
       }
     },
     "Advanced": {
@@ -1069,7 +1740,7 @@
               "Two objects with the same value of the attribute cannot be created.",
               "None of the above"
             ],
-            "answer": "B",
+            "answer": "id(a1) and id(a2) will have different values.",
             "explanation": "Although both a1 and a2 have the same value of attributes, but these two point to two different objects. Hence, their id will be different."
           },
           {
@@ -1092,13 +1763,8 @@
               "a.change()",
               "print(a.num)"
             ],
-            "options": [
-              "A. 5\n   7",
-              "B. 5\n   5",
-              "C. 3\n   3",
-              "D. 3\n   7"
-            ],
-            "answer": "D",
+            "options": ["5\n   7", "5\n   5", "3\n   3", "3\n   7"],
+            "answer": "3\n   7",
             "explanation": "Inside the constructor (__init__), self.num is set to 3 initially. The first print statement prints 3. When the method change() is invoked, self.num is changed to 7, so the second print statement prints 7."
           },
           {
@@ -1128,13 +1794,13 @@
           {
             "question": "Which of the following statements is false?",
             "options": [
-              "A. A non-private method in a superclass can be overridden",
-              "B. A derived class is a subset of superclass",
-              "C. The value of a private variable in the superclass can be changed in the subclass",
-              "D. When invoking the constructor from a subclass, the constructor of superclass is automatically invoked"
+              "A non-private method in a superclass can be overridden",
+              "A derived class is a subset of superclass",
+              "The value of a private variable in the superclass can be changed in the subclass",
+              "When invoking the constructor from a subclass, the constructor of superclass is automatically invoked"
             ],
-            "answer": "C",
-            "explanation": "Statement C is false. In object-oriented programming, private variables in a superclass are not accessible directly in the subclass, so their values cannot be changed directly in the subclass. The concept of encapsulation prevents direct access to private variables from outside the class."
+            "answer": "The value of a private variable in the superclass can be changed in the subclass",
+            "explanation": "The third statement is false. In object-oriented programming, private variables in a superclass are not accessible directly in the subclass, so their values cannot be changed directly in the subclass. The concept of encapsulation prevents direct access to private variables from outside the class."
           },
           {
             "question": "What will be the output of the following Python code?",
@@ -1144,38 +1810,35 @@
               "print(tuple3)"
             ],
             "options": [
-              "A. (4, 8, 6)",
-              "B. (2, 4, 3, 2, 4, 3)",
-              "C. (2, 2, 4, 4, 3, 3)",
-              "D. Error"
+              "(4, 8, 6)",
+              "(2, 4, 3, 2, 4, 3)",
+              "(2, 2, 4, 4, 3, 3)",
+              "Error"
             ],
-            "answer": "B",
+            "answer": "(2, 4, 3, 2, 4, 3)",
             "explanation": "The code duplicates the tuple1 by multiplying it by 2, resulting in (2, 4, 3, 2, 4, 3)."
           },
           {
             "question": "What will be the output of the following Python code?",
-            "code": [
-              "list1 = [8, 0, 9, 5]",
-              "print(list1[::-1])"
-            ],
+            "code": ["list1 = [8, 0, 9, 5]", "print(list1[::-1])"],
             "options": [
-              "A. [5, 9, 0, 8]",
-              "B. [8, 0, 9]",
-              "C. [8, 0, 9, 5]",
-              "D. [0, 9, 5]"
+              "[5, 9, 0, 8]",
+              "[8, 0, 9]",
+              "[8, 0, 9, 5]",
+              "[0, 9, 5]"
             ],
-            "answer": "A",
+            "answer": "[5, 9, 0, 8]",
             "explanation": "The code reverses the list1 using slicing with [::-1], resulting in [5, 9, 0, 8]."
           },
           {
             "question": "The marks of a student on 6 subjects are stored in a list, list1=[80,66,94,87,99,95]. How can the student's average mark be calculated?",
             "options": [
-              "A. print(avg(list1))",
-              "B. print(sum(list1)/len(list1))",
-              "C. print(sum(list1)/sizeof(list1))",
-              "D. print(total(list1)/len(list1))"
+              "print(avg(list1))",
+              "print(sum(list1)/len(list1))",
+              "print(sum(list1)/sizeof(list1))",
+              "print(total(list1)/len(list1))"
             ],
-            "answer": "B",
+            "answer": "print(sum(list1)/len(list1))",
             "explanation": "The student's average mark can be calculated by summing the marks in the list and dividing by the number of subjects, which is len(list1). So, the correct calculation is print(sum(list1)/len(list1))."
           },
           {
@@ -1185,13 +1848,8 @@
               "list1.remove(2)",
               "print(sum(list1))"
             ],
-            "options": [
-              "A. 18",
-              "B. 19",
-              "C. 21",
-              "D. 22"
-            ],
-            "answer": "C",
+            "options": ["18", "19", "21", "22"],
+            "answer": "21",
             "explanation": "After removing the first occurrence of the value 2 from the list, the modified list becomes [1, 3, 5, 4, 6, 2], and the sum of these numbers is 21. Therefore, the output is 21."
           },
           {
@@ -1201,12 +1859,12 @@
               "dict.update({'Che': 72, 'Bio': 80})"
             ],
             "options": [
-              "A. It will create a new dictionary as dict={'Che':72,'Bio':80} and the old dict will be deleted.",
-              "B. It will throw an error as a dictionary cannot be updated.",
-              "C. It will simply update the dictionary as dict={'Phy':94,'Che':72,'Bio':80,'Eng':95}.",
-              "D. It will not throw any error but it will not make any changes in dict."
+              "It will create a new dictionary as dict={'Che':72,'Bio':80} and the old dict will be deleted.",
+              "It will throw an error as a dictionary cannot be updated.",
+              "It will simply update the dictionary as dict={'Phy':94,'Che':72,'Bio':80,'Eng':95}.",
+              "It will not throw any error but it will not make any changes in dict."
             ],
-            "answer": "C",
+            "answer": "It will simply update the dictionary as dict={'Phy':94,'Che':72,'Bio':80,'Eng':95}.",
             "explanation": "The code updates the values of the 'Che' and 'Bio' keys in the dictionary, so the resulting dictionary is {'Phy': 94, 'Che': 72, 'Bio': 80, 'Eng': 95}. Therefore, option C is correct."
           },
           {
@@ -1217,12 +1875,12 @@
               "print(dict)"
             ],
             "options": [
-              "A. {'Joey': 1, 'Rachel': 2, 'Phoebe': 2}",
-              "B. {'Joey': 1, 'Rachel': 2}",
-              "C. {'Joey': 1, 'Phoebe': 2}",
-              "D. Error"
+              "{'Joey': 1, 'Rachel': 2, 'Phoebe': 2}",
+              "{'Joey': 1, 'Rachel': 2}",
+              "{'Joey': 1, 'Phoebe': 2}",
+              "Error"
             ],
-            "answer": "A",
+            "answer": "{'Joey': 1, 'Rachel': 2, 'Phoebe': 2}",
             "explanation": "The code updates the dictionary by adding the 'Phoebe' key with a value of 2. So, the resulting dictionary is {'Joey': 1, 'Rachel': 2, 'Phoebe': 2}. Therefore, option A is correct."
           },
           {
@@ -1234,25 +1892,20 @@
               "set3 = set1 & set2",
               "print(set3)"
             ],
-            "options": [
-              "A. {3}",
-              "B. {}",
-              "C. {2, 5, 3, 1}",
-              "D. {2, 5, 1}"
-            ],
-            "answer": "A",
+            "options": ["{3}", "{}", "{2, 5, 3, 1}", "{2, 5, 1}"],
+            "answer": "{3}",
             "explanation": "The code performs a set intersection between set1 and set2 using the '&' operator. The result is a new set containing the common element, which is {3}. Therefore, option A is correct."
           },
           {
             "question": "What will set1|set2 do?",
-            "code": ["If set1={\"a\",\"b\",3}" , "set2={3,7}"],
+            "code": ["If set1={\"a\",\"b\",3}", "set2={3,7}"],
             "options": [
-              "A. Elements of set2 will get appended to set1",
-              "B. Elements of set1 will get appended to set2",
-              "C. A new set will be created with the elements of both set1 and set2",
-              "D. A new set will be created with the unique elements of set1 and set2."
+              "Elements of set2 will get appended to set1",
+              "Elements of set1 will get appended to set2",
+              "A new set will be created with the elements of both set1 and set2",
+              "A new set will be created with the unique elements of set1 and set2."
             ],
-            "answer": "C",
+            "answer": "A new set will be created with the elements of both set1 and set2",
             "explanation": "The '|' operator performs a union operation on sets. It creates a new set that contains all the unique elements from both set1 and set2. Therefore, option C is correct."
           },
           {
@@ -1267,13 +1920,8 @@
               "       pass",
               "print(c)"
             ],
-            "options": [
-              "A. 2",
-              "B. 0",
-              "C. 4",
-              "D. 3"
-            ],
-            "answer": "D",
+            "options": ["2", "0", "4", "3"],
+            "answer": "3",
             "explanation": "The given Python code counts the number of characters in the string 'hello' that are not 'l'. It initializes a count 'c' to 0 and iterates through each character in the string. If the character is not 'l', it increments 'c' by 1. The final value of 'c' is 3, so the output is 3, as given in option D."
           },
           {
@@ -1288,25 +1936,23 @@
               "       pass",
               "print(c)"
             ],
-            "options": [
-              "A. 2",
-              "B. 0",
-              "C. 4",
-              "D. 3"
-            ],
-            "answer": "D",
+            "options": ["2", "0", "4", "3"],
+            "answer": "3",
             "explanation": "The given Python code counts the number of characters in the string 'hello' that are not 'l'. It initializes a count 'c' to 0 and iterates through each character in the string. If the character is not 'l', it increments 'c' by 1. The final value of 'c' is 3, so the output is 3, as given in option D."
           },
           {
             "question": "What will the below Python code will return?",
-            "code": ["If str1=\"save paper,save plants\"", "str1.find(\"save\")"],
-            "options": [
-              "A. It returns the first index position of the first occurrence of \"save\" in the given string str1.",
-              "B. It returns the last index position of the last occurrence of \"save\" in the given string str1.",
-              "C. It returns the last index position of the first occurrence of \"save\" in the given string str1.",
-              "D. It returns the first index position of the first occurrence of \"save\" in the given string str1."
+            "code": [
+              "If str1=\"save paper,save plants\"",
+              "str1.find(\"save\")"
             ],
-            "answer": "A",
+            "options": [
+              "It returns the first index position of the first occurrence of \"save\" in the given string str1.",
+              "It returns the last index position of the last occurrence of \"save\" in the given string str1.",
+              "It returns the last index position of the first occurrence of \"save\" in the given string str1.",
+              "It returns the first index position of the first occurrence of \"save\" in the given string str1."
+            ],
+            "answer": "It returns the first index position of the first occurrence of \"save\" in the given string str1.",
             "explanation": "It returns the first index position of the first occurrence of \"save\" in the given string str1."
           }
         ]
@@ -1621,13 +2267,8 @@
               "    }",
               "}"
             ],
-            "options": [
-              "a) Three",
-              "b) One",
-              "c) One,Two,Three",
-              "d) Run-time error"
-            ],
-            "answer": "c) One,Two,Three",
+            "options": ["Three", "One", "One,Two,Three", "Run-time error"],
+            "answer": "One,Two,Three",
             "explanation": "The output of the given Java program is 'c) One,Two,Three'. When an object of the 'Three' class is created in the 'main' method, it invokes the constructors of its superclasses in the order of inheritance. First, the constructor of 'One' is called, which prints 'One,'. Then, the constructor of 'Two' (the subclass of 'One') is called, which prints 'Two,'. Finally, the constructor of 'Three' (the subclass of 'Two') is called, which prints 'Three'."
           },
           {
@@ -1664,12 +2305,12 @@
               "}"
             ],
             "options": [
-              "a) 23451",
-              "b) 12354",
-              "c) 13245",
-              "d) The code does not compile."
+              "23451",
+              "12354",
+              "13245",
+              "The code does not compile."
             ],
-            "answer": "c) 13245",
+            "answer": "13245",
             "explanation": "The class is loaded first, with the static initialization block called and '1' is outputted first. When the 'BlueCar' is created in the 'main()' method, the superclass initialization happens first. The instance initialization blocks are executed before the constructor, so '32' is outputted next.\n\nFinally, the class is loaded with the instance initialization blocks again being called before the constructor, outputting '45'. The result is that '13245' is printed, making Option C the correct answer."
           },
           {
@@ -1692,13 +2333,8 @@
               "    }",
               "}"
             ],
-            "options": [
-              "A. 2",
-              "B. 4",
-              "C. 8",
-              "D. The code does not compile."
-            ],
-            "answer": "A. 2",
+            "options": ["2", "4", "8", "The code does not compile."],
+            "answer": "2",
             "explanation": "The code compiles without issue, so Option D is incorrect. Java allows methods to be overridden, but not variables. Therefore, marking them final does not prevent them from being reimplemented in a subclass. Furthermore, polymorphism does not apply in the same way it would to methods as it does to variables. In particular, the reference type determines the version of the secret variable that is selected, making Output 2 and Option A the correct answer."
           },
           {
@@ -1726,12 +2362,12 @@
               "}"
             ],
             "options": [
-              "A. Compiler error: no constructor provided for the class.",
-              "B. Compiles without errors, and when run, it prints the following: red: 0 green: 0 blue: 0.",
-              "C. Compiles without errors, and when run, it prints the following: red: 10 green: 10 blue: 10.",
-              "D. Compiles without errors, and when run, crashes by throwing NullPointerException."
+              "Compiler error: no constructor provided for the class.",
+              "Compiles without errors, and when run, it prints the following: red: 0 green: 0 blue: 0.",
+              "Compiles without errors, and when run, it prints the following: red: 10 green: 10 blue: 10.",
+              "Compiles without errors, and when run, crashes by throwing NullPointerException."
             ],
-            "answer": "B. Compiles without errors, and when run, it prints the following: red: 0 green: 0 blue: 0.",
+            "answer": "Compiles without errors, and when run, it prints the following: red: 0 green: 0 blue: 0.",
             "explanation": "In Java, a method with the same name as the class is not treated as a constructor. In the given program, the `Color` class has a method named `Color()`, but it is not a constructor. Therefore, when an instance of `Color` is created using `new Color()`, the default constructor is invoked, which initializes integer fields to their default values, which is 0. As a result, it prints 'red: 0 green: 0 blue: 0' when run."
           },
           {
@@ -1751,12 +2387,12 @@
               "}"
             ],
             "options": [
-              "a. Only protected can be used.",
-              "B. public and protected both can be used.",
-              "C. public, protected, and private can be used.",
-              "d. Only public can be used."
+              "Only protected can be used.",
+              "public and protected both can be used.",
+              "public, protected, and private can be used.",
+              "Only public can be used."
             ],
-            "answer": "B. public and protected both can be used.",
+            "answer": "public and protected both can be used.",
             "explanation": "In Java, when a subclass overrides a method from its superclass, the access modifier for the overridden method can be the same or less restrictive. In this case, the `display` method in the `Circle` class is overriding the `display` method from the `Shape` class. Since the `display` method in the `Shape` class is declared as `protected`, the overriding method in the `Circle` class can have an access modifier of `protected` or `public`. Therefore, both `public` and `protected` can be used as access modifiers for the `display` method in the `Circle` class."
           },
           {
@@ -1771,8 +2407,8 @@
               "    }",
               "}"
             ],
-            "options": ["a) false", "b) true", "c) None"],
-            "answer": "b) true",
+            "options": ["false", "true", "None"],
+            "answer": "true",
             "explanation": "We know that the intern() method will return the String object reference from the string pool since we assign it back to s2 and now both s1 and s2 are having the same reference. It means that s1 and s2 references pointing to the same object."
           },
           {
@@ -1793,13 +2429,8 @@
               "    }",
               "}"
             ],
-            "options": [
-              "a) int",
-              "b) short",
-              "c) Compile-time error",
-              "d) Run-time error"
-            ],
-            "answer": "a) int",
+            "options": ["int", "short", "Compile-time error", "Run-time error"],
+            "answer": "int",
             "explanation": "The class Demo has one constructor i.e. with int argument. The short value is automatically promoted to an int value during object creation so the constructor with the int argument will be called and it will print “int”."
           },
           {
@@ -1823,12 +2454,12 @@
               "}"
             ],
             "options": [
-              "a) Parent",
-              "b) Child",
-              "c) Compile-time error",
-              "d) Run-time error"
+              "Parent",
+              "Child",
+              "Compile-time error",
+              "Run-time error"
             ],
-            "answer": "c) Compile-time error",
+            "answer": "Compile-time error",
             "explanation": "The code will not compile because in Java, when you override a method in a subclass, the access modifier of the overriding method should not be more restrictive than the overridden method. In this case, the `className` method in the `Child` class has default/package-private access, which is more restrictive than the `className` method in the `Parent` class, which is `public`. This leads to a compile-time error."
           },
           {
@@ -1921,12 +2552,1177 @@
         ]
       },
       "C++": {
-        "questions": [{}]
+        "questions": [
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "#include <string>",
+              "using namespace std;",
+              "int main() {",
+              "    cout << rank <int [10]> :: value;",
+              "    cout << rank <char [10] [10]> :: value;",
+              "    cout << rank < string [10] [10] [10]> :: value;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["111", "123", "321", "121"],
+            "answer": "123",
+            "explanation": "In this program, the first array has a single dimension, the second one has two dimensions, and the third one has three dimensions. Therefore, the program prints 123."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "#include <string>",
+              "using namespace std;",
+              "int main() {",
+              "    cout << is_array <int> :: value;",
+              "    cout << is_array <char [10]> :: value;",
+              "    cout << is_array <string]> :: value;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["010", "101", "001", "110"],
+            "answer": "010",
+            "explanation": "In this code, 'is_array' checks if the given type is an array or not. 'int' and 'string' are not of array type, so '0' is printed for them. 'char[10]' is an array of characters of size 10, so '1' is printed for it. Hence, the answer is '010'."
+          },
+          {
+            "question": "Which of the following is correct about extent() function?",
+            "options": [
+              "Returns how many elements are in array currently",
+              "Returns the size of the 1st dimension",
+              "Returns how many total elements can be stored in an array",
+              "Returns the size of a given dimension"
+            ],
+            "answer": "Returns the size of a given dimension",
+            "explanation": "The 'extent()' function takes two parameters, one denoting the array and the other showing the dimension for which the size we want to know."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "#include <string>",
+              "using namespace std;",
+              "int main() {",
+              "    cout << extent < string [10][20][30], 0> :: value;",
+              "    cout << extent < string [10][20][30], 1> :: value;",
+              "    cout << extent < string [10][20][30], 2> :: value;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["101010", "102030", "302010", "102010"],
+            "answer": "102030",
+            "explanation": "In the first 'cout', we are passing 0, and the size of the first dimension of the array is 10, so 10 is printed. In the following cases, we have passed 1 and 2; therefore, 20 and 30 are printed, respectively."
+          },
+          {
+            "question": "Which of the following is correct about remove_all_extents() function?",
+            "options": [
+              "Removes all dimensions from an array",
+              "Removes the first dimension from the left of the array",
+              "Removes the first dimension from the right of the array",
+              "Removes the last dimension from the left of the array"
+            ],
+            "answer": "Removes all dimensions from an array",
+            "explanation": "As the name suggests, the 'remove_all_extents()' function removes all the dimensions from the array. So the rank of the array after this operation becomes 0."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int a = 5, b = 6, c, d;",
+              "    c = a, b;",
+              "    d = (a ,b);",
+              "    cout << c << \" \" << d;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["5 6", "6 5", "6 7", "6 8"],
+            "answer": "5 6",
+            "explanation": "In this code, the comma operator ',' has a lower precedence than the assignment operator '='. Therefore, 'c = a, b;' is equivalent to 'c = a;' and 'b;' is a separate expression. In 'd = (a ,b);', the comma operator separates the expressions, but only the value of 'b' is assigned to 'd'. Hence, the output is '5 6'."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int i, j;",
+              "    j = 10;",
+              "    i = (j++, j + 100, 999 + j);",
+              "    cout << i;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["1000", "11", "1010", "1001"],
+            "answer": "1010",
+            "explanation": "In this code, 'j' starts with the value 10. 'j' is then incremented to 11. Next, 'j + 100' is evaluated (but the result is not assigned to anything), and finally, '999 + j' is evaluated, which results in 1010. The value of 1010 is stored in 'i', so the output is '1010'."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int x, y;",
+              "    x = 5;",
+              "    y = ++x * ++x;",
+              "    cout << x << y;",
+              "    y = x++ * ++x;",
+              "    cout << x << y;",
+              "    return 0;",
+              "}"
+            ],
+            "options": ["749735", "736749", "367497", "367597"],
+            "answer": "749735",
+            "explanation": "Due to the precedence of the pre-increment and post-increment operators, we get the output as '749735'."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int a = 10;",
+              "    if (a = 15) {",
+              "        time;",
+              "        cout << a;",
+              "        if (n == 3) goto time;",
+              "    }",
+              "    break;",
+              "    return 0;",
+              "}"
+            ],
+            "options": [
+              "1010",
+              "10",
+              "infinitely print 10",
+              "compile time error"
+            ],
+            "answer": "compile time error",
+            "explanation": "There are several issues in this code. The assignment 'a = 15' inside the 'if' condition should use '==' for comparison. Also, 'time' and 'n' are undeclared variables, and 'break' is used outside of a loop or switch statement, which is a compilation error."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int n = 15;",
+              "    for (; ;)",
+              "        cout << n;",
+              "    return 0;",
+              "}"
+            ],
+            "options": [
+              "error",
+              "15",
+              "infinite times of printing n",
+              "none of the mentioned"
+            ],
+            "answer": "infinite times of printing n",
+            "explanation": "In this code, there is no exit condition specified for the 'for' loop, so it will run indefinitely, printing the value of 'n' (which is 15) continuously until manually terminated."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int i = 3;",
+              "    int l = i / -2;",
+              "    int k = i % -2;",
+              "    cout << l << k ;",
+              "    return 0;",
+              "}"
+            ],
+            "options": [
+              "compile time error",
+              "-1 1",
+              "1 -1",
+              "implementation defined"
+            ],
+            "answer": "-1 1",
+            "explanation": "The sign of the result of the modulo operation on negative numbers is the sign of the dividend. So, 'l' is -1, and 'k' is 1."
+          },
+          {
+            "question": "What will be the output of the following C++ code?",
+            "code": [
+              "#include <iostream>",
+              "using namespace std;",
+              "int main() {",
+              "    int x = 8;",
+              "    cout << \"ANDing integer 'x' with 'true' : \" << x && true;",
+              "    return 0;",
+              "}"
+            ],
+            "options": [
+              "ANDing integer ‘x’ with ‘true’ :8",
+              "ANDing integer ‘x’ with ‘true’ :0",
+              "ANDing integer ‘x’ with ‘true’ :1",
+              "ANDing integer ‘x’ with ‘true’ :9"
+            ],
+            "answer": "ANDing integer ‘x’ with ‘true’ :8",
+            "explanation": "The && operator in C++ uses short-circuit evaluation. As 'x' (which is 8) is true (non-zero), it doesn't bother evaluating 'true', and the result of the expression is 8."
+          },
+          {
+            "question": "0946, 786427373824, ‘x’ and 0X2f are _____ _____ ____ and _____ literals respectively.",
+            "options": [
+              "decimal, character, octal, hexadecimal",
+              "octal, hexadecimal, character, decimal",
+              "hexadecimal, octal, decimal, character",
+              "octal, decimal, character, hexadecimal"
+            ],
+            "answer": "octal, decimal, character, hexadecimal",
+            "explanation": "Literal integer constants that begin with 0x or 0X are interpreted as hexadecimal, and the ones that begin with 0 as octal. The character literals are written within single quotes."
+          },
+          {
+            "question": "What is the value of the following 8-bit integer after all statements are executed?",
+            "options": ["1", "-1", "127", "Implementation defined"],
+            "answer": "Implementation defined",
+            "explanation": "Right shift of signed integers is undefined and has implementation-defined behavior."
+          },
+          {
+            "question": "Which of these expressions will make the rightmost set bit zero in an input integer x?",
+            "options": [
+              "x = x | (x-1)",
+              "x = x & (x-1)",
+              "x = x | (x+1)",
+              "x = x & (x+2)"
+            ],
+            "answer": "x = x & (x-1)",
+            "explanation": "If x is odd, the last bit will be 1, and the last bit of x-1 will become 0. If x is even, then the last bit of x will be 0, and the last bit of x-1 will become 1. In both cases, the AND operation of 1 and 0 will be 0, so the last bit of the final x will be 0."
+          },
+          {
+            "question": "Which of these expressions will isolate the rightmost set bit?",
+            "options": [
+              "x = x & (~x)",
+              "x = x ^ (~x)",
+              "x = x & (-x)",
+              "x = x ^ (-x)"
+            ],
+            "answer": "x = x & (-x)",
+            "explanation": "The negative of a number is stored as 2's complement in C++. When you take the AND of x and (-x), the rightmost digit will be preserved, isolating the rightmost set bit."
+          },
+          {
+            "question": "Which of the following is the correct difference between cin and scanf()?",
+            "options": [
+              "both are the same",
+              "cin is a stream object whereas scanf() is a function",
+              "scanf() is a stream object whereas cin is a function",
+              "cin is used for printing whereas scanf() is used for reading input"
+            ],
+            "answer": "cin is a stream object whereas scanf() is a function",
+            "explanation": "cin is a stream object available in C++ whereas scanf() is a function available in both C and C++. Both are used for reading input from users."
+          },
+          {
+            "question": "Which of the following is an exit-controlled loop?",
+            "options": ["for", "while", "do-while", "all of the mentioned"],
+            "answer": "do-while",
+            "explanation": "do-while is called an exit-controlled loop because in do-while, the termination condition is checked when we have executed the body of the loop, i.e., we are exiting the body and then checking the condition. Therefore, it is called an exit-controlled loop."
+          }
+        ]
       },
       "PHP": {
-        "questions": [{}]
+        "questions": [
+          {
+            "question": "How can you establish a connection to a MySQL database using PHP?",
+            "options": [
+              "Using the mysqli_query() function",
+              "By including a connection string in the HTML file",
+              "By setting up a WebSocket connection",
+              "Using the mysqli_connect() function"
+            ],
+            "answer": "Using the mysqli_connect() function",
+            "explanation": "To establish a connection to a MySQL database in PHP, you should use the mysqli_connect() function. This function allows you to specify the database server, username, password, and database name as parameters, and it returns a connection object that can be used for querying the database."
+          },
+          {
+            "question": "How can you use AJAX with PHP to retrieve data from a server and display it on a web page?",
+            "options": [
+              "By embedding PHP code directly in the HTML file",
+              "By using the PHP cURL library",
+              "By sending an HTTP GET or POST request to a PHP script using JavaScript",
+              "By including a PHP file as an iframe in the HTML"
+            ],
+            "answer": "By sending an HTTP GET or POST request to a PHP script using JavaScript",
+            "explanation": "To use AJAX with PHP, you can send an HTTP GET or POST request to a PHP script using JavaScript. The PHP script processes the request, interacts with the server, and returns the data, which can then be displayed on the web page without requiring a full page reload."
+          },
+          {
+            "question": "What will be the output of the following PHP code?",
+            "code": [
+              "<?php",
+              "$four4 = 4;",
+              "$three3 = 3;",
+              "$two2 = 2;",
+              "echo $four4 + $three3 / $two2 - 1;",
+              "?>"
+            ],
+            "options": ["4.5", "7", "3.5", "Error"],
+            "answer": "4.5",
+            "explanation": "The code calculates the expression $four4 + $three3 / $two2 - 1, which simplifies to 4 + 1.5 - 1, resulting in 4.5 as the output."
+          },
+          {
+            "question": "What will be the output of the following PHP code?",
+            "code": [
+              "<?php",
+              "$color = \"red\";",
+              "echo \"$color\";",
+              "echo \"$COLOR\";",
+              "echo \"$Color\";",
+              "?>"
+            ],
+            "options": ["redredred", "redred", "red", "Error"],
+            "answer": "red",
+            "explanation": "In PHP, all variables are case-sensitive. Therefore, while the variable $color is defined and contains the value 'red,' the variables $COLOR and $Color are treated as different and not defined. As a result, only the value of $color is echoed, which is 'red.'"
+          },
+          {
+            "question": "What will be the output of the following PHP code?",
+            "code": [
+              "<?php",
+              "$car = \"Honda\";",
+              "",
+              "switch ($car) {",
+              "    case \"Honda\":",
+              "        echo \"You selected Honda.\";",
+              "    case \"BMW\":",
+              "        echo \"You selected BMW.\";",
+              "    case \"AUDI\":",
+              "        echo \"You selected Audi.\";",
+              "    default:",
+              "        echo \"None is selected.\";",
+              "}",
+              "?>"
+            ],
+            "options": [
+              "You selected Honda.",
+              "You selected Honda.You selected BMW.",
+              "You selected Honda.You selected BMW.You selected Audi.",
+              "You selected Honda.You selected BMW.You selected Audi.None is selected."
+            ],
+            "answer": "You selected Honda.You selected BMW.You selected Audi.None is selected.",
+            "explanation": "In the above PHP script, break statements were not used in the case blocks. The value of $car is \"Honda\", so the first case executes and then all other blocks will be executed because the switch statement executes the blocks from the matched case block to the bottom if the break statement is not there."
+          },
+          {
+            "question": "Which of the following is the output of the below code?",
+            "code": [
+              "<?php",
+              "class letsfindcourse",
+              "{",
+              "    public $lfc_name = \"letsfindcourse\";",
+              "    ",
+              "    public function __construct($lfc_name)",
+              "    {",
+              "        $this->lfc_name = $lfc_name;",
+              "    }",
+              "}",
+              "",
+              "$lfc = new letsfindcourse(\"letsfindcourse\");",
+              "echo $lfc->lfc_name;",
+              "?>"
+            ],
+            "options": ["letsfindcourse", "1", "Error", "No Output"],
+            "answer": "letsfindcourse",
+            "explanation": "The output of the provided code is 'letsfindcourse'."
+          },
+          {
+            "question": "PHP recognizes constructors by the name.",
+            "options": [
+              "classname()",
+              "_construct()",
+              "function _construct()",
+              "function __construct()"
+            ],
+            "answer": "function __construct()",
+            "explanation": "PHP recognizes constructors by the name with a double underscore followed by the 'construct' keyword."
+          },
+          {
+            "question": "Which one of the following functions is used to determine object type?",
+            "options": ["obj_type()", "type()", "is_a()", "is_obj()"],
+            "answer": "is_a()",
+            "explanation": "The is_a() function returns true if the object belongs to a class type or if it belongs to a class that is a child of that class. Otherwise, false is returned."
+          },
+          {
+            "question": "Which one of the following is the right way to call a class constant, given that the class is mathFunction?",
+            "options": [
+              "echo mathFunction->PI;",
+              "echo PI;",
+              "echo mathFunction::PI;",
+              "echo mathFunction=PI;"
+            ],
+            "answer": "echo mathFunction::PI;",
+            "explanation": "echo mathFunction::PI; is the right way to call a class constant, given that the class is mathFunction."
+          },
+          {
+            "question": "What will be the output of the following PHP code?",
+            "code": [
+              "$y = 2;",
+              "if (--$y == 2 || $y xor --$y)",
+              "{",
+              "    echo $y;",
+              "}"
+            ],
+            "options": ["1", "0", "2", "no output"],
+            "answer": "0",
+            "explanation": "–$y == 2 is false but y is decremented, the xor gives true if only one of the operands are true, thus 1 xor 0 is true."
+          },
+          {
+            "question": "A function name is not case-sensitive?",
+            "code": [
+              "<?php",
+              "function prolfc($num1, $num2, $num3)",
+              "{",
+              "    $mul = $num1 * $num2 * $num3;",
+              "    echo \"The product is $mul\";",
+              "}",
+              "",
+              "prolfc(1, 2, 3, 4);",
+              "?>"
+            ],
+            "options": ["24", "8", "6", "Error: too many arguments."],
+            "answer": "6",
+            "explanation": "The output of the following PHP code is 6."
+          },
+          {
+            "question": "Which one of the following PHP function is used to determine a file’s last access time?",
+            "options": [
+              "fileltime()",
+              "filectime()",
+              "fileatime()",
+              "filetime()"
+            ],
+            "answer": "fileatime()",
+            "explanation": "The fileatime() function returns a file’s last access time in Unix timestamp format or FALSE on error."
+          }
+        ]
       }
     }
   },
+  "challenges": {
+    "Python": {
+      "questions": [
+        {
+          "question": "Select the correct output of the following String operations",
+          "code": [
+            "str1 = \"my isname isisis jameis isis bond\";",
+            "sub = \"is\";",
+            "print(str1.count(sub, 4));"
+          ],
+          "options": ["5", "6", "7"],
+          "answer": "6",
+          "explanation": "The output of the given code will be 6."
+        },
+        {
+          "question": "Select the correct output of the following String operations",
+          "code": [
+            "strOne = str(\"pynative\")",
+            "strTwo = \"pynative\"",
+            "print(strOne == strTwo)",
+            "print(strOne is strTwo)"
+          ],
+          "options": ["False False", "True True", "True False", "False True"],
+          "answer": "True False",
+          "explanation": "The output of the given code will be 'True False'."
+        },
+        {
+          "question": "What is the output of the following round() function call",
+          "code": ["print(round(100.2563, 3))", "print(round(100.000056, 3))"],
+          "options": [
+            "100.256\n100",
+            "100.256\n100.000",
+            "100.256\n100.0",
+            "100.0\n100"
+          ],
+          "answer": "100.256\n100.000",
+          "explanation": "The output of the round(100.2563, 3) call is '100.256', and the output of the round(100.000056, 3) call is '100.000'."
+        },
+        {
+          "question": "Choose the correct function to get 3 elements from the list randomly in such a way that each element of the list has a different probability of being selected.",
+          "code": ["numberList = [100, 200, 300, 400, 500]"],
+          "options": [
+            "random.choices(numberList, weights=(10, 5, 15, 20, 50), k=3)",
+            "random.choice(numberList, weights=(10, 5, 15, 20, 50), k=3)",
+            "random.sample(numberList, weights=(10, 5, 15, 20, 50), k=3)"
+          ],
+          "answer": "random.choices(numberList, weights=(10, 5, 15, 20, 50), k=3)",
+          "explanation": "The correct function to get 3 elements from the list randomly with different probabilities is 'random.choices(numberList, weights=(10, 5, 15, 20, 50), k=3)'. This function allows you to specify the weights for each element to control their selection probability."
+        },
+        {
+          "question": "Select all the correct options to join two lists in Python",
+          "code": [
+            "listOne = ['a', 'b', 'c', 'd']",
+            "listTwo = ['e', 'f', 'g']"
+          ],
+          "options": [
+            "newList = extend(listOne, listTwo)",
+            "newList = listOne.extend(listTwo)",
+            "newList.extend(listOne, listTwo)"
+          ],
+          "answer": ["newList = listOne.extend(listTwo)"],
+          "explanation": "To join two lists in Python, you can use the '+' operator or the 'extend' method. The correct option is 'newList = listOne.extend(listTwo)'. The other options are incorrect."
+        },
+        {
+          "question": "What is the output of the following union operation",
+          "code": [
+            "set1 = {10, 20, 30, 40}",
+            "set2 = {50, 20, '10', 60}",
+            "set3 = set1.union(set2)",
+            "print(set3)"
+          ],
+          "options": [
+            "{40, 10, 50, 20, 60, 30}",
+            "{40, '10', 50, 20, 60, 30}",
+            "{40, 10, '10', 50, 20, 60, 30}",
+            "SyntaxError: Different types cannot be used with sets"
+          ],
+          "answer": "{40, 10, '10', 50, 20, 60, 30}",
+          "explanation": "The `union` operation between `set1` and `set2` combines the elements of both sets, removing any duplicates. The result is a set containing elements {40, 10, '10', 50, 20, 60, 30}. So, the correct output is '{40, 10, '10', 50, 20, 60, 30}'."
+        },
+        {
+          "question": "Select the all correct way to remove the key marks from a dictionary",
+          "code": [
+            "student = {",
+            "  \"name\": \"Emma\",",
+            "  \"class\": 9,",
+            "  \"marks\": 75",
+            "}"
+          ],
+          "options": [
+            "student.pop(\"marks\")",
+            "student.remove(\"marks\")",
+            "student.popitem(\"marks\")"
+          ],
+          "answer": "student.pop(\"marks\")",
+          "explanation": "To remove the key \"marks\" from the dictionary, you can use either the 'pop(\"marks\")' method . This methods will effectively remove the key-value pair associated with \"marks\" from the dictionary."
+        }
+      ]
+    },
+    "JavaScript": {
+      "questions": [
+        {
+          "question": "Determine the result – String('Hello') === 'Hello';",
+          "options": ["true", "false", "SyntaxError", "ReferenceError"],
+          "answer": "true",
+          "explanation": "The result is true because the strict equality operator (===) compares both the type and the value. In this case, the string 'Hello' created using the String constructor is still equal to the string literal 'Hello'."
+        },
+        {
+          "question": "What is the correct JavaScript syntax to print 'DataFlair' in the console?",
+          "options": [
+            "print('DataFlair')",
+            "console.print('DataFlair')",
+            "log.console('DataFlair')",
+            "console.log('DataFlair')"
+          ],
+          "answer": "console.log('DataFlair')",
+          "explanation": "The correct JavaScript syntax to print 'DataFlair' in the console is 'console.log('DataFlair')'."
+        },
+        {
+          "question": "Which is the correct JavaScript syntax to change the HTML content given below?\n\n<p id='test'>Hello World!</p>",
+          "options": [
+            "document.getElementById('test').innerHTML = 'Hello DataFlair!'",
+            "document.getElementsById('test').innerHTML = 'Hello DataFlair!'",
+            "document.getElementById(test).innerHTML = 'Hello DataFlair!'",
+            "document.getElementsByTagName('p')[0].innerHTML = 'Hello DataFlair!'"
+          ],
+          "answer": "document.getElementById('test').innerHTML = 'Hello DataFlair!'",
+          "explanation": "The correct JavaScript syntax to change the HTML content of an element with the ID 'test' is 'document.getElementById('test').innerHTML = 'Hello DataFlair!'.'"
+        },
+        {
+          "question": "How do you find the minimum of x and y using JavaScript?",
+          "options": ["min(x,y);", "Math.min(x,y)", "Math.min(xy)", "min(xy);"],
+          "answer": "Math.min(x,y)",
+          "explanation": "To find the minimum of two values in JavaScript, you should use the 'Math.min(x, y)' function."
+        },
+        {
+          "question": "What will be the output of the following JavaScript code snippet?",
+          "code": [
+            "<p id=\"demo\"></p>",
+            "var txt1 = \"Sanfoundry_\";",
+            "var txt2 = \"Javascriptmcq\";",
+            "document.getElementById(\"demo\").innerHTML = txt1 + txt2;"
+          ],
+          "options": [
+            "error",
+            "Sanfoundry_ Javascriptmcq",
+            "undefined",
+            "Sanfoundry_Javascriptmcq"
+          ],
+          "answer": "Sanfoundry_Javascriptmcq",
+          "explanation": "The + operator in JavaScript acts as a concatenation operator when used with strings. The new string does not have any space between the two added strings."
+        },
+        {
+          "question": "What will be the output of the following JavaScript code snippet?",
+          "code": [
+            "// JavaScript Equalto Operators",
+            "function equalto()",
+            "{",
+            "    var num = 10;",
+            "    if (num === \"10\")",
+            "        return true;",
+            "    else",
+            "        return false;",
+            "}"
+          ],
+          "options": ["false", "true", "compilation error", "runtime error"],
+          "answer": "false",
+          "explanation": "A === operator in JS is only true if the operands are of the same type and the contents match. Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions."
+        },
+        {
+          "code": [
+            "// Javascript code snippet to compare the height",
+            "function height()",
+            "{",
+            "    var height = 123.56;",
+            "    var type = (height >= 190) ? \"tall\" : \"short\";",
+            "    return type;",
+            "}"
+          ],
+          "question": "What will be the output of the following JavaScript code?",
+          "options": ["short", "123.56", "tall", "190"],
+          "answer": "short",
+          "explanation": "The ternary operator in JavaScript is used as a comparison operator which works on three operands. The statement in the above code initializes the 'type' variable with the value 'short' which is returned through the function."
+        }
+      ]
+    },
+    "Java": {
+      "questions": [
+        {
+          "question": "What will be the output of the following code?",
+          "code": [
+            "import java.util.Arrays;",
+            "import java.util.Comparator;",
+            "public class ComparatorTest {",
+            "    public static void main(String args[]) {",
+            "        String[] ar = { \"c\", \"d\", \"b\", \"a\", \"e\" };",
+            "        InnerClass in = new InnerClass();",
+            "        Arrays.parallelSort(ar, in);",
+            "        for (String str : ar)",
+            "            System.out.println(str + \" \");",
+            "        System.out.println(Arrays.binarySearch(ar, \"b\"));",
+            "    }",
+            "    static class InnerClass implements Comparator<String> {",
+            "        public int compare(String s1, String s2) {",
+            "            return s2.compareTo(s1);",
+            "        }",
+            "    }",
+            "}"
+          ],
+          "options": [
+            "e d c b a -1",
+            "a b c 0 e d",
+            "d b c e a 1",
+            "e b a d c"
+          ],
+          "answer": "e d c b a -1",
+          "explanation": "The code sorts the array of strings in reverse order and then searches for the index of the string \"b\" using binary search. The output is \"e d c b a\" (the sorted array) followed by \"-1\" (the result of binary search for \"b\")."
+        },
+        {
+          "question": "What will be the output of the following code?",
+          "code": [
+            "import java.util.LinkedHashSet;",
+            "import java.util.Set;",
+            "public class LinkedHashSetTest {",
+            "    public static void main(String args[]) {",
+            "        Set s = new LinkedHashSet();",
+            "        s.add(\"1\");",
+            "        s.add(1);",
+            "        s.add(3);",
+            "        s.add(2);",
+            "        System.out.println(s);",
+            "    }",
+            "}"
+          ],
+          "options": [
+            "[1, 1, 2, 3]",
+            "[1, 2, 2, 3]",
+            "[1, 1, 3, 2]",
+            "[1, 2, 3]"
+          ],
+          "answer": "[1, 1, 3, 2]",
+          "explanation": "The code creates a LinkedHashSet and adds elements \"1\", 1, 3, and 2 to it. LinkedHashSet maintains the order of elements as they were added. Therefore, the output will be [1, 1, 3, 2], which reflects the order of insertion."
+        },
+        {
+          "question": "What will be the output of the following code?",
+          "code": [
+            "import java.util.ArrayList;",
+            "import java.util.Collections;",
+            "import java.util.Comparator;",
+            "class Employee implements Comparator {",
+            "    String name;",
+            "    String id;",
+            "    public Employee() {}",
+            "    public Employee(String name, String id) {",
+            "        this.name = name;",
+            "        this id = id;",
+            "    }",
+            "    @Override",
+            "    public int compare(Employee obj1, Employee obj2) {",
+            "        return obj2.name.compareTo(obj1.name);",
+            "    }",
+            "    @Override",
+            "    public String toString() {",
+            "        return \"{\" + \"name \" + name + \", id \" + id + '}';",
+            "    }",
+            "}",
+            "public class ComparatorUsage {",
+            "    public static void main(String args[]) {",
+            "        Employee emp1 = new Employee(\"sam\", \"4\");",
+            "        Employee emp2 = new Employee(\"amy\", \"2\");",
+            "        ArrayList<Employee> list = new ArrayList<Employee>();",
+            "        list.add(emp1);",
+            "        list.add(emp2);",
+            "        Collections.sort(list, new Employee());",
+            "        System.out.println(list);",
+            "    }",
+            "}"
+          ],
+          "options": [
+            "[2, 3]",
+            "Runtime Exception",
+            "Compile time exception",
+            "None of the above"
+          ],
+          "answer": "Compile time exception",
+          "explanation": "The code will not compile because the 'Employee' class is implementing the raw 'Comparator' interface, but it should implement 'Comparator<Employee>'. Additionally, there is a typo in the 'Employee' constructor where 'this id' should be 'this.id'."
+        },
+        {
+          "question": "What will be the output of the following code?",
+          "code": [
+            "import java.util.ArrayList;",
+            "import java.util.List;",
+            "",
+            "public class ListDemo {",
+            "    public static void main(String args[]) {",
+            "        List<Integer> list = new ArrayList<Integer>();",
+            "        list.add(2);",
+            "        list.add(3);",
+            "        m(list);",
+            "    }",
+            "",
+            "    public static void m(List<Number> list) {",
+            "        System.out.println(list);",
+            "    }",
+            "}"
+          ],
+          "options": [
+            "3",
+            "3.0",
+            "Compile time exception",
+            "Runtime exception"
+          ],
+          "answer": "Runtime exception",
+          "Explanation": "In Java, generics are invariant. This means that if you have a method that accepts a List<Number>, it cannot accept a List<Integer> even though Integer is a subclass of Number. When you attempt to call the m method with a List<Integer>, it will result in a runtime exception because the types are not compatible. This behavior occurs because Java enforces type safety at runtime for generic types."
+        },
+        {
+          "question": "Which of those doesn’t have an index-based structure?",
+          "options": ["List", "Set", "Map"],
+          "answer": "Set",
+          "explanation": "A Set is a collection of distinct elements, and it doesn't have a direct index-based structure like Lists or Maps."
+        },
+        {
+          "question": "java.util.Collections is a:",
+          "options": ["Class", "Interface", "Object", "None of the above"],
+          "answer": "Class",
+          "explanation": "java.util.Collections is a class in the Java Collections Framework. It provides various utility methods for working with collections."
+        },
+        {
+          "question": "What will be the output of the following code?",
+          "code": [
+            "import java.util.ArrayList;",
+            "import java.util.List;",
+            "",
+            "public class MyClass {",
+            "  public static void main(String args[]) {",
+            "    // Insert Here",
+            "    List<String> list = new ArrayList<String>();",
+            "    list.add(\"a\");",
+            "    list.add(\"b\");",
+            "    l.add(list);",
+            "  }",
+            "}"
+          ],
+          "options": [
+            "List l = new ArrayList>();",
+            "List<String> l = new ArrayList<>();",
+            "List<?> l = new ArrayList<>();",
+            "List l = new ArrayList();"
+          ],
+          "answer": "List l = new ArrayList();",
+          "explanation": "The correct statement to insert is: List l = new ArrayList();"
+        }
+      ]
+    },
+    "C++": {
+      "questions": [
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "struct Time {",
+            "    int hours, minutes, seconds;",
+            "};",
+            "int toSeconds(Time now);",
+            "int main() {",
+            "    Time t;",
+            "    t.hours = 5;",
+            "    t.minutes = 30;",
+            "    t.seconds = 45;",
+            "    cout << \"Total seconds: \" << toSeconds(t) << endl;",
+            "    return 0;",
+            "}",
+            "int toSeconds(Time now) {",
+            "    return 3600 * now.hours + 60 * now.minutes + now.seconds;",
+            "}"
+          ],
+          "options": ["19845", "20000", "15000", "19844"],
+          "answer": "19845",
+          "explanation": "In this program, we are just converting the given hours and minutes into seconds."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    struct ShoeType {",
+            "        string style;",
+            "        double price;",
+            "    };",
+            "    ShoeType shoe1, shoe2;",
+            "    shoe1.style = \"Adidas\";",
+            "    shoe1.price = 9.99;",
+            "    cout << shoe1.style << \"$\" << shoe1.price;",
+            "    shoe2 = shoe1;",
+            "    shoe2.price = shoe2.price / 9;",
+            "    cout << shoe2.style << \"$\" << shoe2.price;",
+            "    return 0;",
+            "}"
+          ],
+          "options": [
+            "Adidas $ 9.99Adidas $ 1.11",
+            "Adidas $ 9.99Adidas $ 9.11",
+            "Adidas $ 9.99Adidas $ 11.11",
+            "Adidas $ 11.11Adidas $ 11.11"
+          ],
+          "answer": "Adidas $ 9.99Adidas $ 1.11",
+          "explanation": "We copied the value of shoe1 into shoe2 and divided the shoe2 price by 9, so this is the output."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "struct sec {",
+            "    int a;",
+            "    char b;",
+            "};",
+            "int toSeconds(Time now);",
+            "int main() {",
+            "    struct sec s = {25, 50};",
+            "    struct sec *ps = (struct sec *) &s;",
+            "    cout << ps->a << ps->b;",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["252", "253", "254", "262"],
+          "answer": "252",
+          "explanation": "In this program, we are dividing the values of a and b and printing it."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    int a[2][4] = {3, 6, 9, 12, 15, 18, 21, 24};",
+            "    cout << *(a[1] + 2) << *(*(a + 1) + 2) << [1[a]];",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["15 18 21", "21 21 21", "24 24 24", "Compile time error"],
+          "answer": "21 21 21",
+          "explanation": "a[1][2] means 1 * (4) + 2 = 6th element of an array starting from zero."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    int i;",
+            "    const char *arr[] = {\"c\", \"c++\", \"java\", \"VBA\"};",
+            "    const char *(*ptr)[4] = &arr;",
+            "    cout << ++(*ptr)[2];",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["ava", "java", "c++", "compile time error"],
+          "answer": "ava",
+          "explanation": "In this program, we are moving the pointer from the first position to the second position and printing the remaining value."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    int arr[] = {4, 5, 6, 7};",
+            "    int *p = (arr + 1);",
+            "    cout << *p;",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["4", "5", "6", "7"],
+          "answer": "5",
+          "explanation": "In this program, we are making the pointer point to the next value and printing it."
+        },
+        {
+          "question": "What will happen in the following C++ code snippet?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    int arr[] = {4, 5, 6, 7};",
+            "    int *p = (arr + 1);",
+            "    cout << arr;",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["4", "5", "address of arr", "7"],
+          "answer": "address of arr",
+          "explanation": "As we attempted to print only 'arr,' it will print the address of the array."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    int numbers[5];",
+            "    int *p;",
+            "    p = numbers; *p = 10;",
+            "    p++; *p = 20;",
+            "    p = numbers[2]; *p = 30;",
+            "    p = numbers + 3; *p = 40;",
+            "    p = numbers; *(p + 4) = 50;",
+            "    for (int n = 0; n < 5; n++) {",
+            "        cout << numbers[n] << \",\";",
+            "    }",
+            "    return 0;",
+            "}"
+          ],
+          "options": [
+            "10,20,30,40,50,",
+            "1020304050",
+            "compile error",
+            "runtime error"
+          ],
+          "answer": "10,20,30,40,50,",
+          "explanation": "In this program, we are assigning values to the array and immediately dereferencing it for printing."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    int arr[] = {4, 5, 6, 7};",
+            "    int *p = (arr + 1);",
+            "    cout << *arr + 9;",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["12", "5", "13", "error"],
+          "answer": "13",
+          "explanation": "In this program, we are adding the value 9 to the initial value of the array, so it prints 13."
+        },
+        {
+          "question": "The void pointer can point to which type of objects?",
+          "options": ["int", "float", "double", "all of the mentioned"],
+          "answer": "all of the mentioned",
+          "explanation": "Because it doesn’t know the type of object it is pointing to, a void pointer can point to all objects."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    char str[5] = \"ABC\";",
+            "    cout << str[3];",
+            "    cout << str;",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["ABC", "ABCD", "AB", "AC"],
+          "answer": "ABC",
+          "explanation": "We are just printing the values of the first 3 characters of the array 'str'."
+        },
+        {
+          "question": "What will be the output of the following C++ code?",
+          "code": [
+            "#include <iostream>",
+            "using namespace std;",
+            "int main() {",
+            "    char array[] = {10, 20, 30};",
+            "    cout << -2 [array];",
+            "    return 0;",
+            "}"
+          ],
+          "options": ["-15", "-30", "compile time error", "garbage value"],
+          "answer": "-30",
+          "explanation": "It's printing the negative value of the element at index -2 in the array 'array'."
+        }
+      ]
+    },
+    "PHP": {
+      "questions": [
+        {
+          "question": "What will be the output of the following PHP code?",
+          "code": [
+            "<?php",
+            "$i = 0;",
+            "$j = 0;",
+            "first: while ($i < 2)",
+            "{",
+            " $i++;",
+            "  while ($j < 3)",
+            "    {",
+            "     $j++;",
+            "      echo(\"loop\\n\");",
+            "      if($j%2==0)",
+            "         continue;",
+            "      goto first;",
+            "    }",
+            "}",
+            "?>"
+          ],
+          "options": [
+            "prints 'loop' infinite times",
+            "prints 'loop' 1 time",
+            "prints 'loop' 2 times",
+            "prints 'loop' 3 times"
+          ],
+          "answer": "prints 'loop' 3 times",
+          "explanation": "\"loop\" 3 times is the output of the following code snippet."
+        },
+        {
+          "question": "What will be the output of the following code?",
+          "code": [
+            "<?php declare(strict_types=1); // strict requirement ?>",
+            "",
+            "<?php",
+            "function setHeight(int $minheight = 50) {",
+            "    echo \"The height is : $minheight <br>\";",
+            "}",
+            "",
+            "setHeight(350);",
+            "?>"
+          ],
+          "options": [
+            "The height is : 350",
+            "The height is : 50",
+            "No Output",
+            "Error"
+          ],
+          "answer": "The height is : 350",
+          "explanation": "The output of the following code will be 'The height is : 350'."
+        },
+        {
+          "question": "Which of the following functions help in navigating to another PHP page?",
+          "options": [
+            "header()",
+            "location()",
+            "redirect()",
+            "None of the above"
+          ],
+          "answer": "header()",
+          "explanation": "The header() function is used to send HTTP headers, including the Location header, which can be used to navigate to another PHP page or URL."
+        },
+        {
+          "question": "Which of the following is the output of the below code?",
+          "code": [
+            "<?php",
+            "   class lfc {",
+            " ",
+            "      var $mcq_type;",
+            "     ",
+            "      function setmcq_type($par){",
+            "         $this->mcq_type = $par;",
+            "      }",
+            "        ",
+            "      function getmcq_type(){",
+            "         echo $this->mcq_type.\"<br>\";",
+            "      }",
+            "        ",
+            "   }",
+            "  ",
+            "   $obj = new lfc;",
+            " ",
+            "   $obj->setmcq_type(\"Objects Mcq\");",
+            "   $obj->getmcq_type();",
+            "?>"
+          ],
+          "options": ["Objects Mcq", "Objects Mcq \"\"", "Error", "No Output"],
+          "answer": "Objects Mcq \"\"",
+          "explanation": "The output of the provided code is 'Objects Mcq<br>'."
+        },
+        {
+          "question": "Which of the following is the output of the below code?",
+          "code": [
+            "<?php",
+            "class letsfindcourse",
+            "{",
+            "    public function __destruct(){",
+            "        echo 'The class \"' . __CLASS__ . '\" was destroyed!';",
+            "    }",
+            "}",
+            "",
+            "$lfc = new letsfindcourse;",
+            "?>"
+          ],
+          "options": [
+            "The class letsfindcourse was destroyed!",
+            "The class lfc was initiated!",
+            "Error",
+            "No Output"
+          ],
+          "answer": "The class letsfindcourse was destroyed!",
+          "explanation": "The output of the provided code is 'The class \"letsfindcourse\" was destroyed!'."
+        },
+        {
+          "question": "Which is the correct example of an Associative array in PHP?",
+          "options": [
+            "$person = array(\"Alvin\"=>\"Delhi\", \"Alex\"=>\"Mumbai\", \"Bhavik\"=>\"Banglore\");",
+            "$person = array(\"Alvin\"=>\"Delhi\"; \"Alex\"=>\"Mumbai\"; \"Bhavik\"=>\"Banglore\");",
+            "$person = new array(\"Alvin\"=>\"Delhi\", \"Alex\"=>\"Mumbai\", \"Bhavik\"=>\"Banglore\");",
+            "$person = new array(\"Alvin\"=>\"Delhi\"; \"Alex\"=>\"Mumbai\"; \"Bhavik\"=>\"Banglore\");"
+          ],
+          "answer": "$person = array(\"Alvin\"=>\"Delhi\", \"Alex\"=>\"Mumbai\", \"Bhavik\"=>\"Banglore\");",
+          "explanation": "The correct example of an Associative array in PHP is: $person = array(\"Alvin\"=>\"Delhi\", \"Alex\"=>\"Mumbai\", \"Bhavik\"=>\"Banglore\");"
+        },
+        {
+          "question": "What is the use of PHP mt_rand() function?",
+          "options": [
+            "Generates a random number using the milliseconds time.",
+            "Generates a random number using the microseconds time.",
+            "Generates a random number using the milliseconds time.",
+            "Generates a random number using the Mersenne Twister algorithm."
+          ],
+          "answer": "Generates a random number using the Mersenne Twister algorithm.",
+          "explanation": "The use of the mt_rand() function in PHP is to generate a random number using the Mersenne Twister algorithm."
+        },
+        {
+          "question": "Which PHP global variable is used to collect form data after submitting an HTML form with method='post'?",
+          "options": ["$_GET", "$_REQUEST", "$_POST", "$_ENV"],
+          "answer": "$_POST",
+          "explanation": "The PHP global variable $_POST is used to collect form data after submitting an HTML form with method='post'."
+        }
+      ]
+    }
+  },
+
   "users": {}
 }

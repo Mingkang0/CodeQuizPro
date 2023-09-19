@@ -18,12 +18,13 @@ import Tab3 from './pages/Tab3';
 import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
 import TabBar from './components/tabbar'
-import Quiz from './pages/Quiz';
-import Challenges from './pages/Challenges';
+import Quiz from './pages/quiz/Quiz';
+import Challenges from './pages/challenges/Challenges';
 import Learning from './pages/learning resources/Learning';
-import Login from './pages/Login';
+import Login from './pages/login';
+import Ques from './pages/challenges/Que';
 import Register from './pages/register';
-import Question from './pages/Question';
+import Question from './pages/quiz/Question';
 import Language from './pages/learning resources/Language';
 import Topic from './pages/learning resources/Topic';
 
@@ -65,6 +66,7 @@ const App: React.FC = () => {
             <Route path="/learning/:language/:topicId" component={Topic} />
             <Route path="/language" component={Language} />
             <Route path="/question/:language/:difficulty" component={Question}/>
+            <Route path="/challenges/:language" component={Ques}/>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Redirect exact from="/" to="/home" />
