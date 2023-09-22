@@ -1,9 +1,10 @@
-import { IonCard, IonCardContent, IonContent, IonGrid, IonInput, IonImg, IonPage, IonCardTitle, IonButton, IonRouterLink, IonText } from '@ionic/react';
+import { IonCard, IonCardContent, IonToast, IonContent, IonGrid, IonInput, IonImg, IonPage, IonCardTitle, IonButton, IonRouterLink, IonText } from '@ionic/react';
 import logo from '../assests/CodeQuiz_Pro-removebg-preview.png'
 import './css/Register.css';
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase.config';
+import { auth, cloudDB } from '../firebase.config';
+import { doc, setDoc } from "firebase/firestore";
 
 const Register: React.FC = () => {
   const [register, setRegister] = useState({
@@ -12,18 +13,41 @@ const Register: React.FC = () => {
     password: '',
     confirmPassword: ''
   });
+  const [error, setError] = useState<any>(null);
+  const [success, setSuccess] = useState<any>();
 
   const onChange = (e: any) => {
     setRegister({ ...register, [e.target.name]: e.target.value });
   }
 
+
+  // Function to add a new user document 
+  const addUserDocument = async (uid: string, username: string, avatar: string) => {
+    try {
+      const userRef = doc(cloudDB, 'User', uid);
+      const payload = { username, avatar };
+      await setDoc(userRef, payload);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
+      if (register.password !== register.confirmPassword) {
+        setError("Passwords do not match!");
+        return;
+      }
       await createUserWithEmailAndPassword(auth, register.email, register.password);
-      console.log("The account has been successfully created!");
-    } catch (error) {
+      const user = auth.currentUser;
+      if (user) {
+        await addUserDocument(user.uid, register.username, '');
+      }
+      setSuccess("The account has been successfully created!");
+    } catch (error: any) {
+      setError(error.message);
       console.error("Error saving data to Firebase:", error);
     }
   };
@@ -55,6 +79,20 @@ const Register: React.FC = () => {
           </IonText>
         </IonGrid>
       </IonContent>
+      <IonToast
+        isOpen={!!error}
+        message={error || ''}
+        duration={3000}
+        onDidDismiss={() => setError(null)}
+        color="danger"
+      />
+      <IonToast
+        isOpen={!!success}
+        message={success || ''}
+        duration={3000}
+        onDidDismiss={() => setSuccess(null)}
+        color="success"
+      />
     </IonPage>
   );
 }

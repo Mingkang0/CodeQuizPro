@@ -1,11 +1,15 @@
 import { IonContent, IonNavLink, IonButtons, IonBackButton, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonAvatar, IonItem, IonText, IonLabel, IonButton, IonCardContent, IonCard, IonMenuButton } from '@ionic/react';
 import './css/Profile.css'
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { pencilOutline } from 'ionicons/icons';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import SideMenu from '../components/SideMenu';
+import { auth, cloudDB } from '../firebase.config';
+import { collection, getDoc, doc } from "firebase/firestore";
+import avatar from '../assests/Avatar/Avatar_1.png';
 
 const Profile: React.FC = () => {
+    const [user, setUser] = useState<any>();
     async function selectImage() {
         try {
             const image = await Camera.getPhoto({
@@ -21,6 +25,27 @@ const Profile: React.FC = () => {
         }
     }
 
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const userRef = doc(collection(cloudDB, 'User'), auth?.currentUser?.uid);
+            const docSnapshot = await getDoc(userRef);
+    
+            if (docSnapshot.exists()) {
+                setUser(docSnapshot.data());
+            } else {
+              console.log('No such user!');
+            }
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+
+    console.log(auth?.currentUser)
+    console.log(user)
     return (
         <>
             <SideMenu />
@@ -41,11 +66,11 @@ const Profile: React.FC = () => {
                 <IonContent color='main' className="ion-padding ion-text-center">
                     <IonItem color='main' lines='none'>
                         <IonAvatar className='ion-margin-top'>
-                            <img src="/public/avatar_sample.png" alt="Profile Picture" />
+                            <img src={avatar} alt="Profile Picture" />
                         </IonAvatar>
                     </IonItem>
-                    <IonTitle class='ion-margin-top'>Username</IonTitle>
-                    <IonText>Email@email.com</IonText>
+                    <IonTitle class='ion-margin-top'>{user?.username}</IonTitle>
+                    <IonText>{auth?.currentUser?.email || "Email"}</IonText>
                     <IonTitle className='ion-margin-top'><h2><strong>Learning Progress</strong></h2></IonTitle>
                     <IonCard style={{ borderRadius: "10px" }}>
                         <IonCardContent>
@@ -71,3 +96,4 @@ const Profile: React.FC = () => {
 };
 
 export default Profile;
+

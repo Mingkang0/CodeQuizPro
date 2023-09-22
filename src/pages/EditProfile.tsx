@@ -1,29 +1,62 @@
-import { IonInput, IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonList, IonAvatar, IonButton, IonIcon, IonLabel } from '@ionic/react';
-import React, { useState } from 'react';
+import { IonInput, IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonList, IonAvatar, IonButton, IonIcon, IonLabel, IonToast } from '@ionic/react';
+import React, { useState, useEffect } from 'react';
 import './css/EditProfile.css';
 import { cameraOutline } from 'ionicons/icons';
+import { auth } from '../firebase.config';
+import { doc, getDoc, setDoc, collection } from 'firebase/firestore';
+import { cloudDB } from '../firebase.config';
+import AvatarSelectionModal from '../assests/Avatar/AvatarList';
+
 
 const EditProfile: React.FC = () => {
     const [showImageUpload, setShowImageUpload] = useState(false);
-    const [username, setUsername] = useState<any>("");
-    const [email, setEmail] = useState<any>("");
+    const [username, setUsername] = useState<any>();
+    const [update, setUpdate] = useState<any>(null);
+    const [selectedAvatar, setSelectedAvatar] = useState<string | null>(null); // Track selected avatar
+    const [isAvatarSelectionModalOpen, setIsAvatarSelectionModalOpen] = useState(false);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const userRef = doc(collection(cloudDB, 'User'), auth?.currentUser?.uid);
+                const docSnapshot = await getDoc(userRef);
+
+                if (docSnapshot.exists()) {
+                    const userData = docSnapshot.data();
+                    setUsername(userData?.username);
+                } else {
+                    console.log('No such user!');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+    }, []);
+
 
     const onUsernameChange = (e: any) => {
         setUsername(e.detail.value);
         console.log(username);
     }
 
-    const onEmailChange = (e: any) => {
-        setEmail(e.detail.value);
-        console.log(email);
-    }
-
     const handleImageUploadClick = () => {
         setShowImageUpload(!showImageUpload);
     };
 
+    const handleAvatarSelection = (avatar: string) => {
+        setSelectedAvatar(avatar);
+    };
+
     const handleSaveClick = () => {
-        console.log("The profile is updated")
+        try {
+            const userRef = doc(collection(cloudDB, 'User'), auth?.currentUser?.uid);
+            const payload = { username, avatar: selectedAvatar };
+            setDoc(userRef, payload, { merge: true });
+            setUpdate('The profile is updated');
+        } catch (error) {
+            console.log("Update error: ", error);
+        }
     };
 
     return (
@@ -36,15 +69,30 @@ const EditProfile: React.FC = () => {
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
+
             <IonContent color='main' className="ion-padding">
+                <IonToast
+                    isOpen={!!update}
+                    message={update || ''}
+                    duration={3000}
+                    onDidDismiss={() => setUpdate(null)}
+                    color="success"
+                    position='middle'
+                    buttons={[
+                        {
+                            text: 'OK',
+                            role: 'cancel',
+                        },
+                    ]}
+                />
                 <IonItem color='main' lines='none'>
                     <IonAvatar className='ion-margin-top'>
-                        <img src="/public/avatar_sample.png" alt="Profile Picture" />
+                        <img src="/src/assests/Avatar/Avatar_1.png" alt="Profile Picture" />
                     </IonAvatar>
                 </IonItem>
                 <IonButtons>
-                    <IonButton size='small' color='medium' fill='outline' shape='round' id='uploadProfile'>
-                        Upload <IonIcon slot="end" icon={cameraOutline}></IonIcon>
+                    <IonButton onClick={() => { setIsAvatarSelectionModalOpen(true) }} size='small' color='medium' fill='outline' shape='round' id='uploadProfile'>
+                        Select <IonIcon slot="end" icon={cameraOutline}></IonIcon>
                     </IonButton>
                 </IonButtons>
                 <IonInput
@@ -56,8 +104,8 @@ const EditProfile: React.FC = () => {
                     placeholder="Enter Username"
                 ></IonInput>
                 <IonInput
-                    value={email}
-                    onIonChange={onEmailChange}
+                    disabled={true}
+                    value={auth?.currentUser?.email}
                     label="Email"
                     labelPlacement="floating"
                     fill="outline"
@@ -67,6 +115,11 @@ const EditProfile: React.FC = () => {
                 <IonButtons>
                     <IonButton onClick={handleSaveClick} type='submit' color='tertiary' fill='solid' shape='round' expand='block' id='saveBtn'>SAVE </IonButton>
                 </IonButtons>
+                <AvatarSelectionModal
+                    isOpen={isAvatarSelectionModalOpen}
+                    onClose={() => setIsAvatarSelectionModalOpen(false)}
+                    onSelectAvatar={handleAvatarSelection}
+                />
             </IonContent>
         </IonPage>
     );

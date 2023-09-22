@@ -57,7 +57,7 @@ const App: React.FC = () => {
         <IonTabs>
           <IonRouterOutlet>
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/editProfile" component={EditProfile} />
+            <Route path="/editProfile" component={EditProfile} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/tab3" component={Tab3} />
             <Route path="/quiz" component={Quiz} />
