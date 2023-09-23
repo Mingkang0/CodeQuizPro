@@ -5,14 +5,20 @@
         "1": {
           "title": "Introduction to Python",
           "overview": "Introduction to Python covers the basics of the Python programming language. Learn about Python's history, syntax, and how to write your first Python program. Explore Python's philosophy and its role in various application domains.",
-          "duration": "10 minutes",
-          "content": "Welcome to the Introduction to Python topic! In this section, we'll dive into the world of Python programming. Python is a versatile and beginner-friendly programming language known for its simplicity and readability. In this topic, you'll learn about Python's history, its syntax, and how to write your first Python program. We'll also explore Python's philosophy and its widespread use in fields such as web development, data analysis, and automation. By the end of this topic, you'll have a solid foundation in Python programming."
+          "duration": "5 minutes",
+          "content": "Python is a popular programming language. It was created by Guido van Rossum, and released in 1991. It is used for web development (server-side), software development, mathematics and so on. What can Python do? First, Python can be used on a server to create web applications. Second, Python can be used alongside software to create workflows. Third, Python can connect to database systems. It can also read and modify files. Fourth, Python can be used to handle big data and perform complex mathematics. Fifth, Python can be used for rapid prototyping, or for production-ready software development. What are the benefits of using Python? First, Python is easy to learn. Second, Python is free and open-source. Third, Python has a broad community. Fourth, Python has many libraries available. Fifth, Python is versatile. Python is a great language for beginners. It is powerful enough for companies like Google, Facebook, and Spotify. Python is used in many fields, such as: data science, machine learning, and web development."
         },
         "2": {
           "title": "Variables and Data Types",
           "overview": "Variables and Data Types topic explains how to work with variables, data types, and basic data structures in Python. Explore Python's dynamic typing system, and learn how to declare variables, assign values, and work with numeric, string, and boolean data types.",
           "duration": "15 minutes",
-          "content": "In the Variables and Data Types topic, we'll explore the fundamental building blocks of Python programs. You'll learn how to work with variables, which are used to store data in your programs. Python is dynamically typed, which means you don't need to declare the data type explicitly. We'll cover numeric data types, including integers and floating-point numbers, as well as string and boolean data types. You'll also discover how to perform operations and conversions between data types. By the end of this topic, you'll be comfortable working with variables and data types in Python."
+          "content": "Variables are containers for storing data values.In Python, variables are created when you assign a value to it. For example, x = 5 or y = \"Hello, World\". Variables do not need to be declared with any particular type, and can even change type after they have been set.",
+          "code": [
+            "x = 5",
+            "y = \"Hello, World!\"",
+            "print(x)",
+            "print(y)"
+          ]
         },
         "3": {
           "title": "Control Structures",
@@ -3722,7 +3728,5 @@
         }
       ]
     }
-  },
-
-  "users": {}
+  }
 }

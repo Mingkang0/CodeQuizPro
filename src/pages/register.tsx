@@ -4,7 +4,8 @@ import './css/Register.css';
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, cloudDB } from '../firebase.config';
-import { doc, setDoc } from "firebase/firestore";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import DefaultAvatar from '../assests/Avatar/Avatar_1.png';
 
 const Register: React.FC = () => {
   const [register, setRegister] = useState({
@@ -32,6 +33,15 @@ const Register: React.FC = () => {
     }
   };
 
+  const initializeLearningProgress = async (uid: string) => {
+    try {
+      const docRef = doc(cloudDB, 'Learning_Progress', uid);
+      await setDoc(docRef, {});
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -43,7 +53,8 @@ const Register: React.FC = () => {
       await createUserWithEmailAndPassword(auth, register.email, register.password);
       const user = auth.currentUser;
       if (user) {
-        await addUserDocument(user.uid, register.username, '');
+        await addUserDocument(user.uid, register.username, DefaultAvatar);
+        await initializeLearningProgress(user.uid);
       }
       setSuccess("The account has been successfully created!");
     } catch (error: any) {

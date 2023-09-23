@@ -1,48 +1,54 @@
-import { IonInput, IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonList, IonAvatar, IonButton, IonIcon, IonLabel, IonToast } from '@ionic/react';
+import {
+    IonInput, IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage,
+    IonTitle, IonToolbar, IonList, IonAvatar, IonButton, IonIcon, IonToast,
+    IonRefresher, RefresherEventDetail, IonRefresherContent,
+} from '@ionic/react';
 import React, { useState, useEffect } from 'react';
-import './css/EditProfile.css';
+import '../css/editProfile.css';
 import { cameraOutline } from 'ionicons/icons';
-import { auth } from '../firebase.config';
+import { auth } from '../../firebase.config';
 import { doc, getDoc, setDoc, collection } from 'firebase/firestore';
-import { cloudDB } from '../firebase.config';
-import AvatarSelectionModal from '../assests/Avatar/AvatarList';
-
+import { cloudDB } from '../../firebase.config';
+import AvatarSelectionModal from './AvatarList';
 
 const EditProfile: React.FC = () => {
-    const [showImageUpload, setShowImageUpload] = useState(false);
     const [username, setUsername] = useState<any>();
+    const [avatar, setAvatar] = useState<any>();
     const [update, setUpdate] = useState<any>(null);
-    const [selectedAvatar, setSelectedAvatar] = useState<string | null>(null); // Track selected avatar
+    const [selectedAvatar, setSelectedAvatar] = useState<string | null>(null);
     const [isAvatarSelectionModalOpen, setIsAvatarSelectionModalOpen] = useState(false);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const userRef = doc(collection(cloudDB, 'User'), auth?.currentUser?.uid);
-                const docSnapshot = await getDoc(userRef);
+    const handleRefresh = (event: CustomEvent<RefresherEventDetail>) => {
+        setTimeout(() => {
+            fetchData();
+            event.detail.complete();
+        }, 2000);
+    }
 
-                if (docSnapshot.exists()) {
-                    const userData = docSnapshot.data();
-                    setUsername(userData?.username);
-                } else {
-                    console.log('No such user!');
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
+    const fetchData = async () => {
+        try {
+            const userRef = doc(collection(cloudDB, 'User'), auth?.currentUser?.uid);
+            const docSnapshot = await getDoc(userRef);
+
+            if (docSnapshot.exists()) {
+                const userData = docSnapshot.data();
+                setUsername(userData?.username);
+                setAvatar(userData?.avatar);
+            } else {
+                console.log('No such user!');
             }
-        };
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    useEffect(() => {
         fetchData();
     }, []);
 
-
     const onUsernameChange = (e: any) => {
         setUsername(e.detail.value);
-        console.log(username);
     }
-
-    const handleImageUploadClick = () => {
-        setShowImageUpload(!showImageUpload);
-    };
 
     const handleAvatarSelection = (avatar: string) => {
         setSelectedAvatar(avatar);
@@ -65,12 +71,15 @@ const EditProfile: React.FC = () => {
                 <IonToolbar color='warning'>
                     <IonTitle>Edit Profile</IonTitle>
                     <IonButtons slot='start'>
-                        <IonBackButton></IonBackButton>
+                        <IonBackButton defaultHref='/profile'></IonBackButton>
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
 
             <IonContent color='main' className="ion-padding">
+                <IonRefresher slot="fixed" pullFactor={0.5} pullMin={100} pullMax={200} onIonRefresh={handleRefresh}>
+                    <IonRefresherContent></IonRefresherContent>
+                </IonRefresher>
                 <IonToast
                     isOpen={!!update}
                     message={update || ''}
@@ -87,7 +96,7 @@ const EditProfile: React.FC = () => {
                 />
                 <IonItem color='main' lines='none'>
                     <IonAvatar className='ion-margin-top'>
-                        <img src="/src/assests/Avatar/Avatar_1.png" alt="Profile Picture" />
+                        <img src={selectedAvatar || avatar} alt="Profile Picture" />
                     </IonAvatar>
                 </IonItem>
                 <IonButtons>

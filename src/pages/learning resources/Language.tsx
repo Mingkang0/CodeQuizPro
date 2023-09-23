@@ -1,8 +1,10 @@
 import { IonButtons, IonCard, IonCardContent, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonLabel, IonList, IonMenuButton, IonNavLink, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
+import React, {useEffect} from 'react';
 import SideMenu from '../../components/SideMenu';
 import programminglanguage from '../../assests/languageInfo';
 import { useHistory } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { cloudDB, auth } from '../../firebase.config';
 
 const Language: React.FC = () => {
     const history = useHistory();
@@ -10,6 +12,26 @@ const Language: React.FC = () => {
     const handleLanguage = (language: string) => {
         history.push(`/learning/${language}`);
     }
+
+    const getLanguageInitialStatus = async () => {
+        try {
+            const docRef = doc(cloudDB, 'Learning_Progress', `${auth?.currentUser?.uid}`);
+            const docSnap = await getDoc(docRef);
+    
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+            } else {
+                console.log('No language progress available');
+                
+            }
+        } catch (error) {
+            console.log('Error getting document:', error);
+        }
+    };
+
+    useEffect(()=>{
+        getLanguageInitialStatus();
+    },[])
 
     return (
         <>

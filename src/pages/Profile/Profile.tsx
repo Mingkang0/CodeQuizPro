@@ -1,51 +1,45 @@
-import { IonContent, IonNavLink, IonButtons, IonBackButton, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonAvatar, IonItem, IonText, IonLabel, IonButton, IonCardContent, IonCard, IonMenuButton } from '@ionic/react';
-import './css/Profile.css'
-import React, {useEffect, useState} from 'react';
+import {
+    IonRefresher, RefresherEventDetail, IonRefresherContent, IonContent, IonNavLink,
+    IonButtons, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonAvatar, IonItem,
+    IonText, IonLabel, IonButton, IonCardContent, IonCard, IonMenuButton
+} from '@ionic/react';
+import '../css/Profile.css'
+import React, { useEffect, useState } from 'react';
 import { pencilOutline } from 'ionicons/icons';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import SideMenu from '../components/SideMenu';
-import { auth, cloudDB } from '../firebase.config';
+import SideMenu from '../../components/SideMenu';
+import { auth, cloudDB } from '../../firebase.config';
 import { collection, getDoc, doc } from "firebase/firestore";
-import avatar from '../assests/Avatar/Avatar_1.png';
 
 const Profile: React.FC = () => {
     const [user, setUser] = useState<any>();
-    async function selectImage() {
-        try {
-            const image = await Camera.getPhoto({
-                quality: 90,
-                allowEditing: true,
-                resultType: CameraResultType.DataUrl,
-                source: CameraSource.Photos,
-            });
-            // Handle the captured image here
-        } catch (error) {
-            // Handle any errors that occur during image capture
-            console.error('Error capturing image:', error);
-        }
+
+    const handleRefresh = (event: CustomEvent<RefresherEventDetail>) => {
+        setTimeout(() => {
+            fetchData();
+            event.detail.complete();
+        }, 2000);
     }
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
+
+    const fetchData = async () => {
+        try {
             const userRef = doc(collection(cloudDB, 'User'), auth?.currentUser?.uid);
             const docSnapshot = await getDoc(userRef);
-    
+
             if (docSnapshot.exists()) {
                 setUser(docSnapshot.data());
             } else {
-              console.log('No such user!');
+                console.log('No such user!');
             }
-          } catch (error) {
+        } catch (error) {
             console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
+        }
+    };
 
-    console.log(auth?.currentUser)
-    console.log(user)
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <>
             <SideMenu />
@@ -56,20 +50,23 @@ const Profile: React.FC = () => {
                             <IonMenuButton></IonMenuButton>
                         </IonButtons>
                         <IonTitle className='ion-margin'><strong>Profile</strong></IonTitle>
-                        <IonNavLink slot='end'>
-                            <IonButton color='dark' fill='clear' routerLink='/editProfile'>
+                        <IonNavLink slot="end" routerDirection="forward"  >
+                            <IonButton color='dark' fill='clear' routerLink="/editProfile">
                                 <IonIcon icon={pencilOutline}></IonIcon>
                             </IonButton>
                         </IonNavLink>
                     </IonToolbar>
                 </IonHeader>
                 <IonContent color='main' className="ion-padding ion-text-center">
+                    <IonRefresher slot="fixed" pullFactor={0.5} pullMin={100} pullMax={200} onIonRefresh={handleRefresh}>
+                        <IonRefresherContent></IonRefresherContent>
+                    </IonRefresher>
                     <IonItem color='main' lines='none'>
                         <IonAvatar className='ion-margin-top'>
-                            <img src={avatar} alt="Profile Picture" />
+                            <img src={user?.avatar} alt="Profile Picture" />
                         </IonAvatar>
                     </IonItem>
-                    <IonTitle class='ion-margin-top'>{user?.username}</IonTitle>
+                    <IonTitle class='ion-margin-top'>{user?.username || "Username"}</IonTitle>
                     <IonText>{auth?.currentUser?.email || "Email"}</IonText>
                     <IonTitle className='ion-margin-top'><h2><strong>Learning Progress</strong></h2></IonTitle>
                     <IonCard style={{ borderRadius: "10px" }}>

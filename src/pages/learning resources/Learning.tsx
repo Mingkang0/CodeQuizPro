@@ -13,9 +13,8 @@ import {
 import { IonLabel, IonSegment, IonSegmentButton } from '@ionic/react';
 import Notes from './Notes';
 import { useParams } from 'react-router-dom';
-import { ref, get, set } from 'firebase/database';
+import { ref, get } from 'firebase/database';
 import { db } from '../../firebase.config';
-
 
 const Learning: React.FC = () => {
     const { language } = useParams<{ language: string }>();
@@ -85,7 +84,7 @@ const Learning: React.FC = () => {
                 <IonHeader>
                     <IonToolbar color='warning'>
                         <IonButtons slot='start'>
-                            <IonBackButton></IonBackButton>
+                            <IonBackButton defaultHref='/language'></IonBackButton>
                         </IonButtons>
                         <IonTitle>Learning Resources - <b>{language}</b></IonTitle>
                     </IonToolbar>

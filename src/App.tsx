@@ -15,8 +15,8 @@ import { homeOutline, square, person } from 'ionicons/icons';
 // Import pages here
 import Home from './pages/Home';
 import Tab3 from './pages/Tab3';
-import Profile from './pages/Profile';
-import EditProfile from './pages/EditProfile';
+import Profile from './pages/Profile/Profile';
+import EditProfile from './pages/Profile/EditProfile';
 import TabBar from './components/tabbar'
 import Quiz from './pages/quiz/Quiz';
 import Challenges from './pages/challenges/Challenges';
@@ -65,8 +65,8 @@ const App: React.FC = () => {
             <Route path="/learning/:language" component={Learning} />
             <Route path="/learning/:language/:topicId" component={Topic} />
             <Route path="/language" component={Language} />
-            <Route path="/question/:language/:difficulty" component={Question}/>
-            <Route path="/challenges/:language" component={Ques}/>
+            <Route path="/question/:language/:difficulty" component={Question} />
+            <Route path="/challenges/:language" component={Ques} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Redirect exact from="/" to="/home" />
