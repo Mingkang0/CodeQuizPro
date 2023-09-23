@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "197637390332",
+    "firebase_url": "https://codequiz-4822b-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "codequiz-4822b",
     "storage_bucket": "codequiz-4822b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:197637390332:android:b6795e96bf695a48d07c79",
+        "mobilesdk_app_id": "1:197637390332:android:d707f5a71be710aad07c79",
         "android_client_info": {
-          "package_name": "com.codequizpro"
+          "package_name": "com.android.codequizpro"
         }
       },
       "oauth_client": [],
