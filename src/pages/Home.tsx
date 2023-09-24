@@ -1,9 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonText, IonMenu, IonMenuButton, IonButton, IonButtons, IonNavLink, IonList, IonMenuToggle, IonItem, IonLabel } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonText, IonMenuButton, IonButton, IonButtons, IonNavLink } from '@ionic/react';
 import './css/Home.css';
 import { IonIcon } from '@ionic/react';
 import { personCircleOutline } from 'ionicons/icons';
-import { IonSearchbar } from '@ionic/react';
 import { IonCard, IonCardContent, IonCardTitle } from '@ionic/react';
 import quiz from '../assests/task-square.png';
 import resources from '../assests/book.png';
@@ -55,8 +53,7 @@ const Home: React.FC = () => {
 
         <IonContent color='main' fullscreen>
           <link href="https://fonts.googleapis.com/css?family=Inria+Sans" rel="stylesheet" />
-          <IonSearchbar placeholder="Search" className='searchbar ion-margin-top'></IonSearchbar>
-
+          
           {/* Home content */}
           <div className='ion-margin'>
             {/* Quizz */}

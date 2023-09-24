@@ -5,17 +5,21 @@ import {
 } from '@ionic/react';
 import '../css/Profile.css'
 import React, { useEffect, useState } from 'react';
-import { pencilOutline } from 'ionicons/icons';
+import { language, pencilOutline } from 'ionicons/icons';
 import SideMenu from '../../components/SideMenu';
 import { auth, cloudDB } from '../../firebase.config';
-import { collection, getDoc, doc } from "firebase/firestore";
+import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import Progress from './Progress';
+import programminglanguage from '../../assests/languageInfo';
 
 const Profile: React.FC = () => {
     const [user, setUser] = useState<any>();
+    const [languageProgress, setLanguageProgress] = useState<any>();
 
     const handleRefresh = (event: CustomEvent<RefresherEventDetail>) => {
         setTimeout(() => {
             fetchData();
+            getLanguageInitialStatus();
             event.detail.complete();
         }, 2000);
     }
@@ -36,8 +40,47 @@ const Profile: React.FC = () => {
         }
     };
 
+    const getLanguageInitialStatus = async () => {
+        try {
+            const userUid = auth?.currentUser?.uid;
+            const userDocRef = doc(cloudDB, 'Learning_Progress', `${userUid}`);
+
+            const programmingLanguages = programminglanguage.map((language) => language.language);
+
+            const progressLanguages: any = [];
+
+            for (const language of programmingLanguages) {
+                const collectionRef = collection(userDocRef, language);
+                const querySnapshot = await getDocs(collectionRef);
+
+                const languageProgress: any = [];
+                querySnapshot.forEach((doc) => {
+                    languageProgress.push(doc.data());
+                });
+
+                let completeness = 0;
+
+                languageProgress.forEach((topic: any) => {
+                    if (topic.isComplete) {
+                        completeness++;
+                    }
+                });
+
+                progressLanguages.push({ language, complete: completeness });
+
+                console.log(`Completeness for ${language}: ${completeness}`);
+            }
+
+            setLanguageProgress(progressLanguages);
+            console.log(progressLanguages);
+        } catch (error) {
+            console.log('Error getting subcollections:', error);
+        }
+    };
+
     useEffect(() => {
         fetchData();
+        getLanguageInitialStatus();
     }, []);
 
     return (
@@ -69,22 +112,7 @@ const Profile: React.FC = () => {
                     <IonTitle class='ion-margin-top'>{user?.username || "Username"}</IonTitle>
                     <IonText>{auth?.currentUser?.email || "Email"}</IonText>
                     <IonTitle className='ion-margin-top'><h2><strong>Learning Progress</strong></h2></IonTitle>
-                    <IonCard style={{ borderRadius: "10px" }}>
-                        <IonCardContent>
-                            <IonItem detail={true} routerLink='/learning'>
-                                <IonLabel>
-                                    <h3><strong>C++</strong></h3>
-                                    <p>COMPLETED &nbsp; - &nbsp; 100%</p>
-                                </IonLabel>
-                            </IonItem>
-                            <IonItem detail={true}>
-                                <IonLabel>
-                                    <h3><strong>Python</strong></h3>
-                                    <p>IN PROGRESS &nbsp; - &nbsp; 70%</p>
-                                </IonLabel>
-                            </IonItem>
-                        </IonCardContent>
-                    </IonCard>
+                    <Progress />
                 </IonContent>
             </IonPage>
         </>
