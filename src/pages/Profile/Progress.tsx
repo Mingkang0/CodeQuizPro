@@ -1,20 +1,43 @@
-import { IonCard, IonCardContent, IonContent, IonHeader, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCard, IonCardContent, IonItem, IonLabel } from '@ionic/react';
 import React from 'react';
-import { auth, cloudDB } from '../../firebase.config';
-import { doc, getDoc } from 'firebase/firestore';
 
-const Progress: React.FC = () => {
+interface ProgressProps {
+    languageProgress: any;
+}
 
+const Progress: React.FC<ProgressProps> = ({ languageProgress }) => {
+    const progressStatus = ["COMPLETED", "IN PROGRESS", "NOT STARTED"];
+
+    const calCompletePercentage = (language: any) => {
+        return language / 10 * 100;
+    };
+
+    const getCompleteStatus = (percentage: number) => {
+        if (percentage === 100) {
+          return progressStatus[0]; // "COMPLETED"
+        } else if (percentage > 0) {
+          return progressStatus[1]; // "IN PROGRESS"
+        } else {
+          return progressStatus[2]; // "NOT STARTED"
+        }
+      };
 
     return (
         <IonCard style={{ borderRadius: "10px" }}>
             <IonCardContent>
-                <IonItem detail={true} routerLink='/learning'>
-                    <IonLabel>
-                        <h3><strong>C++</strong></h3>
-                        <p>COMPLETED &nbsp; - &nbsp; 100%</p>
-                    </IonLabel>
-                </IonItem>
+                {languageProgress?.length > 0 ? (
+                    languageProgress.map((language: any) => (
+                        <IonItem key={language.language} detail={true} routerLink={`/learning/${language.language}`}>
+                            <IonLabel>
+                                <h3><strong>{language.language}</strong></h3>
+                                <p>{getCompleteStatus(calCompletePercentage(language.complete))} &nbsp; - &nbsp; {calCompletePercentage(language.complete)}%</p>
+                                
+                            </IonLabel>
+                        </IonItem>
+                    ))
+                ) : (
+                    <p>No progress available</p>
+                )}
             </IonCardContent>
         </IonCard>
     );
