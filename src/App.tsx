@@ -21,7 +21,7 @@ import TabBar from './components/tabbar'
 import Quiz from './pages/quiz/Quiz';
 import Challenges from './pages/challenges/Challenges';
 import Learning from './pages/learning resources/Learning';
-import Login from './pages/login';
+import Login from './pages/Login';
 import Ques from './pages/challenges/Que';
 import Register from './pages/register';
 import Question from './pages/quiz/Question';
