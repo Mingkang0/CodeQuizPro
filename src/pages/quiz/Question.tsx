@@ -21,6 +21,9 @@ import {
 import { ref, get } from 'firebase/database';
 import { db } from '../../firebase.config';
 import SideMenu from '../../components/SideMenu';
+import { auth, cloudDB } from '../../firebase.config';
+import { collection, setDoc, doc, addDoc } from "firebase/firestore";
+import { Timestamp } from 'firebase/firestore';
 
 interface QuestionData {
   question: string;
@@ -97,14 +100,40 @@ const Question: React.FC = () => {
     setQuestions(updatedQuestions);
   };
 
+  const addChallengeData = async (language:string, difficulty:string , score: number) => {
+    const firestore = cloudDB; // Replace with your Firestore instance
+    const user = auth.currentUser;
+  
+    if (user) {
+      const userId = user.uid;
+      const chaCompletionCollection = collection(firestore, 'Quizzes');
+      try {
+        await addDoc(chaCompletionCollection, {
+          userId: userId,        
+          language: language,
+          difficulty: difficulty,
+          score: score,
+          completedDate: Timestamp.now(),
+        });
+        console.log('Challenges data added to Firestore successfully!');
+      } catch (error) {
+        console.error('Error adding challenges data to Firestore:', error);
+      }
+    }else {
+      // User is not authenticated, handle this case (e.g., show a message or redirect to login)
+      console.log('User is not authenticated');
+    }
+  }
+
   const handleFinishQuiz = () => {
     // Calculate the number of correct answers
     const correctAnswers = questions.filter((question) => question.isCorrect === true).length;
     const totalQuestions = questions.length;
 
+    const score = (correctAnswers/totalQuestions)*100;
+    addChallengeData(language,difficulty,score);
     // Set a flag to indicate that the quiz is finished
     setQuizFinished(true);
-
     // Store the results in state
     setQuizResults({ correctAnswers, totalQuestions });
   };

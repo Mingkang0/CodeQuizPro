@@ -28,6 +28,7 @@ import Question from './pages/quiz/Question';
 import Language from './pages/learning resources/Language';
 import Topic from './pages/learning resources/Topic';
 import Report from './pages/report/report';
+import QuizzesReport from './pages/report/quiz';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -84,6 +85,7 @@ const App: React.FC = () => {
             <Route exact path="/home" component={Home} />
             <Route exact path="/report" component={Report} />
             <Route path="/report/challenges" component={ChallengeReport} />
+            <Route path="/report/quizzes" component={QuizzesReport} />
             <Route path="/quiz" component={Quiz} />
             <Route path="/challenges" component={Challenges} />
             <Route path="/learning/:language" component={Learning} />

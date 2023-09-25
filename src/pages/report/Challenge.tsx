@@ -5,6 +5,7 @@ import { collection, getDocs, doc, query, where, Timestamp } from 'firebase/fire
 import { cloudDB, auth } from '../../firebase.config'; // Adjust the import path as needed
 import '../css/report.css';
 import SideMenu from '../../components/SideMenu';
+import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 
 interface ChallengeData {
   language: string;
@@ -35,12 +36,10 @@ const ChallengeReport: React.FC = () => {
           const challengesRef = collection(firestore, 'Challenges');
           const challengesQuery = query(challengesRef, where('userId', '==', userId));
           const challengesSnapshot = await getDocs(challengesQuery);
-          console.log('Fetched challengesSnapshot:', challengesSnapshot);
           const data: ChallengeData[] = [];
 
           for (const docSnap of challengesSnapshot.docs) {
             const challengeData = docSnap.data() as ChallengeData;
-            console.log('challengesData:', challengesData);
             data.push(challengeData);
           }
 
@@ -55,6 +54,24 @@ const ChallengeReport: React.FC = () => {
 
     fetchData();
   }, [challengesData]);
+
+const chartData: Record<string, number> = {};
+
+challengesData.forEach((challenge) => {
+  const language = challenge.language;
+  if (!chartData[language]) {
+    chartData[language] = 1;
+  } else {
+    chartData[language]++;
+  }
+});
+  // Convert chartData to an array of objects for recharts
+  const chartDataArray = Object.keys(chartData).map((language) => ({
+    name: language,
+    value: chartData[language],
+  }));
+
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#FF5733'];
 
   return (
     <>
@@ -115,10 +132,25 @@ const ChallengeReport: React.FC = () => {
                     ))}
                   </tbody>
                 </table>
-              </IonCardContent>
-              <IonCardContent>
-                <IonCardTitle style={{ marginBottom: '20px' }}>Doughnut Chart:</IonCardTitle>
-                
+                <IonCardTitle style={{ marginTop:'20px', marginBottom: '20px' }}>Pie Chart:</IonCardTitle>
+                <PieChart width={300} height={230}>
+              <Pie
+                dataKey="value"
+                isAnimationActive={false}
+                data={chartDataArray}
+                cx={165}
+                cy={120}
+                outerRadius={80}
+                fill="#8884d8"
+                label
+              >
+                {chartDataArray.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip/>
+            </PieChart>
+            <IonTitle>Total Challenges Taken: {challengesData.length}</IonTitle>
               </IonCardContent>
             </IonCard>
           )}
