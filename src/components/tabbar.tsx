@@ -3,7 +3,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import { home, person, settings } from 'ionicons/icons';
 import Home from '../pages/Home';
 import Tab2 from '../pages/Tab2';
-import Tab3 from '../pages/Tab3';
+import Tab3 from '../pages/report/Challenge';
 import { useRef } from "react";
 import { useEffect, useState } from "react";
 import { Redirect, Route } from "react-router";
