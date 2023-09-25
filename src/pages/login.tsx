@@ -33,15 +33,15 @@ const Login: React.FC = () => {
   
   return (
     <IonPage>
-      <IonContent color="main">
+      <IonContent color="main" className='ion-padding-top'>
         <IonGrid>
           <link href="https://fonts.googleapis.com/css?family=Inria+Sans" rel="stylesheet" />
-          <IonTitle className='header ion-text-center'>Welcome to <strong>CodeQuizPro</strong></IonTitle>
+          <IonTitle className='header ion-text-center'><h2>Welcome to <strong>CodeQuiz Pro</strong></h2></IonTitle>
           <div className='logo'>
             <IonImg src={logo} style={{ width: '65%' }} />
           </div>
           <form action='post' onSubmit={handleLogin}>
-            <IonCard className='card ion-margin'>
+            <IonCard className='card ion-margin ion-padding-vertical'>
               <IonCardContent>
                 <IonCardTitle className='title ion-text-center'>Sign In</IonCardTitle>
                 <IonInput onIonChange={onChangeEmail} value={email} name='email' label="Email" labelPlacement="floating" fill="outline" type="email" placeholder='Enter email'></IonInput>

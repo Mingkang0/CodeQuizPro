@@ -85,14 +85,14 @@ const Register: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent color="main">
+      <IonContent color="main" className='ion-padding-top'>
         <IonGrid>
           <link href="https://fonts.googleapis.com/css?family=Inria+Sans" rel="stylesheet" />
           <div className='logo'>
             <IonImg src={logo} style={{ width: '65%' }} />
           </div>
           <form onSubmit={handleSubmit}>
-            <IonCard className='card ion-margin'>
+            <IonCard className='card ion-margin ion-padding-vertical'>
               <IonCardContent>
                 <IonCardTitle className='title ion-text-center'>Sign Up</IonCardTitle>
                 <IonInput onIonChange={onChange} value={register.username} name='username' label="Username" labelPlacement="floating" fill="outline" type="text" placeholder='Enter username'></IonInput>

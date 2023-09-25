@@ -67,12 +67,10 @@ const Profile: React.FC = () => {
                 });
 
                 progressLanguages.push({ language, complete: completeness });
-
-                console.log(`Completeness for ${language}: ${completeness}`);
             }
 
             setLanguageProgress(progressLanguages);
-            console.log(progressLanguages);
+            
         } catch (error) {
             console.log('Error getting subcollections:', error);
         }
@@ -112,7 +110,7 @@ const Profile: React.FC = () => {
                     <IonTitle class='ion-margin-top'>{user?.username || "Username"}</IonTitle>
                     <IonText>{auth?.currentUser?.email || "Email"}</IonText>
                     <IonTitle className='ion-margin-top'><h2><strong>Learning Progress</strong></h2></IonTitle>
-                    <Progress />
+                    <Progress languageProgress={languageProgress} />
                 </IonContent>
             </IonPage>
         </>
