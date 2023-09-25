@@ -42,6 +42,15 @@ const Register: React.FC = () => {
     }
   }
 
+  const initializeChallengesProgress = async (uid: string) => {
+    try {
+      const docRef = doc(cloudDB, 'Challenges', uid);
+      await setDoc(docRef, {});
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -55,6 +64,7 @@ const Register: React.FC = () => {
       if (user) {
         await addUserDocument(user.uid, register.username, DefaultAvatar);
         await initializeLearningProgress(user.uid);
+        await initializeChallengesProgress(user.uid);
       }
       setSuccess("The account has been successfully created!");
     } catch (error: any) {
