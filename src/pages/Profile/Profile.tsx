@@ -67,12 +67,10 @@ const Profile: React.FC = () => {
                 });
 
                 progressLanguages.push({ language, complete: completeness });
-
-                console.log(`Completeness for ${language}: ${completeness}`);
             }
 
             setLanguageProgress(progressLanguages);
-            console.log(progressLanguages);
+            
         } catch (error) {
             console.log('Error getting subcollections:', error);
         }
