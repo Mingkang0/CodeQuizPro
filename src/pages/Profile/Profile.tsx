@@ -1,16 +1,17 @@
 import {
     IonRefresher, RefresherEventDetail, IonRefresherContent, IonContent, IonNavLink,
     IonButtons, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon, IonAvatar, IonItem,
-    IonText, IonLabel, IonButton, IonCardContent, IonCard, IonMenuButton
+    IonText, IonButton, IonMenuButton
 } from '@ionic/react';
 import '../css/Profile.css'
 import React, { useEffect, useState } from 'react';
-import { language, pencilOutline } from 'ionicons/icons';
+import { pencilOutline } from 'ionicons/icons';
 import SideMenu from '../../components/SideMenu';
 import { auth, cloudDB } from '../../firebase.config';
 import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 import Progress from './Progress';
 import programminglanguage from '../../assests/languageInfo';
+import DefaultAvatar from '../../assests/Avatar/Avatar_1.png';
 
 const Profile: React.FC = () => {
     const [user, setUser] = useState<any>();
@@ -104,7 +105,7 @@ const Profile: React.FC = () => {
                     </IonRefresher>
                     <IonItem color='main' lines='none'>
                         <IonAvatar className='ion-margin-top'>
-                            <img src={user?.avatar} alt="Profile Picture" />
+                            <img src={user?.avatar || DefaultAvatar} alt="Avatar" />
                         </IonAvatar>
                     </IonItem>
                     <IonTitle class='ion-margin-top'>{user?.username || "Username"}</IonTitle>

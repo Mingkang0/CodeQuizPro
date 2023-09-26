@@ -1,9 +1,11 @@
 plugins{
     id 'com.android.application'
+    id 'com.huawei.agconnect'
     id 'com.google.gms.google-services'
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
 
 android {
     namespace "io.ionic.starter"
@@ -50,6 +52,9 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:32.3.1')
     implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'com.huawei.agconnect:agconnect-core:1.9.1.301'
+    implementation 'com.huawei.agconnect:agconnect-auth:1.9.1.301'
 }
 
 apply from: 'capacitor.build.gradle'

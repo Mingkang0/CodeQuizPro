@@ -31,17 +31,17 @@
 		"client_id":"1253703172698983360",
 		"client_secret":"4B4FDBE477E261EC6718DBAD8A8998FA517BB7357C717778DE8E33AB3F7E698E",
 		"project_id":"388421841221700807",
-		"app_id":"109269569",
+		"app_id":"109269671",
 		"api_key":"DAEDADdtVUBqBgKZetmMLApiRtPZ2Kbp9uxBz+7ojuV5E02QqOkp+mlchAPsPe6nRCpGrRd3XKUnOVn/D9EfUASf9DREg1Q1OYKgrg==",
-		"package_name":"com.codequizpro"
+		"package_name":"com.android.codequizpro"
 	},
 	"oauth_client":{
-		"client_id":"109269569",
+		"client_id":"109269671",
 		"client_type":1
 	},
 	"app_info":{
-		"app_id":"109269569",
-		"package_name":"com.codequizpro"
+		"app_id":"109269671",
+		"package_name":"com.android.codequizpro"
 	},
 	"service":{
 		"analytics":{
@@ -79,17 +79,17 @@
 	"configuration_version":"3.0",
 	"appInfos":[
 		{
-			"package_name":"com.codequizpro",
+			"package_name":"com.android.codequizpro",
 			"client":{
-				"app_id":"109269569"
+				"app_id":"109269671"
 			},
 			"app_info":{
-				"package_name":"com.codequizpro",
-				"app_id":"109269569"
+				"package_name":"com.android.codequizpro",
+				"app_id":"109269671"
 			},
 			"oauth_client":{
 				"client_type":1,
-				"client_id":"109269569"
+				"client_id":"109269671"
 			}
 		}
 	]

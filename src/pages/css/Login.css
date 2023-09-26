@@ -11,9 +11,15 @@
   display: flex; 
   justify-content: center;
 }
+
 .btn{
   margin-top: 20px;
   --background: #ffdd9f;
+  --border-radius: 15px!important;
+}
+.btnHuawei{
+  margin-top: 20px;
+  --background: #d3d0ca;
   --border-radius: 15px!important;
 }
 .card{

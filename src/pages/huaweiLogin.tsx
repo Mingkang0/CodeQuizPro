@@ -1,15 +1,20 @@
 import { IonCard, IonCardContent, IonContent, IonGrid, IonInput, IonImg, IonPage, IonTitle, IonButtons, IonCardTitle, IonButton, IonRouterLink, IonText } from '@ionic/react';
 import logo from '../assests/CodeQuiz_Pro-removebg-preview.png'
-import './css/Login.css'
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import './css/Login.css';
 import { useState } from 'react';
-import { auth } from '../firebase.config';
 import { useHistory } from 'react-router-dom';
+
 
 const Login: React.FC = () => {
   const history = useHistory();
   const [email, setEmail] = useState<any>("");
   const [password, setPassword] = useState<any>("");
+
+
+  const signInWithHuawei = (e:any) => {
+    e.preventDefault();
+    console.log("Login with Huawei")
+  };
 
   const onChangeEmail = (e: any) => {
     setEmail(e.detail.value);
@@ -18,18 +23,6 @@ const Login: React.FC = () => {
   const onChangePassword = (e: any) => {
     setPassword(e.detail.value);
   }
-
-  const handleLogin = async (e: any) => {
-    e.preventDefault();
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-      // console.log(user)
-      history.push('/home');
-    } catch (error) {
-      console.error("Error during login:", error);
-    }
-  };
 
   return (
     <IonPage>
@@ -40,18 +33,18 @@ const Login: React.FC = () => {
           <div className='logo'>
             <IonImg src={logo} style={{ width: '65%' }} />
           </div>
-          <form action='post' onSubmit={handleLogin}>
+          <form action='post' onSubmit={signInWithHuawei}>
             <IonCard className='card ion-margin ion-padding-vertical'>
               <IonCardContent>
-                <IonCardTitle className='title ion-text-center'>Sign In</IonCardTitle>
+                <IonCardTitle className='title ion-text-center'>Sign In with HUAWEI ID</IonCardTitle>
                 <IonInput onIonChange={onChangeEmail} value={email} name='email' label="Email" labelPlacement="floating" fill="outline" type="email" placeholder='Enter email'></IonInput>
                 <IonInput onIonChange={onChangePassword} value={password} name='password' label="Password" labelPlacement="floating" fill="outline" type="password" placeholder='Enter password'></IonInput>
                 <IonRouterLink>
                   Forgot Password?
                 </IonRouterLink>
-                <IonButton className="btn" expand="block" type="submit">Login</IonButton>
-                <IonRouterLink routerLink='/huaweiLogin'>
-                  <IonButton className="btnHuawei" expand="block">Login By HUAWEI ID</IonButton>
+                <IonButton  className="btn" expand="block" type="submit">Login</IonButton>
+                <IonRouterLink routerLink='/login'>
+                    <IonButton className="btnHuawei" expand="block">Back</IonButton>
                 </IonRouterLink>
               </IonCardContent>
             </IonCard>

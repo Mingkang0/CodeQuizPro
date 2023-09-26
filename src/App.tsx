@@ -17,11 +17,11 @@ import Home from './pages/Home';
 import ChallengeReport from './pages/report/Challenge';
 import Profile from './pages/Profile/Profile';
 import EditProfile from './pages/Profile/EditProfile';
-import TabBar from './components/tabbar'
 import Quiz from './pages/quiz/Quiz';
 import Challenges from './pages/challenges/Challenges';
 import Learning from './pages/learning resources/Learning';
 import Login from './pages/Login';
+import huaweiLogin from './pages/huaweiLogin';
 import Ques from './pages/challenges/Que';
 import Register from './pages/register';
 import Question from './pages/quiz/Question';
@@ -53,7 +53,6 @@ import './theme/tabbar.css';
 /* Firebase */
 import { auth } from './firebase.config'
 import { useEffect, useState } from 'react';
-
 
 setupIonicReact();
 
@@ -115,6 +114,7 @@ const App: React.FC = () => {
         ) : (
           <IonRouterOutlet>
             <Route exact path="/login" component={Login} />
+            <Route exact path="/huaweilogin" component={huaweiLogin} />
             <Route exact path="/register" component={Register} />
             <Redirect exact from="/" to="/login" />
          </IonRouterOutlet>
