@@ -5,6 +5,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../firebase.config';
 import { useHistory } from 'react-router-dom';
+import { loginAnonymously } from './Auth/auth';
+import { configInstance } from './Auth/config';
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -31,6 +33,19 @@ const Login: React.FC = () => {
     }
   };
 
+  const signInAnonymously = async (e: React.FormEvent) => {
+    e.preventDefault();
+    configInstance();
+
+    loginAnonymously()
+      .then((res) => {
+        console.log('login successfully!');
+      }).catch((err) => {
+        alert(err.message);
+      });
+    history.push('/home');
+  };
+
   return (
     <IonPage>
       <IonContent color="main" className='ion-padding-top'>
@@ -50,9 +65,7 @@ const Login: React.FC = () => {
                   Forgot Password?
                 </IonRouterLink>
                 <IonButton className="btn" expand="block" type="submit">Login</IonButton>
-                <IonRouterLink routerLink='/huaweiLogin'>
-                  <IonButton className="btnHuawei" expand="block">Login By HUAWEI ID</IonButton>
-                </IonRouterLink>
+                <IonButton onClick={signInAnonymously} className="btnHuawei" expand="block">Login Anonymously</IonButton>
               </IonCardContent>
             </IonCard>
           </form>

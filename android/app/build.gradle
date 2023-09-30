@@ -23,8 +23,21 @@ android {
             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+
+    signingConfigs {
+        config {
+            storeFile file('HMS.config.jks')
+            storePassword 'password'
+            keyAlias 'HMS'
+            keyPassword 'password'
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.config // Enable signingConfig for debug flavor
+        }
         release {
+            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

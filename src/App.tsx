@@ -1,4 +1,4 @@
-import { Redirect, Route} from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -21,7 +21,7 @@ import Quiz from './pages/quiz/Quiz';
 import Challenges from './pages/challenges/Challenges';
 import Learning from './pages/learning resources/Learning';
 import Login from './pages/Login';
-import huaweiLogin from './pages/huaweiLogin';
+import huaweiLogin from './pages/Auth/huaweiLogin';
 import Ques from './pages/challenges/Que';
 import Register from './pages/register';
 import Question from './pages/quiz/Question';
@@ -53,47 +53,50 @@ import './theme/tabbar.css';
 /* Firebase */
 import { auth } from './firebase.config'
 import { useEffect, useState } from 'react';
+import { getUserInfo } from './pages/Auth/auth';
+import { configInstance } from './pages/Auth/config'
 
 setupIonicReact();
 
 const App: React.FC = () => {
   const [userAuthenticated, setUserAuthenticated] = useState(false);
+  const [anon, setAnon] = useState(true);
+
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         setUserAuthenticated(true);
       } else {
         setUserAuthenticated(false);
       }
     });
-  
     return () => unsubscribe();
   }, []);
   return (
     <IonApp>
       <IonReactRouter>
-          <IonRouterOutlet>
- 
+        <IonRouterOutlet>
 
-          </IonRouterOutlet>
-          {userAuthenticated ? (
+
+        </IonRouterOutlet>
+        {userAuthenticated ? (
           <IonTabs>
             <IonRouterOutlet>
-            <Route exact path="/profile" component={Profile} />
-            <Route path="/editProfile" component={EditProfile} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/report" component={Report} />
-            <Route path="/report/challenges" component={ChallengeReport} />
-            <Route path="/report/quizzes" component={QuizzesReport} />
-            <Route path="/quiz" component={Quiz} />
-            <Route path="/challenges" component={Challenges} />
-            <Route path="/learning/:language" component={Learning} />
-            <Route path="/learning/:language/:topicId" component={Topic} />
-            <Route path="/language" component={Language} />
-            <Route path="/question/:language/:difficulty" component={Question} />
-            <Route path="/challenges/:language" component={Ques} />
-            
-            <Redirect exact from="/" to="/home" />
+              <Route exact path="/profile" component={Profile} />
+              <Route path="/editProfile" component={EditProfile} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/report" component={Report} />
+              <Route path="/report/challenges" component={ChallengeReport} />
+              <Route path="/report/quizzes" component={QuizzesReport} />
+              <Route path="/quiz" component={Quiz} />
+              <Route path="/challenges" component={Challenges} />
+              <Route path="/learning/:language" component={Learning} />
+              <Route path="/learning/:language/:topicId" component={Topic} />
+              <Route path="/language" component={Language} />
+              <Route path="/question/:language/:difficulty" component={Question} />
+              <Route path="/challenges/:language" component={Ques} />
+
+              <Redirect exact from="/" to="/home" />
             </IonRouterOutlet>
 
             <IonTabBar slot="bottom" className="tabbar-bottom">
@@ -114,10 +117,9 @@ const App: React.FC = () => {
         ) : (
           <IonRouterOutlet>
             <Route exact path="/login" component={Login} />
-            <Route exact path="/huaweilogin" component={huaweiLogin} />
             <Route exact path="/register" component={Register} />
             <Redirect exact from="/" to="/login" />
-         </IonRouterOutlet>
+          </IonRouterOutlet>
         )}
       </IonReactRouter>
     </IonApp>
