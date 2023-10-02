@@ -1,6 +1,7 @@
 import { IonCardContent, IonItem, IonLabel, IonList, IonNavLink } from '@ionic/react';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { auth } from '../../firebase.config';
 
 interface NotesProps {
     topics: {
@@ -16,7 +17,11 @@ interface NotesProps {
 const Notes: React.FC<NotesProps> = ({ topics, language }) => {
     const history = useHistory();
     const handleTopic = (topicId: string) => {
-        history.push(`/learning/${language}/${topicId}`);
+        if(auth.currentUser){
+            history.push(`/learning/${language}/${topicId}`);
+        }else{
+            history.push(`/anonymous/learning/${language}/${topicId}`);
+        }
         window.location.reload();
     }
 

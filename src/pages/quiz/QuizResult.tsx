@@ -4,13 +4,13 @@ import {
   IonCardContent,
   IonCardTitle,
   IonGrid,
-  IonIcon,
   IonImg,
   IonText,
 } from '@ionic/react';
 
 import pic from '../../assests/congratulation_5278593.png'
 import { useHistory } from 'react-router';
+import { auth } from '../../firebase.config';
 
 interface QuizResultsProps {
   correctAnswers: number;
@@ -20,8 +20,12 @@ interface QuizResultsProps {
 const QuizResults: React.FC<QuizResultsProps> = ({ correctAnswers, totalQuestions }) => {
   const history =useHistory();
   const handleReturnHome= () => {
-   
-    history.push('/');
+    if(auth.currentUser){
+      history.push('/');
+    }
+    else{
+      history.push('/anonymous/home');
+    }
   }
   return (
     <IonCard className="ion-margin">

@@ -1,8 +1,9 @@
-import { IonContent, IonHeader, IonButton, IonTitle, IonPage, IonText, IonToolbar, IonIcon, IonCardTitle, IonGrid, IonCard, IonCardContent, IonCardHeader, IonRow, IonCol, IonItem, IonInput, IonButtons, IonMenuButton } from '@ionic/react';
+import { IonContent, IonHeader, IonButton, IonTitle, IonPage, IonToolbar, IonCardTitle, IonGrid, IonCard, IonCardContent, IonRow, IonCol, IonButtons, IonMenuButton } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import programminglanguage from '../../assests/languageInfo';
 import {TbStarsFilled } from 'react-icons/tb'
 import { useHistory } from 'react-router';
+import { auth } from '../../firebase.config';
 
 import '../css/Quiz.css'
 import SideMenu from '../../components/SideMenu';
@@ -33,15 +34,22 @@ const Quiz: React.FC = () => {
 
   const StartQuiz = () => {
     if (selectedDifficulty && selectedLanguage) {
-      history.push(`/question/${selectedLanguage}/${selectedDifficulty}`)
-      window.location.reload();
+      if(auth.currentUser){
+        history.push(`/question/${selectedLanguage}/${selectedDifficulty}`)
+        window.location.reload();
+      }else{
+        history.push(`/anonymous/question/${selectedLanguage}/${selectedDifficulty}`)
+        window.location.reload();
+      }
     }
   }
+
   useEffect(() => {
     if (shouldRefresh) {
       setShouldRefresh(false);
     }
   }, [shouldRefresh]);
+
   return (
     <>
       <SideMenu />

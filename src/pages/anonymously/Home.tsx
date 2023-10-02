@@ -1,14 +1,14 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonText, IonMenuButton, IonButton, IonButtons, IonNavLink } from '@ionic/react';
-import './css/Home.css';
-import { IonIcon } from '@ionic/react';
-import { personCircleOutline } from 'ionicons/icons';
+import '../css/Home.css';
 import { IonCard, IonCardContent, IonCardTitle } from '@ionic/react';
-import quiz from '../assests/task-square.png';
-import resources from '../assests/book.png';
-import challenges from '../assests/edit.png'
+import { IonIcon } from '@ionic/react';
+import { homeOutline } from 'ionicons/icons';
+import quiz from '../../assests/task-square.png';
+import resources from '../../assests/book.png';
+import challenges from '../../assests/edit.png'
 import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import SideMenu from '../components/SideMenu';
+import SideMenu from '../../components/SideMenu';
 
 
 const Home: React.FC = () => {
@@ -17,13 +17,13 @@ const Home: React.FC = () => {
 
   const handleContentClick = (e: any) => {
     if (e === "quiz") {
-      history.push('/quiz');
+      history.push('/anonymous/quiz');
     }
     else if (e === "learning") {
-      history.push('/language');
+      history.push('/anonymous/language');
     }
     else if (e === "challenges") {
-      history.push('/challenges');
+      history.push('/anonymous/challenges');
     }
     window.location.reload();
   };
@@ -43,9 +43,9 @@ const Home: React.FC = () => {
               <IonMenuButton></IonMenuButton>
             </IonButtons>
             <IonTitle className=''><strong>CodeQuiz Pro</strong></IonTitle>
-            <IonNavLink slot='end'>
-              <IonButton color='dark' fill='clear' routerLink="/profile">
-                <IonIcon size='large' icon={personCircleOutline} />
+            <IonNavLink slot="end">
+              <IonButton fill='clear' color='dark' routerLink='/anonymous/home'>
+                <IonIcon icon={homeOutline} size='large'></IonIcon>
               </IonButton>
             </IonNavLink>
           </IonToolbar>

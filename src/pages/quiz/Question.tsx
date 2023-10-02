@@ -8,7 +8,6 @@ import {
   IonHeader,
   IonButtons,
   IonToolbar,
-  IonBackButton,
   IonTitle,
   IonText,
   IonGrid,
@@ -17,13 +16,16 @@ import {
   IonContent,
   IonPage,
   IonMenuButton,
+  IonIcon,
+  IonNavLink,
 } from '@ionic/react';
 import { ref, get } from 'firebase/database';
 import { db } from '../../firebase.config';
 import SideMenu from '../../components/SideMenu';
 import { auth, cloudDB } from '../../firebase.config';
-import { collection, setDoc, doc, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { Timestamp } from 'firebase/firestore';
+import { homeOutline } from 'ionicons/icons';
 
 interface QuestionData {
   question: string;
@@ -137,16 +139,13 @@ const Question: React.FC = () => {
     // Store the results in state
     setQuizResults({ correctAnswers, totalQuestions });
   };
-  const History = useHistory();
-  const handleExitQuiz = () => {
-    History.push('/');
-    window.location.reload();
-  }
+
   useEffect(() => {
     if (shouldRefresh) {
       setShouldRefresh(false);
     }
   }, [shouldRefresh]);
+  
   return (
     <>
       <SideMenu />
@@ -156,7 +155,11 @@ const Question: React.FC = () => {
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonButton slot="end" color="danger" style={{ marginRight: '10px' }} onClick={handleExitQuiz}>Exit</IonButton>
+            <IonNavLink slot="end">
+              <IonButton fill='clear' color='dark' routerLink={auth.currentUser? '/home' : '/anonymous/home'}>
+                <IonIcon icon={homeOutline} size='large'></IonIcon>
+              </IonButton>
+            </IonNavLink>
             <IonTitle><b>Quizzes</b></IonTitle>
           </IonToolbar>
         </IonHeader>

@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../firebase.config';
 import { useHistory } from 'react-router-dom';
-import { loginAnonymously } from './Auth/auth';
+import { loginAnonymously, loginWithEmail, getUserInfo } from './Auth/auth';
 import { configInstance } from './Auth/config';
 
 const Login: React.FC = () => {
@@ -43,7 +43,7 @@ const Login: React.FC = () => {
       }).catch((err) => {
         alert(err.message);
       });
-    history.push('/home');
+    history.push('/anonymous/home');
   };
 
   return (

@@ -2,7 +2,7 @@ import { CreateAnimation, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabB
 import { IonReactRouter } from "@ionic/react-router";
 import { home, person, settings } from 'ionicons/icons';
 import Home from '../pages/Home';
-import Tab2 from '../pages/Tab2';
+import Tab2 from '../pages/anonymously/Home';
 import Tab3 from '../pages/report/Challenge';
 import { useRef } from "react";
 import { useEffect, useState } from "react";

@@ -9,14 +9,14 @@ import { useParams } from 'react-router-dom';
 import { db, cloudDB, auth } from '../../firebase.config';
 import SideMenu from '../../components/SideMenu';
 import { useHistory } from 'react-router-dom';
-import { doc, getDoc, updateDoc, setDoc, DocumentData, DocumentReference } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, setDoc } from 'firebase/firestore';
+
 
 const Topic: React.FC = () => {
     const history = useHistory();
     const { language, topicId } = useParams<{ language: string, topicId: string }>();
     const [content, setContent] = React.useState<any>(null);
     const [isComplete, setIsComplete] = React.useState<boolean>();
-    const [shouldRefresh, setShouldRefresh] = React.useState<any>(false);
 
     const handleRefresh = (event: CustomEvent<RefresherEventDetail>) => {
         setTimeout(() => {
@@ -82,7 +82,11 @@ const Topic: React.FC = () => {
     };
 
     const handleBack = () => {
-        history.push(`/learning/${language}`)
+        if(auth.currentUser){
+            history.push(`/learning/${language}`)
+        }else{
+            history.push(`/anonymous/learning/${language}`)
+        }
     };
 
     const handleComplete = async () => {
@@ -148,13 +152,14 @@ const Topic: React.FC = () => {
 
                             </IonCardContent>
                         </IonCard>
-                        
+
                         : <IonText>No content available. Will be updated soon.</IonText>}
                     <IonButton color='medium' onClick={handleBack}>Back</IonButton>
-                    <IonButton color={isComplete ? "success" : ""} className='ion-float-right' onClick={handleComplete}>
-                        {isComplete ? 'Mark as Incomplete' : 'Mark as Complete'}
-                    </IonButton>
-                                       
+                    {auth.currentUser ?
+                        <IonButton color={isComplete ? "success" : ""} className='ion-float-right' onClick={handleComplete}>
+                            {isComplete ? 'Mark as Incomplete' : 'Mark as Complete'}
+                        </IonButton> : null
+                    }
                 </IonContent>
             </IonPage>
         </>

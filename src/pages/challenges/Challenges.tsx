@@ -1,20 +1,23 @@
-import { IonContent, IonHeader,  IonTitle, IonPage, IonText, IonToolbar, IonIcon, IonCardTitle, IonGrid, IonCard, IonCardContent, IonCardHeader, IonRow, IonCol, IonItem, IonInput, IonBackButton, IonButtons, IonMenuButton } from '@ionic/react';
+import { IonContent, IonHeader,  IonTitle, IonPage, IonToolbar, IonCardTitle, IonGrid, IonCard, IonCardContent, IonRow, IonCol, IonButtons, IonMenuButton } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
 import SideMenu from '../../components/SideMenu';
 import programminglanguage from '../../assests/languageInfo';
 import { useHistory } from 'react-router';
-import { language } from 'ionicons/icons';
-
+import { auth } from '../../firebase.config';
 
 const Challenges: React.FC = () => {
-
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const [shouldRefresh, setShouldRefresh] = useState(false);
   const history = useHistory();
+
   const handleLanguageSelect = (language: string) => {
     setSelectedLanguage(language);
     if(selectedLanguage) {
-      history.push(`/challenges/${selectedLanguage}`)
+      if(auth.currentUser){
+        history.push(`/challenges/${selectedLanguage}`)
+      }else{
+        history.push(`/anonymous/challenges/${selectedLanguage}`)
+      }
       window.location.reload();
     }
   }

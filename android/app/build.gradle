@@ -26,7 +26,7 @@ android {
 
     signingConfigs {
         config {
-            storeFile file('HMS.config.jks')
+            storeFile file('../../HMS.config.jks')
             storePassword 'password'
             keyAlias 'HMS'
             keyPassword 'password'

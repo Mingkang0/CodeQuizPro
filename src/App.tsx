@@ -21,7 +21,6 @@ import Quiz from './pages/quiz/Quiz';
 import Challenges from './pages/challenges/Challenges';
 import Learning from './pages/learning resources/Learning';
 import Login from './pages/Login';
-import huaweiLogin from './pages/Auth/huaweiLogin';
 import Ques from './pages/challenges/Que';
 import Register from './pages/register';
 import Question from './pages/quiz/Question';
@@ -29,6 +28,7 @@ import Language from './pages/learning resources/Language';
 import Topic from './pages/learning resources/Topic';
 import Report from './pages/report/report';
 import QuizzesReport from './pages/report/quiz';
+import AnonHome from './pages/anonymously/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -53,14 +53,11 @@ import './theme/tabbar.css';
 /* Firebase */
 import { auth } from './firebase.config'
 import { useEffect, useState } from 'react';
-import { getUserInfo } from './pages/Auth/auth';
-import { configInstance } from './pages/Auth/config'
 
 setupIonicReact();
 
 const App: React.FC = () => {
   const [userAuthenticated, setUserAuthenticated] = useState(false);
-  const [anon, setAnon] = useState(true);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -70,8 +67,11 @@ const App: React.FC = () => {
         setUserAuthenticated(false);
       }
     });
+
     return () => unsubscribe();
   }, []);
+
+  console.log(userAuthenticated)
   return (
     <IonApp>
       <IonReactRouter>
@@ -119,6 +119,16 @@ const App: React.FC = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Redirect exact from="/" to="/login" />
+
+            {/* Route for login anonymously */}
+            <Route path="/anonymous/home" component={AnonHome} />
+            <Route path="/anonymous/quiz" component={Quiz} />
+            <Route path="/anonymous/challenges" component={Challenges} />
+            <Route path="/anonymous/challenges/:language" component={Ques} />
+            <Route path="/anonymous/question/:language/:difficulty" component={Question} />
+            <Route path="/anonymous/learning/:language" component={Learning} />
+            <Route path="/anonymous/learning/:language/:topicId" component={Topic} />
+            <Route path="/anonymous/language" component={Language} />
           </IonRouterOutlet>
         )}
       </IonReactRouter>

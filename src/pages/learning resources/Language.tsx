@@ -10,7 +10,11 @@ const Language: React.FC = () => {
     const history = useHistory();
     
     const handleLanguage = (language: string) => {
-        history.push(`/learning/${language}`);
+        if(auth.currentUser){
+            history.push(`/learning/${language}`);
+        }else{
+            history.push(`/anonymous/learning/${language}`);
+        }
     }
 
     const getLanguageInitialStatus = async () => {

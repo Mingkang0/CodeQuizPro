@@ -12,8 +12,10 @@ import {
     IonAlert,
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import {auth} from '../firebase.config';
+import { auth } from '../firebase.config';
 import { signOut } from 'firebase/auth';
+import { logout } from '../pages/Auth/auth';
+import { configInstance } from '../pages/Auth/config';
 
 const SideMenu: React.FC = () => {
     const history = useHistory();
@@ -33,6 +35,25 @@ const SideMenu: React.FC = () => {
         },
     ];
 
+    const anonItems = [
+        {
+            title: 'Home',
+            url: '/anonymous/home',
+        },
+        {
+            title: 'Quizzes',
+            url: '/anonymous/quiz',
+        },
+        {
+            title: 'Daily Challenges',
+            url: '/anonymous/challenges',
+        },
+        {
+            title: 'Learning Resources',
+            url: '/anonymous/language',
+        },
+    ];
+
     const [showLogoutAlert, setShowLogoutAlert] = React.useState(false);
 
     const showLogoutConfirmation = () => {
@@ -41,11 +62,16 @@ const SideMenu: React.FC = () => {
 
     const handleLogout = async () => {
         try {
-            await signOut(auth);
+            if (auth !== null) {
+                await signOut(auth);
+            } else {
+                configInstance();
+                await logout()
+            }
             history.push('/login');
-          } catch (err) {
+        } catch (err) {
             console.error(err);
-          }
+        }
     };
 
     return (
@@ -60,11 +86,21 @@ const SideMenu: React.FC = () => {
             <IonContent color="light" className="ion-padding">
                 <IonList>
                     <IonMenuToggle>
-                        {items.map((item, index) => (
-                            <IonItem key={index} routerLink={item.url}>
-                                <IonLabel>{item.title}</IonLabel>
-                            </IonItem>
-                        ))}
+                        {auth?.currentUser ?
+                            items.map((item, index) => (
+                                <IonItem key={index} routerLink={item.url}>
+                                    <IonLabel>{item.title}</IonLabel>
+                                </IonItem>
+                            ))
+                            :
+
+                            anonItems.map((item, index) => (
+                                <IonItem key={index} routerLink={item.url}>
+                                    <IonLabel>{item.title}</IonLabel>
+                                </IonItem>
+                            ))
+                        }
+
                         <IonItem onClick={() => showLogoutConfirmation()}><strong>Logout</strong></IonItem>
                     </IonMenuToggle>
                 </IonList>

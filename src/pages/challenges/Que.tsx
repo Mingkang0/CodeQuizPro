@@ -8,7 +8,6 @@ import {
   IonHeader,
   IonButtons,
   IonToolbar,
-  IonBackButton,
   IonTitle,
   IonText,
   IonGrid,
@@ -17,14 +16,17 @@ import {
   IonContent,
   IonPage,
   IonMenuButton,
+  IonIcon,
+  IonNavLink,
 } from '@ionic/react';
 import { ref, get, set } from 'firebase/database';
 import { db } from '../../firebase.config';
 import SideMenu from '../../components/SideMenu';
 import ChallengesResults from './result';
 import { auth, cloudDB } from '../../firebase.config';
-import { collection, setDoc, doc, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { Timestamp } from 'firebase/firestore';
+import { homeOutline } from 'ionicons/icons';
 
 interface QuesData {
   question: string;
@@ -107,23 +109,23 @@ const Ques: React.FC = () => {
     const totalQuestions = questions.length;
     // Set a flag to indicate that the challenges is finished
 
-    const score = (correctAnswers/totalQuestions)*100;
-    addChallengeData(language,score);
+    const score = (correctAnswers / totalQuestions) * 100;
+    addChallengeData(language, score);
     setChallengesFinished(true);
 
     // Store the results in state
     setChallengesResults({ correctAnswers, totalQuestions });
   };
-  const addChallengeData = async (language:string ,score: number) => {
+  const addChallengeData = async (language: string, score: number) => {
     const firestore = cloudDB; // Replace with your Firestore instance
     const user = auth.currentUser;
-  
+
     if (user) {
       const userId = user.uid;
       const chaCompletionCollection = collection(firestore, 'Challenges');
       try {
         await addDoc(chaCompletionCollection, {
-          userId: userId,        
+          userId: userId,
           language: language,
           score: score,
           completedDate: Timestamp.now(),
@@ -132,18 +134,14 @@ const Ques: React.FC = () => {
       } catch (error) {
         console.error('Error adding challenges data to Firestore:', error);
       }
-    }else {
+    } else {
       // User is not authenticated, handle this case (e.g., show a message or redirect to login)
       console.log('User is not authenticated');
     }
-  
-   
-  } 
-  const History = useHistory();
-  const handleExitChallenges = () => {
-    History.push('/');
-    window.location.reload();
+
+
   }
+
   useEffect(() => {
     if (shouldRefresh) {
       setShouldRefresh(false);
@@ -158,8 +156,12 @@ const Ques: React.FC = () => {
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonButton slot="end" color="danger" style={{ marginRight: '10px' }} onClick={handleExitChallenges}>Exit</IonButton>
             <IonTitle><b>Challenges</b></IonTitle>
+            <IonNavLink slot="end">
+              <IonButton fill='clear' color='dark' routerLink={auth.currentUser ? '/home' : '/anonymous/home'}>
+                <IonIcon icon={homeOutline} size='large'></IonIcon>
+              </IonButton>
+            </IonNavLink>
           </IonToolbar>
         </IonHeader>
         <IonContent color='main'>

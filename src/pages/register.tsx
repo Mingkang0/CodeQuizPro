@@ -4,8 +4,11 @@ import './css/Register.css';
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, cloudDB } from '../firebase.config';
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import DefaultAvatar from '../assests/Avatar/Avatar_1.png';
+
+import { getUserInfo } from './Auth/auth';
+import { configInstance } from './Auth/config'
 
 const Register: React.FC = () => {
   const [register, setRegister] = useState({
@@ -82,7 +85,7 @@ const Register: React.FC = () => {
       console.error("Error saving data to Firebase:", error);
     }
   };
-
+  console.log(getUserInfo() || null)
   return (
     <IonPage>
       <IonContent color="main" className='ion-padding-top'>
