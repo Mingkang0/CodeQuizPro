@@ -29,6 +29,7 @@ import Topic from './pages/learning resources/Topic';
 import Report from './pages/report/report';
 import QuizzesReport from './pages/report/quiz';
 import AnonHome from './pages/anonymously/Home';
+import ResetPassword from './pages/ForgotPassword';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -118,6 +119,7 @@ const App: React.FC = () => {
           <IonRouterOutlet>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/forgotPassword" component={ResetPassword} />
             <Redirect exact from="/" to="/login" />
 
             {/* Route for login anonymously */}

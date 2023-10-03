@@ -14,7 +14,7 @@ import SideMenu from '../../components/SideMenu';
 const Home: React.FC = () => {
   const history = useHistory();
   const [shouldRefresh, setShouldRefresh] = useState(false);
-
+  
   const handleContentClick = (e: any) => {
     if (e === "quiz") {
       history.push('/anonymous/quiz');
@@ -27,6 +27,7 @@ const Home: React.FC = () => {
     }
     window.location.reload();
   };
+
   useEffect(() => {
     if (shouldRefresh) {
       setShouldRefresh(false);

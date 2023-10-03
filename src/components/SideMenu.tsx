@@ -14,8 +14,7 @@ import {
 import { useHistory } from 'react-router-dom';
 import { auth } from '../firebase.config';
 import { signOut } from 'firebase/auth';
-import { logout } from '../pages/Auth/auth';
-import { configInstance } from '../pages/Auth/config';
+import { signOutAG, configInstanceAG } from '../pages/Auth/auth';
 
 const SideMenu: React.FC = () => {
     const history = useHistory();
@@ -65,8 +64,12 @@ const SideMenu: React.FC = () => {
             if (auth !== null) {
                 await signOut(auth);
             } else {
-                configInstance();
-                await logout()
+                configInstanceAG();
+                await signOutAG()
+                .then((res) => {
+                    console.log(res);
+                    console.log("Logout successfully!");
+                });
             }
             history.push('/login');
         } catch (err) {

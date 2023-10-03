@@ -19,7 +19,7 @@ import {
   IonIcon,
   IonNavLink,
 } from '@ionic/react';
-import { ref, get, set } from 'firebase/database';
+import { ref, get } from 'firebase/database';
 import { db } from '../../firebase.config';
 import SideMenu from '../../components/SideMenu';
 import ChallengesResults from './result';

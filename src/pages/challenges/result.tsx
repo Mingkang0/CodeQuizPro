@@ -19,6 +19,7 @@ interface ChallengesResultsProps {
 
 const ChallengesResults: React.FC<ChallengesResultsProps> = ({ correctAnswers, totalQuestions }) => {
   const history = useHistory();
+
   const handleReturnHome = () => {
     if (auth.currentUser) {
       history.push('/');
@@ -27,6 +28,7 @@ const ChallengesResults: React.FC<ChallengesResultsProps> = ({ correctAnswers, t
       history.push('/anonymous/home');
     }
   }
+  
   return (
     <IonCard className="ion-margin">
       <IonCardContent>

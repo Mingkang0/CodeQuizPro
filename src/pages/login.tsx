@@ -5,8 +5,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../firebase.config';
 import { useHistory } from 'react-router-dom';
-import { loginAnonymously, loginWithEmail, getUserInfo } from './Auth/auth';
-import { configInstance } from './Auth/config';
+import { signInAnonymouslyAG, configInstanceAG } from './Auth/auth';
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -35,14 +34,15 @@ const Login: React.FC = () => {
 
   const signInAnonymously = async (e: React.FormEvent) => {
     e.preventDefault();
-    configInstance();
-
-    loginAnonymously()
+    configInstanceAG();
+    await signInAnonymouslyAG()
       .then((res) => {
         console.log('login successfully!');
-      }).catch((err) => {
-        alert(err.message);
-      });
+        console.log("Login Anonymously success: ",res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
     history.push('/anonymous/home');
   };
 
@@ -61,7 +61,7 @@ const Login: React.FC = () => {
                 <IonCardTitle className='title ion-text-center'>Sign In</IonCardTitle>
                 <IonInput onIonChange={onChangeEmail} value={email} name='email' label="Email" labelPlacement="floating" fill="outline" type="email" placeholder='Enter email'></IonInput>
                 <IonInput onIonChange={onChangePassword} value={password} name='password' label="Password" labelPlacement="floating" fill="outline" type="password" placeholder='Enter password'></IonInput>
-                <IonRouterLink>
+                <IonRouterLink routerLink='/forgotPassword'>
                   Forgot Password?
                 </IonRouterLink>
                 <IonButton className="btn" expand="block" type="submit">Login</IonButton>
